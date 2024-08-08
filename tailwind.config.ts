@@ -7,11 +7,29 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      brown: {
+        DEFAULT: '#9a5c38',
+        accent: '#f18e87'
+      },
+      pink: {
+        DEFAULT: '#ffd0cc'
+      },
+      green: {
+        DEFAULT: '#96b548'
+      },
+      yellow:{
+        DEFAULT: '#fad53f'
+      },
+      background: {
+        top:'#E3938B',
+        transition: '#F18E87',
+        secondary: '#F7D2CD',
+      }
+    },
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'landing': "url(/images/landing/PH2025_WebsiteLanding.svg')",
       },
     },
   },
