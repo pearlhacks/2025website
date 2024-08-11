@@ -7,29 +7,34 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      brown: {
-        DEFAULT: '#9a5c38',
-        accent: '#f18e87'
-      },
-      pink: {
-        DEFAULT: '#ffd0cc'
-      },
-      green: {
-        DEFAULT: '#96b548'
-      },
-      yellow:{
-        DEFAULT: '#fad53f'
-      },
-      background: {
-        top:'#E3938B',
-        transition: '#F18E87',
-        secondary: '#F7D2CD',
-      }
+    fontFamily: {
+      sans: ["Caviar Dreams", "system-ui"],
+      body: ["Proxima Nova", "system-ui"],
     },
     extend: {
       backgroundImage: {
-        'landing': "url(/images/landing/PH2025_WebsiteLanding.svg')",
+        landing: "url(/images/landing/PH2025_WebsiteLanding.svg')",
+      },
+      colors: {
+        brown: {
+          DEFAULT: "#9a5c38",
+        },
+        pink: {
+          200: "#FAE3E1",
+          DEFAULT: "#ffd0cc",
+          accent: "#f18e87",
+        },
+        green: {
+          DEFAULT: "#96b548",
+        },
+        yellow: {
+          DEFAULT: "#fad53f",
+        },
+        background: {
+          top: "#E3938B",
+          transition: "#F18E87",
+          secondary: "#F7D2CD",
+        },
       },
     },
   },

@@ -2,6 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Caviar Dreams";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/CaviarDreams_Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Caviar Dreams";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/CaviarDreams_BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Caviar Dreams";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/CaviarDreams.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Caviar Dreams";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/CaviarDreams_Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/Proxima Nova Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Proxima Nova Reg.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Proxima Nova Bold.ttf") format("truetype");
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
