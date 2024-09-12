@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Footer } from "@/components/Footer";
-
+import { ScrollToTopButton } from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Pearl Hacks",
@@ -17,8 +16,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <main className="min-h-screen font-body font-light flex flex-col items-center bg-background-transition">
+          <ScrollToTopButton />
           {children}
-          <Footer />
         </main>
       </body>
     </html>

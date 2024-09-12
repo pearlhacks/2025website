@@ -23,6 +23,7 @@ const config: Config = {
           200: "#FAE3E1",
           DEFAULT: "#ffd0cc",
           accent: "#f18e87",
+          transition: "#DE6F67",
         },
         green: {
           DEFAULT: "#96b548",
@@ -32,7 +33,7 @@ const config: Config = {
         },
         background: {
           top: "#E3938B",
-          transition: "#F18E87",
+          transition: "#DE6F67",
           secondary: "#F7D2CD",
         },
       },
