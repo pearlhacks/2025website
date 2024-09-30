@@ -2,7 +2,7 @@ import { HeartIcon } from "@heroicons/react/24/outline";
 import { FooterContent } from "./FooterContent";
 import { SocialMediaBar } from "./SocialMediaBar";
 import { Link } from "./Link";
-import { MailingListBox } from "./MailingListBox";
+import { link_mailinglist } from "@/utils/Urls";
 
 export function Footer() {
   return (
@@ -11,8 +11,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 justify-left md:justify-center items-start gap-2 md:gap-4">
           <span className="hidden sm:block">
             <FooterContent title="Keep up with us">
-              Join our mailing list!
-              <MailingListBox />
+              Join {" "}
+              <Link href={link_mailinglist}>
+                our mailing list
+              </Link>
+              !
             </FooterContent>
           </span>
           <FooterContent title="Administration">

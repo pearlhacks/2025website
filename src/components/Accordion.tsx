@@ -3,7 +3,12 @@ import { MinusIcon, PlusIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export function Accordion({ question, answer }) {
+interface AccordionProps {
+  question: string;
+  answer: string;
+}
+
+export function Accordion({ question, answer }: AccordionProps) {
   const [isOpen, setOpen] = useState(false);
 
   function handleClick() {
@@ -13,7 +18,7 @@ export function Accordion({ question, answer }) {
   return (
     <div>
       <div className="flex flex-row justify-between">
-        <h3 className="text-pink-accent font-medium text-md">{question}</h3>
+        <h3 className="text-pink-transition font-medium text-md">{question}</h3>
 
         <button
           className="text-brown w-4 h-4 rounded-full"

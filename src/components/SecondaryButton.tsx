@@ -1,6 +1,12 @@
 import Link from "next/link";
+import { ReactNode } from "react";
 
-export function SecondaryButton({ children, href }) {
+interface SecondaryButtonProps {
+  children: ReactNode;
+  href?: string;
+}
+
+export function SecondaryButton({ children, href }: SecondaryButtonProps) {
   return (
     <button className="font-sans font-bold text-white border-2 transition ease-in-out p-2 px-4 justify-center border-green uppercase items-center backdrop-blur hover:bg-transparent bg-green rounded-full">
       {href ? (

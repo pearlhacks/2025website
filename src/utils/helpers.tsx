@@ -1,4 +1,4 @@
-import { Faq_Category, Tier } from "./Types";
+import { Tier } from "./Types";
 
 export const getTiers = (tier: string) => {
   switch (tier.toLowerCase()) {

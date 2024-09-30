@@ -31,6 +31,12 @@ export default async function Page() {
           </div>
         </div>
       ))}
+      <div className="pb-5">
+        <h2 className="text-green font-sans font-bold text-2xl">
+          Transportation Info
+        </h2>
+        <p className="text-pink-transition p-5 font-medium">Coming soon!</p>
+      </div>
     </GenericLayout>
   );
 }

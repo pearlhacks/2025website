@@ -1,7 +1,13 @@
+import { ReactNode } from "react";
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
 
-export function GenericLayout({ title, children }) {
+interface GenericLayoutProps {
+  title: string;
+  children: ReactNode;
+}
+
+export function GenericLayout({ title, children }: GenericLayoutProps) {
   return (
     <div className="w-full bg-pink h-full">
       <div className="relative bg-cover justify-center text-center pb-72 bg-center bg-no-repeat bg-[url('/images/generic/PH2025_Header.svg')]">

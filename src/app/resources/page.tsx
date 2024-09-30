@@ -22,6 +22,7 @@ export default async function Page() {
             {links.map((link) => {
               return (
                 <DevpostLinkCard
+                  key={link.title}
                   title={link.title}
                   icon={link.img_url}
                   link={link.url}
@@ -38,6 +39,7 @@ export default async function Page() {
             {categories.map(async (category) => {
               return (
                 <ExternalLinkCard
+                  key={category}
                   heading={category}
                   links={await getResource(category)}
                 />
