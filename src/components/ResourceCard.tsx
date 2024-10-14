@@ -14,8 +14,10 @@ export const DevpostLinkCard = ({
 }: DevpostLinkCardProps) => {
   return (
     <div className="bg-white flex space-x-10 flex-row justify-start items-center rounded-md p-5 shadow-sm hover:-translate-y-1 hover:scale-105 transition ease-in-out">
-      {icon && <img className="w-10 h-10" src={icon} alt={`${title} icon`} />}
-      <h3 className="text-xl font-sans font-semibold">{title} Projects</h3>
+      <Link target="_blank" href={link}>
+        {icon && <img className="w-10 h-10" src={icon} alt={`${title} icon`} />}
+        <h3 className="text-xl font-sans font-semibold">{title} Projects</h3>
+      </Link>
     </div>
   );
 };

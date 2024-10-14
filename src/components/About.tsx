@@ -3,18 +3,7 @@ import { SecondaryButton } from "./SecondaryButton";
 export function About() {
   return (
     <div className="bg-pink-accent justify-center items-center text-center pt-20 sm:pt-40 px-5 space-y-8">
-      {/* <div className="absolute z-10 -left-[8rem] md:-left-[12rem] lg:-left-[17rem]">
-        <img
-          src="/images/accents/PH2025_Accent1.svg"
-          className="rotate-90 w-4/6"
-        />
-      </div>
-      <div className="absolute z-10 -right-[45rem] md:-right-[63rem] lg:-right-[65rem]">
-        <img
-          src="/images/accents/PH2025_Accent3.svg"
-          className="rotate-90 w-4/6"
-        />
-      </div> */}
+
       <h2 className="text-white font-sans font-bold text-2xl">
         What is Pearl Hacks?
       </h2>

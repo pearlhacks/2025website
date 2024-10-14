@@ -7,7 +7,6 @@ interface NavbarProps {
 
 export function Navbar({ mode }: NavbarProps) {
   const color = mode === "landing" ? "brown" : "pink";
-  const hoverColor = mode === "landing" ? "pink" : "white";
 
   return (
     <>
@@ -16,7 +15,7 @@ export function Navbar({ mode }: NavbarProps) {
       >
         <Link className="z-30" href="/">
           <span
-            className={`group font-bold font-sans transition ease-in-out hover:text-${hoverColor} flex flex-row items-center space-x-2`}
+            className={`group font-bold font-sans transition ease-in-out hover:text-white flex flex-row items-center space-x-2`}
           >
             <img
               src="/images/PH2025Logo.svg"
@@ -35,9 +34,7 @@ export function Navbar({ mode }: NavbarProps) {
                   link === "Tracks" ? "flex flex-row space-x-1" : undefined
                 }
               >
-                <p
-                  className={`transition ease-in-out hover:text-${hoverColor}`}
-                >
+                <p className={`transition ease-in-out hover:text-white`}>
                   <Link href={link.toLowerCase()}>{link}</Link>
                 </p>
                 {link === "Tracks" && (
