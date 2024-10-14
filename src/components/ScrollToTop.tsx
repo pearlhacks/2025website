@@ -34,13 +34,13 @@ export function ScrollToTopButton() {
 
   return (
     <span
-      className={`flex z-50 flex-row space-x-4 p-10 fixed bottom-0 right-0 scrollToTopButton transition ease-in-out delay-150 ${
+      className={`flex z-50 flex-row space-x-4 p-10 fixed place-items-center bottom-0 scrollToTopButton transition ease-in-out delay-150 ${
         isVisible ? "visible" : "hidden"
       }`}
       onClick={scrollToTop}
     >
       <SecondaryButton>
-        <span className="flex flex-row space-x-6 py-2 items-center">
+        <span className="flex flex-row justify-center space-x-2 py-2 items-center">
           <ChevronUpIcon className="w-6 h-6" />
           <h1 className="hidden sm:block">Back to Top</h1>
         </span>

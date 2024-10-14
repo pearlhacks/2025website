@@ -17,7 +17,11 @@ export function Accordion({ question, answer }: AccordionProps) {
 
   return (
     <div>
-      <div className="flex flex-row justify-between">
+      <div
+        className={`flex flex-row items-center p-2 transition-all ease-in-out rounded-md ${
+          isOpen ? "rounded-b-none" : ""
+        } justify-between bg-white`}
+      >
         <h3 className="text-pink-transition font-medium text-md">{question}</h3>
 
         <button
@@ -36,7 +40,9 @@ export function Accordion({ question, answer }: AccordionProps) {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className="overflow-hidden"
       >
-        <div className="text-brown py-2">{answer}</div>
+        <div className="text-brown p-2 bg-white rounded-md rounded-t-none">
+          {answer}
+        </div>
       </motion.div>
     </div>
   );

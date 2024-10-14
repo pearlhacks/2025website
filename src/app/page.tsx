@@ -2,7 +2,6 @@ import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/HeroSection";
 import { Sponsor } from "@/components/Sponsor";
-import StarsOverlay from "@/components/Star";
 
 export default function Home() {
   return (
@@ -29,3 +28,4 @@ export default function Home() {
     </div>
   );
 }
+

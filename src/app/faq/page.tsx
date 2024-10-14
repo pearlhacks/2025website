@@ -1,5 +1,6 @@
 import { Accordion } from "@/components/Accordion";
 import { GenericLayout } from "@/components/GenericLayout";
+import { SocialMediaBar } from "@/components/SocialMediaBar";
 import { getFAQ } from "@/firebase/getData";
 
 export default async function Page() {
@@ -36,6 +37,13 @@ export default async function Page() {
           Transportation Info
         </h2>
         <p className="text-pink-transition p-5 font-medium">Coming soon!</p>
+      </div>
+      <div className="w-full flex flex-col items-center text-center pt-10">
+        <p className="text-pink-transition font-medium">
+          Can&apos;t find what you&apos;re looking for? Reach out to us through
+          any of these channels
+        </p>
+        <SocialMediaBar />
       </div>
     </GenericLayout>
   );
