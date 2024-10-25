@@ -33,9 +33,13 @@ export function About() {
           />
         </div> */}
       </div>
-      <div className="pt-20 space-y-8">
-        <h2 className="text-white font-sans font-bold text-2xl">Tracks</h2>
-        
+      <div className="pt-8 space-y-8">
+        <div className="justify-center items-center space-x-2 flex flex-row">
+          <h2 className="text-white font-sans font-bold text-2xl">Tracks</h2>
+          <div className="p-1 text-center text-xs rounded-md bg-pink-transition text-white">
+            NEW!
+          </div>
+        </div>
         <div className="w-full flex flex-col justify-center px-8 gap-5 md:flex-row">
           <TrackCard
             title={"Beginner"}
