@@ -1,9 +1,10 @@
-import { SecondaryButton } from "./SecondaryButton";
-
+import { SecondaryButton } from "../Buttons/SecondaryButton";
+import { TrackCard } from "./TrackCard";
+import track1Icon from "../../../public/images/tracks/track_1.svg";
+import track2Icon from "../../../public/images/tracks/track_2.svg";
 export function About() {
   return (
     <div className="bg-pink-accent justify-center items-center text-center pt-20 sm:pt-40 px-5 space-y-8">
-
       <h2 className="text-white font-sans font-bold text-2xl">
         What is Pearl Hacks?
       </h2>
@@ -31,6 +32,26 @@ export function About() {
             className="m-auto w-3/5 lg:2/5"
           />
         </div> */}
+      </div>
+      <div className="pt-20 space-y-8">
+        <h2 className="text-white font-sans font-bold text-2xl">Tracks</h2>
+        
+        <div className="w-full flex flex-col justify-center px-8 gap-5 md:flex-row">
+          <TrackCard
+            title={"Beginner"}
+            description={
+              "Just getting started in tech? The beginner track is for students who have never touched tech or are new to hackathons/building technical projects."
+            }
+            icon={track1Icon}
+          />
+          <TrackCard
+            title={"Regular"}
+            description={
+              "For those of you who’ve attended in the past, this is the regular Pearl Hacks hackathon experience, repackaged! Hack together in a team or solo, and submit your project for a chance to win amazing prizes!"
+            }
+            icon={track2Icon}
+          />
+        </div>
       </div>
     </div>
   );

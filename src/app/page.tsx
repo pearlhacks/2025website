@@ -1,7 +1,7 @@
-import { About } from "@/components/About";
-import { Footer } from "@/components/Footer";
-import { HeroSection } from "@/components/HeroSection";
-import { Sponsor } from "@/components/Sponsor";
+import { About } from "@/components/Homepage/About";
+import { Footer } from "@/components/Footer/Footer";
+import { HeroSection } from "@/components/Homepage/HeroSection";
+import { Sponsor } from "@/components/Homepage/Sponsor";
 
 export default function Home() {
   return (
@@ -28,4 +28,3 @@ export default function Home() {
     </div>
   );
 }
-

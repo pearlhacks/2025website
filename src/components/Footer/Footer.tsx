@@ -1,7 +1,7 @@
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { FooterContent } from "./FooterContent";
 import { SocialMediaBar } from "./SocialMediaBar";
-import { Link } from "./Link";
+import { Link } from "../Link";
 import { link_mailinglist } from "@/utils/Urls";
 
 export function Footer() {
