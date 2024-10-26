@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import type { Metadata } from "next";
 import "./globals.css";
 import { ScrollToTopButton } from "@/components/Buttons/ScrollToTop";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";

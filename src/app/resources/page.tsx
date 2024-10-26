@@ -5,7 +5,7 @@ import {
   DevpostLinkCardSkeleton,
   ExternalLinkCardSkeleton,
 } from "@/components/Skeletons/ResourceCard";
-import { getDevpostLinks, getFAQ, getResource } from "@/firebase/getData";
+import { getDevpostLinks, getResource } from "@/firebase/getData";
 import { useQueries, useQuery } from "@tanstack/react-query";
 
 export default function Page() {
