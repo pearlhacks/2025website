@@ -1,7 +1,7 @@
 "use client";
 import { ClockIcon } from "@heroicons/react/24/outline";
-import { Navbar } from "./Navbar";
-import { PrimaryButton } from "./PrimaryButton";
+import { Navbar } from "../Navbar/Navbar";
+import { PrimaryButton } from "../Buttons/PrimaryButton";
 import { motion } from "framer-motion";
 import { link_mailinglist } from "@/utils/Urls";
 import StarsOverlay from "./Star";
@@ -11,7 +11,7 @@ export function HeroSection() {
     <>
       <div className="bg-cover bg-center bg-no-repeat bg-[url('/images/landing/PH2025_WebsiteLanding.svg')]">
         <StarsOverlay />
-          <Navbar mode="landing" />
+        <Navbar mode="landing" />
         <div className="z-10 w-full p-10 pb-20 md:pb-52 space-x-4 flex flex-wrap items-center justify-center">
           <motion.img
             src="/images/landing/PH2025_MG.svg"

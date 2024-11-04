@@ -1,18 +1,56 @@
-import { Accordion } from "@/components/Accordion";
+"use client";
+import { Accordion } from "@/components/FAQ/Accordion";
 import { GenericLayout } from "@/components/GenericLayout";
-import { SocialMediaBar } from "@/components/SocialMediaBar";
+import { AccordionGrid } from "@/components/Skeletons/Accordion";
+import { Heading } from "@/components/Skeletons/Heading";
+import { SocialMediaBar } from "@/components/Footer/SocialMediaBar";
 import { getFAQ } from "@/firebase/getData";
+import { useQueries } from "@tanstack/react-query";
 
-export default async function Page() {
+export default function Page() {
   const categories = ["Beginner's FAQs", "General FAQs", "Guidelines"];
 
-  // Fetch all FAQs for each category before rendering
-  const faqsByCategory = await Promise.all(
-    categories.map(async (category) => ({
-      category: category,
-      faqs: await getFAQ(category),
-    }))
-  );
+  // use useQueries to fetch multiple categories in parallel
+  const queries = useQueries({
+    queries: categories.map((category) => ({
+      queryKey: ["faq", category],
+      queryFn: () => getFAQ(category),
+    })),
+  });
+
+  // check if any queries are loading
+  const isLoading = queries.some((query) => query.isLoading);
+
+  // check if any queries have errors
+  const isError = queries.some((query) => query.isError);
+
+  if (isLoading) {
+    return (
+      <GenericLayout title="FAQ">
+        <div className="w-full flex flex-col justify-start items-start animate-pulse">
+          <Heading />
+          <AccordionGrid />
+        </div>
+      </GenericLayout>
+    );
+  }
+
+  if (isError) {
+    return (
+      <GenericLayout title="FAQ">
+        <div className="flex justify-center items-center min-h-[200px]">
+          <p className="text-red-500">
+            Error loading FAQs. Please try again later.
+          </p>
+        </div>
+      </GenericLayout>
+    );
+  }
+
+  const faqsByCategory = categories.map((category, index) => ({
+    category,
+    faqs: queries[index].data || [],
+  }));
 
   return (
     <GenericLayout title="FAQ">
@@ -32,7 +70,7 @@ export default async function Page() {
           </div>
         </div>
       ))}
-      <div className="pb-5">
+      <div className="w-full flex flex-col items-start pb-5">
         <h2 className="text-green font-sans font-bold text-2xl">
           Transportation Info
         </h2>

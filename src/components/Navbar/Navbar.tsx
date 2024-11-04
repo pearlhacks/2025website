@@ -27,7 +27,7 @@ export function Navbar({ mode }: NavbarProps) {
         </Link>
         <span className="z-30 flex flex-wrap items-center">
           <span className="hidden sm:flex flex-row space-x-4">
-            {["About", "Tracks", "FAQ", "Resources"].map((link) => (
+            {["About", "FAQ", "Resources"].map((link) => (
               <div
                 key={link}
                 className={
@@ -37,11 +37,6 @@ export function Navbar({ mode }: NavbarProps) {
                 <p className={`transition ease-in-out hover:text-white`}>
                   <Link href={link.toLowerCase()}>{link}</Link>
                 </p>
-                {link === "Tracks" && (
-                  <div className="p-1 text-center text-xs rounded-md bg-pink-accent text-white">
-                    NEW!
-                  </div>
-                )}
               </div>
             ))}
           </span>

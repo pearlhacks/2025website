@@ -1,5 +1,5 @@
 import { GenericLayout } from "@/components/GenericLayout";
-import { SecondaryButton } from "@/components/SecondaryButton";
+import { SecondaryButton } from "@/components/Buttons/SecondaryButton";
 
 export default async function Page() {
   return (

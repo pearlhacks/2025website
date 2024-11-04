@@ -1,8 +1,7 @@
-import { getSponsors } from "@/firebase/getData";
+"use client";
 import { Tier } from "@/utils/Types";
 
-export async function SponsorGrid() {
-  const sponsors = await getSponsors();
+export function SponsorGrid({ sponsors }) {
   const getSize = (tier: Tier) => {
     switch (tier) {
       case Tier.PEARL:

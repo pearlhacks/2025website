@@ -1,6 +1,5 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { ScrollToTopButton } from "@/components/ScrollToTop";
+import RootLayoutClient from "@/components/RootLayout";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Pearl Hacks",
@@ -12,14 +11,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body>
-        <main className="min-h-screen font-body font-light flex flex-col items-center bg-background-transition">
-          <ScrollToTopButton />
-          {children}
-        </main>
-      </body>
-    </html>
-  );
+  return <RootLayoutClient>{children}</RootLayoutClient>;
 }

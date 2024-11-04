@@ -1,7 +1,7 @@
 import { getSponsors } from "@/firebase/getData";
 import { SponsorGrid } from "./SponsorGrid";
 
-export async function Sponsor() {
+export function Sponsor({ sponsors }) {
   return (
     <div className="relative lg:h-[60rem]">
       <img
@@ -12,7 +12,7 @@ export async function Sponsor() {
         <h2 className="text-white font-sans font-bold text-2xl">
           Our 2024 Sponsors
         </h2>
-        <SponsorGrid />
+        <SponsorGrid sponsors={sponsors} />
       </div>
     </div>
   );
