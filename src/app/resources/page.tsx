@@ -9,7 +9,7 @@ import { getDevpostLinks, getResource } from "@/firebase/getData";
 import { useQueries, useQuery } from "@tanstack/react-query";
 
 export default function Page() {
-  // check for Devpost links
+  // check for devpost links
   const devpostQuery = useQuery({
     queryKey: ["devpost-links"],
     queryFn: getDevpostLinks,
