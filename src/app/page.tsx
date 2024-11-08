@@ -1,22 +1,31 @@
-'use client'
+"use client";
 import { About } from "@/components/Homepage/About";
 import { Footer } from "@/components/Footer/Footer";
 import { HeroSection } from "@/components/Homepage/HeroSection";
 import { Sponsor } from "@/components/Homepage/Sponsor";
-import { getSponsors } from "@/firebase/getData";
 import { useQuery } from "@tanstack/react-query";
 import PlantLoader from "@/components/Homepage/LoadingScreen";
 import { useEffect, useState } from "react";
+import { getSponsors } from "@/firebase/getData";
 
 export default function Home() {
-  const [showLoadingScreen, setShowLoadingScreen] = useState(true);
+  const [showLoadingScreen, setShowLoadingScreen] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowLoadingScreen(false);
-    }, 3000); // 5 seconds
+    // Check localStorage to determine if loading screen should be shown
+    const hasVisited = localStorage.getItem("hasVisited");
 
-    return () => clearTimeout(timer);
+    if (!hasVisited) {
+      setShowLoadingScreen(true);
+      localStorage.setItem("hasVisited", "true");
+
+      // Set a timer to remove loading screen after 3 seconds
+      const timer = setTimeout(() => {
+        setShowLoadingScreen(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const {
@@ -40,7 +49,7 @@ export default function Home() {
     <div className="w-full flex flex-col">
       <HeroSection />
       <About />
-      <Sponsor sponsors={sponsors} />
+      {sponsors && <Sponsor sponsors={sponsors} />}
       <span className="block lg:hidden">
         <br />
         <br />

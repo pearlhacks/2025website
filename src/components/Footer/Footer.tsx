@@ -2,7 +2,7 @@ import { HeartIcon } from "@heroicons/react/24/outline";
 import { FooterContent } from "./FooterContent";
 import { SocialMediaBar } from "./SocialMediaBar";
 import { Link } from "../Link";
-import { link_mailinglist } from "@/utils/Urls";
+import { link_mailinglist, social_email } from "@/utils/Urls";
 
 export function Footer() {
   return (
@@ -21,7 +21,7 @@ export function Footer() {
           <FooterContent title="Administration">
             Pearl Hacks abides by the MLH Code of Conduct. For questions or
             feedback, contact us at{" "}
-            <Link href="mailto:questions@pearlhacks.com">
+            <Link href={social_email}>
               questions@pearlhacks.com
             </Link>
             .

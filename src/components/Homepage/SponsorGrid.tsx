@@ -1,7 +1,7 @@
 "use client";
-import { Tier } from "@/utils/Types";
+import { SponsorProps, Tier } from "@/utils/Types";
 
-export function SponsorGrid({ sponsors }) {
+export function SponsorGrid({ sponsors } : SponsorProps) {
   const getSize = (tier: Tier) => {
     switch (tier) {
       case Tier.PEARL:

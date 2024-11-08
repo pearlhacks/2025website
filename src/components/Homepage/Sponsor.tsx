@@ -1,7 +1,9 @@
-import { getSponsors } from "@/firebase/getData";
+import { SponsorProps } from "@/utils/Types";
 import { SponsorGrid } from "./SponsorGrid";
 
-export function Sponsor({ sponsors }) {
+
+
+export function Sponsor({ sponsors }: SponsorProps) {
   return (
     <div className="relative lg:h-[60rem]">
       <img

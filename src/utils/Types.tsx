@@ -27,3 +27,7 @@ export interface DevpostLink {
   img_url: string
   url: string
 }
+
+export type SponsorProps = {
+  sponsors: Sponsor[]; // Ensure sponsors is defined as an array of SponsorType
+};

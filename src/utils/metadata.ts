@@ -2,12 +2,15 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Pearl Hacks",
-  description: "This is a description for SEO",
-  keywords: "app, nextjs, SEO",
+  description:
+    "Pearl Hacks is an inclusive hackathon for women and gender-nonconforming students to explore tech, build projects, and gain mentorship at UNC-Chapel Hill.",
+  keywords:
+    "Pearl Hacks, hackathon, UNC, women in tech, diversity, mentorship, technology, coding, university hackathon",
   openGraph: {
-    title: "My App",
-    description: "A Next.js application",
-    url: "https://example.com",
+    title: "Pearl Hacks",
+    description:
+      "Join Pearl Hacks at UNC-Chapel Hill for a weekend of coding, mentorship, and community for women and gender-nonconforming students in tech.",
+    url: "https://pearlhacks.com",
     type: "website",
   },
 };
