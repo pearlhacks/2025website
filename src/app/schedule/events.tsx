@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { ScheduleEventCard } from "@/components/ScheduleEventCards";
+import { ScheduleEventCard } from "@/components/Schedule/ScheduleEventCards";
 
 interface Event {
   title: string;
@@ -9,7 +9,8 @@ interface Event {
   description: string;
 }
 
-const EVENTS_API_URL = "Google Sheets Schema URL";
+const EVENTS_API_URL =
+  "https://docs.google.com/spreadsheets/d/16YJSaBwjpGRq81ryZ-Z284HkgKwYvg2MHjkBpD0IaJk/edit?usp=sharing";
 
 export default function EventsPage() {
   const router = useRouter();
@@ -63,11 +64,11 @@ export default function EventsPage() {
             events.filter((event) => new Date(event.date) > now)
           );
           break;
-        case "calendar":
-          setFilteredEvents([]); // No specific events, just a calendar link (edit this)
+        /*case "calendar":
+          setFilteredEvents([]); // No specific events, just a calendar link (edit this later)
           break;
         default:
-          setFilteredEvents([]);
+          setFilteredEvents([]);*/
       }
     };
 
@@ -76,7 +77,7 @@ export default function EventsPage() {
     }
   }, [tab, events]);
 
-  return (
+  /*return (
     <div>
       {tab === "calendar" ? (
         <div>Link to Google Calendar here</div>
@@ -92,5 +93,5 @@ export default function EventsPage() {
         </div>
       )}
     </div>
-  );
+  ); */
 }
