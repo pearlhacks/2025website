@@ -1,19 +1,39 @@
 "use client";
+import { useQueries } from "@tanstack/react-query";
+import { getResources } from "@/api/getData";
 import { GenericLayout } from "@/components/GenericLayout";
-import { DevpostLinkCard, ExternalLinkCard } from "@/components/Resource/ResourceCard";
+import {
+  DevpostLinkCard,
+  ExternalLinkCard,
+} from "@/components/Resource/ResourceCard";
 import {
   DevpostLinkCardSkeleton,
   ExternalLinkCardSkeleton,
 } from "@/components/Skeletons/ResourceCard";
-import { getDevpostLinks, getResource } from "@/firebase/getData";
-import { useQueries, useQuery } from "@tanstack/react-query";
+import { Resource } from "@/utils/Types";
 
 export default function Page() {
-  // check for devpost links
-  const devpostQuery = useQuery({
-    queryKey: ["devpost-links"],
-    queryFn: getDevpostLinks,
+  const queries = useQueries({
+    queries: [
+      {
+        queryKey: ["resources"],
+        queryFn: async () => {
+          const { resources } = await getResources();
+          return resources;
+        },
+      },
+      {
+        queryKey: ["devpostLinks"],
+        queryFn: async () => {
+          const { devpostLinks } = await getResources();
+          return devpostLinks;
+        },
+      },
+    ],
   });
+
+  const resourcesQuery = queries[0];
+  const devpostLinksQuery = queries[1];
 
   const categories = [
     "Beginner Hackers",
@@ -22,21 +42,12 @@ export default function Page() {
     "Social & Mental Resources",
   ];
 
-  // check for resources for each category
-  const resourceQueries = useQueries({
-    queries: categories.map((category) => ({
-      queryKey: ["resources", category],
-      queryFn: () => getResource(category),
-    })),
-  });
+  // Check loading and error states
+  const areResourcesLoading = resourcesQuery.isLoading;
+  const isDevpostLoading = devpostLinksQuery.isLoading;
 
-  // check loading states
-  const isDevpostLoading = devpostQuery.isLoading;
-  const areResourcesLoading = resourceQueries.some((query) => query.isLoading);
-
-  // check error states
-  const hasDevpostError = devpostQuery.isError;
-  const hasResourcesError = resourceQueries.some((query) => query.isError);
+  const hasResourcesError = resourcesQuery.isError;
+  const hasDevpostError = devpostLinksQuery.isError;
 
   return (
     <GenericLayout title="Resources">
@@ -55,12 +66,12 @@ export default function Page() {
                 <p className="text-red-500">Error loading past projects</p>
               </div>
             ) : (
-              devpostQuery.data?.map((link) => (
+              devpostLinksQuery.data?.map((link) => (
                 <DevpostLinkCard
                   key={link.title}
                   title={link.title}
-                  icon={link.img_url}
-                  link={link.url}
+                  img_url={link.img_url}
+                  url={link.url}
                 />
               ))
             )}
@@ -85,7 +96,11 @@ export default function Page() {
                 <ExternalLinkCard
                   key={category}
                   heading={category}
-                  links={resourceQueries[index].data || []}
+                  links={
+                    resourcesQuery.data?.filter(
+                      (resource: Resource) => resource.category === category
+                    ) || []
+                  }
                 />
               ))
             )}

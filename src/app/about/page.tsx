@@ -1,7 +1,21 @@
+"use client";
 import { GenericLayout } from "@/components/GenericLayout";
 import { SecondaryButton } from "@/components/Buttons/SecondaryButton";
+import { getDirectors } from "@/api/getData";
+import { useQuery } from "@tanstack/react-query";
+import Tab from "@/components/About/Tab";
+import { TabSkeleton } from "@/components/Skeletons/Tab";
 
-export default async function Page() {
+export default function Page() {
+  const {
+    data: directors,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["directors"],
+    queryFn: getDirectors,
+  });
+
   return (
     <GenericLayout title="About Us">
       <div className="space-y-4 text-brown">
@@ -32,7 +46,7 @@ export default async function Page() {
             </div>
             <img
               src="/images/about/About_1.jpg"
-              className="mt-4 md:mt-0 md:w-1/3 rounded-md"
+              className="object-cover mt-4 md:mt-0 md:w-1/3 rounded-md"
             />
           </div>
         </div>
@@ -40,7 +54,7 @@ export default async function Page() {
           <div className="flex flex-col md:flex-row items-top md:space-x-4 lg:items-center">
             <img
               src="/images/about/About_2.jpg"
-              className="mb-4 md:mb-0 md:w-1/3 rounded-md"
+              className="object-cover mb-4 md:mb-0 md:w-1/3 rounded-md"
             />
             <div className="space-y-4">
               <p>
@@ -64,7 +78,7 @@ export default async function Page() {
             Learn more
           </SecondaryButton>
         </div>
-        <div className="flex flex-wrap items-center">
+        <div className="flex flex-wrap items-center text-start space-x-4">
           <h2 className="text-green font-sans font-bold text-2xl py-5">
             Inclusivity Statement
           </h2>
@@ -78,6 +92,12 @@ export default async function Page() {
             </p>
           </div>
         </div>
+      </div>
+      <div className="w-full flex flex-wrap items-center">
+        <h2 className="text-green font-sans font-bold text-2xl py-5">
+          Meet the Team
+        </h2>
+        {isLoading ? <TabSkeleton /> : <Tab directors={directors} />}
       </div>
     </GenericLayout>
   );
