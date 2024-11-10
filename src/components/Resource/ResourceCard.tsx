@@ -1,21 +1,20 @@
+import { DevpostLink } from "@/utils/Types";
 import Link from "next/link";
 import { ReactNode } from "react";
 
-interface DevpostLinkCardProps {
-  icon?: string;
-  title: string;
-  link: string;
-}
+
 
 export const DevpostLinkCard = ({
-  icon,
+  img_url,
   title,
-  link,
-}: DevpostLinkCardProps) => {
+  url,
+}: DevpostLink) => {
   return (
     <div className="bg-white flex space-x-10 flex-row justify-start items-center rounded-md p-5 shadow-sm hover:-translate-y-1 hover:scale-105 transition ease-in-out">
-      <Link target="_blank" href={link}>
-        {icon && <img className="w-10 h-10" src={icon} alt={`${title} icon`} />}
+      <Link target="_blank" href={url}>
+        {img_url && (
+          <img className="w-10 h-10" src={img_url} alt={`${title} icon`} />
+        )}
         <h3 className="text-xl font-sans font-semibold">{title} Projects</h3>
       </Link>
     </div>

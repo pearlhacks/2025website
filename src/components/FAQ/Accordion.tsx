@@ -2,6 +2,7 @@
 import { MinusIcon, PlusIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { formatContent } from "@/utils/helpers";
 
 interface AccordionProps {
   question: string;
@@ -41,7 +42,7 @@ export function Accordion({ question, answer }: AccordionProps) {
         className="overflow-hidden"
       >
         <div className="text-brown p-2 bg-white rounded-md rounded-t-none">
-          {answer}
+          {formatContent(answer)}
         </div>
       </motion.div>
     </div>

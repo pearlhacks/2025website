@@ -13,21 +13,45 @@ export interface Sponsor {
 }
 
 export interface FAQ {
-    question: string,
-    answer: string,
+  question: string;
+  answer: string;
+  category: string;
 }
 
 export interface Resource {
-    title: string,
-    url: string
+  title: string;
+  url: string;
+  category: string;
 }
 
 export interface DevpostLink {
-  title: string,
-  img_url: string
-  url: string
+  title: string;
+  img_url: string;
+  url: string;
 }
 
 export type SponsorProps = {
-  sponsors: Sponsor[]; // Ensure sponsors is defined as an array of SponsorType
+  sponsors: Sponsor[];
 };
+
+export interface Director {
+  name: string;
+  pronouns: string;
+  role: string;
+  chair: boolean;
+  department: string;
+  image_url: string | null;
+}
+
+export interface DirectorProps {
+  directors: Director[] | undefined;
+}
+
+// Ensure data.resources is typed correctly in getResources
+export interface ResourceData {
+  title: string;
+  url: string;
+  category: string;
+  resource_type: "link" | "devpost";
+  img_url?: string;
+}

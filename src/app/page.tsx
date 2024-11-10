@@ -6,7 +6,7 @@ import { Sponsor } from "@/components/Homepage/Sponsor";
 import { useQuery } from "@tanstack/react-query";
 import PlantLoader from "@/components/Homepage/LoadingScreen";
 import { useEffect, useState } from "react";
-import { getSponsors } from "@/firebase/getData";
+import { getSponsors } from "@/api/getData";
 
 export default function Home() {
   const [showLoadingScreen, setShowLoadingScreen] = useState(false);

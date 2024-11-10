@@ -1,28 +1,33 @@
 "use client";
+
 import { Accordion } from "@/components/FAQ/Accordion";
 import { GenericLayout } from "@/components/GenericLayout";
 import { AccordionGrid } from "@/components/Skeletons/Accordion";
 import { Heading } from "@/components/Skeletons/Heading";
 import { SocialMediaBar } from "@/components/Footer/SocialMediaBar";
-import { getFAQ } from "@/firebase/getData";
-import { useQueries } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
+import { getFAQs } from "@/api/getData";
 
 export default function Page() {
-  const categories = ["Beginner's FAQs", "General FAQs", "Guidelines"];
+  const categories = [
+    "Beginner's FAQs",
+    "General FAQs",
+    "Guidelines",
+    "Transportation",
+    "Reimbursements",
+  ];
 
-  // use useQueries to fetch multiple categories in parallel
-  const queries = useQueries({
-    queries: categories.map((category) => ({
-      queryKey: ["faq", category],
-      queryFn: () => getFAQ(category),
-    })),
+  // Use single query to fetch all FAQs
+  const {
+    data: allFaqs,
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["faqs"],
+    queryFn: getFAQs,
   });
 
-  // check if any queries are loading
-  const isLoading = queries.some((query) => query.isLoading);
-
-  // check if any queries have errors
-  const isError = queries.some((query) => query.isError);
+  console.log(allFaqs);
 
   if (isLoading) {
     return (
@@ -47,9 +52,10 @@ export default function Page() {
     );
   }
 
-  const faqsByCategory = categories.map((category, index) => ({
+  // Group FAQs by category
+  const faqsByCategory = categories.map((category) => ({
     category,
-    faqs: queries[index].data || [],
+    faqs: allFaqs?.filter((faq) => faq.category === category) || [],
   }));
 
   return (
@@ -70,12 +76,6 @@ export default function Page() {
           </div>
         </div>
       ))}
-      <div className="w-full flex flex-col items-start pb-5">
-        <h2 className="text-green font-sans font-bold text-2xl">
-          Transportation Info
-        </h2>
-        <p className="text-pink-transition p-5 font-medium">Coming soon!</p>
-      </div>
       <div className="w-full flex flex-col items-center text-center pt-10">
         <p className="text-pink-transition font-medium">
           Can&apos;t find what you&apos;re looking for? Reach out to us through
