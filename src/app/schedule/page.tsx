@@ -1,5 +1,5 @@
 import { GenericLayout } from "@/components/GenericLayout";
-import { ScheduleButton } from "@/components/ScheduleButton";
+import { ScheduleButton } from "@/components/Schedule/ScheduleButton";
 
 export default async function Page() {
   return (
@@ -15,7 +15,7 @@ export default async function Page() {
                 At Pearl Hacks, we offer a variety of events and workshops every
                 week designed to help you grow your skills and connect with the
                 community. From technical workshops to networking events and
-                mentorship opportunities, there's always something exciting
+                mentorship opportunities, there is always something exciting
                 happening. Click below to explore the full schedule and join us
                 in learning, creating, and collaborating! You can also add these
                 events to your google Calendar to expand all events and view
