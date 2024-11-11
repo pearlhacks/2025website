@@ -1,68 +1,131 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { GenericLayout } from "@/components/GenericLayout";
 import { ScheduleButton } from "@/components/Schedule/ScheduleButton";
+import { getSchedules } from "@/api/getData";
+import { ScheduleEventCard } from "@/components/Schedule/ScheduleEventCards";
+import { parseISO, isThisWeek, isBefore } from "date-fns";
+import { Schedule } from "@/utils/Types";
 
-export default async function Page() {
+export default function Page() {
+  const [categorizedEvents, setCategorizedEvents] = useState<{
+    day1: Schedule[];
+    day2: Schedule[];
+    preHackathon: Schedule[];
+    upcoming: Schedule[];
+  }>({
+    day1: [],
+    day2: [],
+    preHackathon: [],
+    upcoming: [],
+  });
+
+  const [currentTab, setCurrentTab] = useState<
+    "day1" | "day2" | "preHackathon" | "upcoming"
+  >("day1");
+
+  useEffect(() => {
+    async function fetchData() {
+      const scheduleData = await getSchedules();
+      categorizeEvents(scheduleData);
+    }
+    fetchData();
+  }, []);
+
+  // Helper function to categorize events based on sheet criteria
+  const categorizeEvents = (events: Schedule[]) => {
+    const day1Events: Schedule[] = [];
+    const day2Events: Schedule[] = [];
+    const preHackathonWorkshops: Schedule[] = [];
+    const upcomingEvents: Schedule[] = [];
+
+    events.forEach((event) => {
+      const eventDate = parseISO(event.date);
+
+      // Categorize by Day 1 and Day 2
+      if (event.date === "10/26") {
+        day1Events.push(event);
+      } else if (event.date === "10/27") {
+        day2Events.push(event);
+      }
+
+      // Categorize as Pre-Hackathon Workshops
+      if (event.type === "workshop" && event.date !== "02/15") {
+        preHackathonWorkshops.push(event);
+      }
+
+      // Categorize as Upcoming Events if this week and before 02/17
+      if (
+        isThisWeek(eventDate) &&
+        isBefore(eventDate, parseISO("2024-02-17"))
+      ) {
+        upcomingEvents.push(event);
+      }
+    });
+
+    setCategorizedEvents({
+      day1: day1Events,
+      day2: day2Events,
+      preHackathon: preHackathonWorkshops,
+      upcoming: upcomingEvents,
+    });
+  };
+
+  // Function to render events based on the selected tab
+  const renderEvents = () => {
+    const eventsToDisplay = categorizedEvents[currentTab] || [];
+    return <ScheduleEventCard events={eventsToDisplay} />;
+  };
+
   return (
     <GenericLayout title="Schedule">
       <div className="space-y-20 text-brown">
-        <div className="flex flex-wrap items-center">
-          <h1 className="text-green font-sans font-bold text-5xl py-5">
-            Pearl Hacks Schedule
-          </h1>
-          <div className="flex flex-col md:flex-row items-top lg:items-center md:space-x-4">
-            <div className="space-y-4">
-              <p>
-                At Pearl Hacks, we offer a variety of events and workshops every
-                week designed to help you grow your skills and connect with the
-                community. From technical workshops to networking events and
-                mentorship opportunities, there is always something exciting
-                happening. Click below to explore the full schedule and join us
-                in learning, creating, and collaborating! You can also add these
-                events to your google Calendar to expand all events and view
-                them on your personal calendar.
-              </p>
-            </div>
-          </div>
-        </div>
+        <h1 className="text-green font-sans font-bold text-5xl py-5">
+          Pearl Hacks Schedule
+        </h1>
+        <p>
+          At Pearl Hacks, we offer a variety of events and workshops every week
+          designed to help you grow your skills and connect with the community.
+          From technical workshops to networking events and mentorship
+          opportunities, there is always something exciting happening. Click
+          below to explore the full schedule and join us in learning, creating,
+          and collaborating! You can also add these events to your google
+          Calendar to expand all events and view them on your personal calendar.
+        </p>
         <div className="flex justify-center space-x-20">
           <ScheduleButton
-            href="/events?tab=day1"
-            className="bg-green-700 hover:bg-green-800 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            onClick={() => setCurrentTab("day1")}
+            className="bg-green-700 hover:bg-green-800"
           >
             Day 1
           </ScheduleButton>
           <ScheduleButton
-            href="/events?tab=day2"
-            className="bg-yellow-700 hover:bg-yellow-800 focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+            onClick={() => setCurrentTab("day2")}
+            className="bg-yellow-700 hover:bg-yellow-800"
           >
             Day 2
           </ScheduleButton>
           <ScheduleButton
-            href="/events?tab=pre-hackathon"
-            className="bg--700 hover:bg-pink-800 focus:ring-pink-300 dark:bg-pink-600 dark:hover:bg-pink-700 dark:focus:ring-pink-800"
+            onClick={() => setCurrentTab("preHackathon")}
+            className="bg-pink-700 hover:bg-pink-800"
           >
             Pre-Hackathon Workshops
           </ScheduleButton>
           <ScheduleButton
-            href="/events?tab=upcoming"
-            className="bg-orange-700 hover:bg-orange-800 focus:ring-orange-300 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800"
+            onClick={() => setCurrentTab("upcoming")}
+            className="bg-orange-700 hover:bg-orange-800"
           >
             Upcoming Events
           </ScheduleButton>
           <ScheduleButton
-            href="/events?tab=calendar"
-            className="bg-red-700 hover:bg-red-800 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+            onClick={() => window.open("https://calendar.google.com")}
+            className="bg-blue-700 hover:bg-blue-800"
           >
             Add to Calendar
           </ScheduleButton>
         </div>
-        <div className="flex flex-wrap items-center text-start space-x-4">
-          <div className="flex flex-col md:flex-row items-top md:space-x-4 lg:items-center">
-            <div className="space-y-4"></div>
-          </div>
-        </div>
-        <div className="flex justify-center"></div>
-        <div className="flex flex-wrap items-center"></div>
+        <div className="space-y-4">{renderEvents()}</div>
       </div>
     </GenericLayout>
   );
