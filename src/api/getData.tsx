@@ -1,5 +1,30 @@
 import { getTiers } from "@/utils/helpers";
-import { DevpostLink, Director, FAQ, Resource, ResourceData, Sponsor } from "@/utils/Types";
+import {
+  DevpostLink,
+  Director,
+  FAQ,
+  Resource,
+  ResourceData,
+  Sponsor,
+  Schedule,
+} from "@/utils/Types";
+
+export const getSchedules = async () => {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_WEB_API}/sheet/schedules`
+  );
+  const data = await response.json();
+  const schedules: Schedule[] = (data.schedules || []).map((schedule: any) => ({
+    event: schedule.event,
+    type: schedule.type,
+    date: schedule.date,
+    start_time: schedule.start_time,
+    duration: schedule.duration,
+    location: schedule.location,
+    link: schedule.link ? schedule.link : null, // Include link only if available
+  }));
+  return schedules;
+};
 
 export const getSponsors = async () => {
   const response = await fetch(

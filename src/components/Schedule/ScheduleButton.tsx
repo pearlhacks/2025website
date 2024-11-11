@@ -1,16 +1,20 @@
-import { FC, ReactNode } from "react";
+"use client";
+
+import { FC, ReactNode, MouseEventHandler } from "react";
 import Link from "next/link";
 
 interface ScheduleButtonProps {
   children: ReactNode;
   href?: string;
   className?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export const ScheduleButton: FC<ScheduleButtonProps> = ({
   children,
   href,
   className,
+  onClick,
 }) => {
   const buttonContent = (
     <span
@@ -22,10 +26,10 @@ export const ScheduleButton: FC<ScheduleButtonProps> = ({
 
   return href ? (
     <Link href={href} passHref>
-      <a className="flex justify-center items-center">{buttonContent}</a>
+      <span className="flex justify-center items-center">{buttonContent}</span>
     </Link>
   ) : (
-    <button className="flex justify-center items-center">
+    <button onClick={onClick} className="flex justify-center items-center">
       {buttonContent}
     </button>
   );
