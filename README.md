@@ -36,7 +36,7 @@ This repository contains the frontend code for the Pearl Hacks 2025 website.
 │   │   ├── Skeletons/  # Loading UI components
 │   │   └── GenericLayout.tsx  # Parent layout (except homepage)
 │   │
-│   └── firebase/      # Firebase configuration and utilities
+│   └── api/      # Functions to get/update data externally
 ```
 
 ### Page Structure
