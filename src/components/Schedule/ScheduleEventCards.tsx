@@ -3,6 +3,9 @@
 import { Schedule } from "@/utils/Types";
 import React from "react";
 import { ScheduleSkeleton } from "../Skeletons/ScheduleSkeleton";
+import { CalendarIcon } from "@heroicons/react/16/solid";
+import { MapPinIcon } from "@heroicons/react/24/outline";
+import { format, addMinutes } from "date-fns";
 
 type ScheduleEventCardProps = {
   events: Schedule[]; // Array of events to be displayed
@@ -18,38 +21,40 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
 
   return (
     <div className="min-h-screen flex justify-center items-center py-4">
-      <div className="flex justify-center flex-col space-y-4">
+      <div className="grid grid-cols-4 gap-4 auto-rows-auto">
         {/* Render events directly */}
         {events.map((event, index) => (
           <div
             key={index}
-            className="relative max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg p-5 dark:bg-gray-800 dark:border-gray-700 overflow-hidden"
+            className="relative max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg p-5 dark:bg-white-800 dark:border-white-700 overflow-hidden"
           >
-            {/* Jelly paint background blobs */}
-            <div className="absolute inset-0 -z-10">
-              <div className="blob bg-pink-300 opacity-40 w-40 h-40 rounded-full blur-xl absolute top-10 left-10"></div>
-              <div className="blob bg-blue-300 opacity-40 w-32 h-32 rounded-full blur-2xl absolute bottom-5 right-5"></div>
-              <div className="blob bg-purple-300 opacity-40 w-24 h-24 rounded-full blur-lg absolute top-1/2 left-1/3 transform -translate-y-1/2"></div>
-            </div>
-
             <div className="relative z-10">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                {event.event || "Event Title"}
+              {/* replace labels with icon  */}
+              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 font-sans dark:text-brown">
+                {event.event_name || "Event Title"}
               </h5>
-              <p className="text-sm font-semibold text-gray-700 dark:text-gray-400">
-                {event.type ||
+              <p className="flex flex-row items-center space-x-2 mb-1 text-med font-semibold font-body text-gray-700 dark:text-gray-400">
+                <>
+                  <MapPinIcon className="w-4 h-4" />{" "}
+                </>{" "}
+                {event.event_type ||
                   "Event Type: Workshop, Pre-Hackathon Event, or Main Events"}
               </p>
-              <p className="mb-1 text-gray-500 dark:text-gray-400">
-                <strong>Date:</strong> {event.date || "MM/DD/YYYY"}
+              <p className="flex flex-row items-center space-x-2 mb-1 text-gray-500 font-body dark:text-gray-400">
+                <>
+                  <CalendarIcon className="w-4 h-4" />{" "}
+                </>{" "}
+                {event.date || "MM/DD/YYYY"}
               </p>
-              <p className="mb-1 text-gray-500 dark:text-gray-400">
-                <strong>Start Time:</strong> {event.startTime || "HH:MM AM/PM"}
+              {/* to-do: change this to start time - end time i.e. 9am to 10am? */}
+              <p className="mb-1 font-body text-gray-500 dark:text-gray-400">
+                <strong>Start Time:</strong> {event.start_time || "HH:MM AM/PM"}
               </p>
-              <p className="mb-1 text-gray-500 dark:text-gray-400">
-                <strong>Duration:</strong> {event.duration || "TBD"}
+              <p className="mb-1 font-body text-gray-500 dark:text-gray-400">
+                <strong>End Time:</strong>{" "}
+                {event.duration + event.start_time || "TBD"}
               </p>
-              <p className="mb-3 text-gray-500 dark:text-gray-400">
+              <p className="mb-3 font-body text-gray-500 dark:text-gray-400">
                 <strong>Location:</strong>{" "}
                 {event.location || "Location details not available"}
               </p>
@@ -78,6 +83,7 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
                   </svg>
                 </a>
               ) : (
+                // show link when it is avail
                 <span className="text-gray-500 dark:text-gray-400">
                   No link available
                 </span>

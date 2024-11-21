@@ -57,10 +57,10 @@ export interface ResourceData {
 }
 
 export interface Schedule {
-  event: string;
-  type: string;
+  event_name: string;
+  event_type: string;
   date: string;
-  startTime: string;
+  start_time: string;
   duration: number;
   location: string;
   link: string | null;

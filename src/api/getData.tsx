@@ -14,9 +14,10 @@ export const getSchedules = async () => {
     `${process.env.NEXT_PUBLIC_WEB_API}/sheet/schedules`
   );
   const data = await response.json();
+  console.log(data);
   const schedules: Schedule[] = (data.schedules || []).map((schedule: any) => ({
-    event: schedule.event,
-    type: schedule.type,
+    event_name: schedule.event_name,
+    event_type: schedule.event_type,
     date: schedule.date,
     start_time: schedule.start_time,
     duration: schedule.duration,

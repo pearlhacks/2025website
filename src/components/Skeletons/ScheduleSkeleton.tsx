@@ -2,12 +2,12 @@
 
 export const ScheduleSkeleton = () => {
   return (
-    <div className="overflow-hidden max-w-sm py-4 h-96">
-      <div className="flex flex-col space-y-4">
+    <div className="overflow-hidden max-w-full py-4">
+      <div className="grid grid-cols-4 gap-4">
         {[...Array(4)].map((_, index) => (
           <div
             key={index}
-            className="bg-white block w-full flex flex-col justify-center items-center space-y-4 rounded-md px-4 py-6 shadow-sm"
+            className="bg-white flex flex-col justify-center items-center space-y-4 rounded-md px-4 py-6 shadow-sm"
           >
             <div className="flex mb-4 items-center animate-pulse justify-center bg-pink-200 rounded-full p-10">
               <svg

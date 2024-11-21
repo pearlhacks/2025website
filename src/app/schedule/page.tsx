@@ -54,14 +54,14 @@ export default function Page() {
       }
 
       // Categorize as Pre-Hackathon Workshops
-      if (event.type === "workshop" && event.date !== "02/15") {
+      if (event.event_type === "workshop" && event.date !== "02/15") {
         preHackathonWorkshops.push(event);
       }
 
-      // Categorize as Upcoming Events if this week and before 02/17
+      // Categorize as Upcoming Events if this week and before 02/15
       if (
         isThisWeek(eventDate) &&
-        isBefore(eventDate, parseISO("2024-02-17"))
+        isBefore(eventDate, parseISO("2025-02-15"))
       ) {
         upcomingEvents.push(event);
       }
@@ -96,22 +96,22 @@ export default function Page() {
           and collaborating! You can also add these events to your google
           Calendar to expand all events and view them on your personal calendar.
         </p>
-        <div className="flex justify-center space-x-20">
+        <div className="flex overflow-x-auto justify-center space-x-20">
           <ScheduleButton
             onClick={() => setCurrentTab("day1")}
-            className="bg-green-500 hover:bg-green-600"
+            className="bg-green hover:bg-green-600"
           >
             Day 1
           </ScheduleButton>
           <ScheduleButton
             onClick={() => setCurrentTab("day2")}
-            className="bg-yellow-500 hover:bg-yellow-600"
+            className="bg-yellow hover:bg-yellow-600"
           >
             Day 2
           </ScheduleButton>
           <ScheduleButton
             onClick={() => setCurrentTab("preHackathon")}
-            className="bg-pink-300 hover:bg-pink-400"
+            className="bg-pink-accent hover:bg-pink-400"
           >
             Pre-Hackathon Workshops
           </ScheduleButton>
