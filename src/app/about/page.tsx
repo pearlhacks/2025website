@@ -26,22 +26,22 @@ export default function Page() {
           <div className="flex flex-col md:flex-row items-top lg:items-center md:space-x-4">
             <div className="space-y-4">
               <p>
-                Pearl Hacks was first held in 2014 as one of the only
-                beginner-friendly hackathons targeted towards women at the time.
-                It was organized in response to the boom in college hackathons,
-                where students got to spend a weekend bringing their
-                technological ideas to life with the help of their peers and
-                industry professionals.
+                Chiara Sabato 11:18 AM The first Pearl Hacks was held in 2014 as
+                one of the only beginner-friendly hackathons targeted towards
+                women at the time. Founded by UNC alumnus Maegan Clawges, Pearl
+                Hacks was organized in response to the boom in college
+                hackathons. These hackathons allowed participants to spend a
+                weekend bringing their technological ideas to life with the help
+                of their peers and industry professionals.
               </p>
               <p>
-                But while those hackathons were great at immersing students into
-                tech, it was clear that the gender gap and the often
-                intimidating environment at those events was stopping a lot of
-                women of all skill levels from signing up. The first Pearl
-                Hacks, organized by UNC alumni Maegan Clawges, brought in 250
-                female high school and college students in the hopes of
-                providing them with a great hackathon experience that
-                sidestepped these issues.
+                While all emerging hackathons were great at immersing students
+                into tech, it was clear that the gender gap and the often
+                intimidating environment at those events prevented a lot of
+                women of all skill levels from signing up. The first Pearl Hacks
+                brought together 250 female high school and college students in
+                the hopes of providing them with a positive and welcoming
+                hackathon experience that sidestepped these issues.
               </p>
             </div>
             <img
@@ -58,17 +58,20 @@ export default function Page() {
             />
             <div className="space-y-4">
               <p>
-                By growing and learning from the last eight years of Pearl Hacks
+                By growing and learning from the last ten years of Pearl Hacks
                 (which has nearly tripled in size), we now strive to be an open
-                and inclusive environment for gender minorities to experience
-                hackathons, and hopefully dive deeper into the world of
-                technology after experiencing a weekend with us.
+                and inclusive environment for all gender minorities to
+                experience hackathons. After spending the weekend with us, it is
+                our hope that participants feel more confident and capable as
+                they dive deeper into the world of technology. Additionally,
+                Pearl Hacks welcomes a diverse set of skills and seeks to
+                provide as many beginner-friendly resources as possible for
+                those who are coding for the first time!
               </p>
               <p>
-                First-timers are welcomed to join no matter their level of
-                experience. All that awaits you is a weekend of meeting amazing
-                people, learning about technology, and free swag and prizes. We
-                hope you join us at this wonderful event!
+                Pearl Hacks is a weekend of meeting amazing people, learning
+                about technology, and free swag and prizes. We hope you join us
+                at this wonderful event!
               </p>
             </div>
           </div>

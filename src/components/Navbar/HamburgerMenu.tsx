@@ -35,7 +35,7 @@ export default function HamburgerMenu({ mode }: HamburgerMenuProps) {
 
   return (
     <div className="flex flex-col space-y-2">
-      <div className="block z-50 sm:hidden" onClick={toggleDrawer}>
+      <div className="block z-30 sm:hidden" onClick={toggleDrawer}>
         {!isDrawerOpen ? (
           <Bars3Icon
             className={`h-6 w-6 hover:pink text-${color} hover:text-pink transition ease-in-out`}

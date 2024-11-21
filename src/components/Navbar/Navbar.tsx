@@ -15,7 +15,11 @@ export function Navbar({ mode }: NavbarProps) {
       >
         <Link className="z-30" href="/">
           <span
-            className={`group font-bold font-sans transition ease-in-out hover:text-white flex flex-row items-center space-x-2`}
+            className={`group font-bold font-sans ${
+              mode == "landing"
+                ? "hover:text-white"
+                : "bg-white text-brown hover:text-pink"
+            } transition ease-in-out pr-2 rounded-lg  flex flex-row items-center space-x-2`}
           >
             <img
               src="/images/PH2025Logo.svg"
