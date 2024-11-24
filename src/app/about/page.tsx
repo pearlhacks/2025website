@@ -26,7 +26,7 @@ export default function Page() {
           <div className="flex flex-col md:flex-row items-top lg:items-center md:space-x-4">
             <div className="space-y-4">
               <p>
-                Chiara Sabato 11:18 AM The first Pearl Hacks was held in 2014 as
+                The first Pearl Hacks was held in 2014 as
                 one of the only beginner-friendly hackathons targeted towards
                 women at the time. Founded by UNC alumnus Maegan Clawges, Pearl
                 Hacks was organized in response to the boom in college
