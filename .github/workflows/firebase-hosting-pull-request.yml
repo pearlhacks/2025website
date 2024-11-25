@@ -21,4 +21,3 @@ jobs:
           projectId: pearlhacks-master
         env:
           FIREBASE_CLI_EXPERIMENTS: webframeworks
-          NEXT_PUBLIC_WEB_API: ${{ secrets.SuperSecret }}
