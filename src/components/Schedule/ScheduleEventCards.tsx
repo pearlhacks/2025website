@@ -3,9 +3,50 @@
 import { Schedule } from "@/utils/Types";
 import React from "react";
 import { ScheduleSkeleton } from "../Skeletons/ScheduleSkeleton";
-import { CalendarIcon } from "@heroicons/react/16/solid";
+import {
+  BellAlertIcon,
+  BellIcon,
+  CalendarIcon,
+  StarIcon,
+} from "@heroicons/react/16/solid";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 import { format, addMinutes } from "date-fns";
+
+const calculateEndTime = (startTime?: string, duration?: string): string => {
+  if (!startTime || !duration) {
+    return "TBD"; // Handle cases where data is missing
+  }
+
+  try {
+    // Parse start time into hours and minutes
+    const [time, modifier] = startTime.split(" "); // E.g., "9:00 AM"
+    const [hours, minutes] = time.split(":").map(Number);
+
+    // Create a base Date object with the start time
+    const startDate = new Date();
+    startDate.setHours(
+      modifier === "PM" && hours !== 12 ? hours + 12 : hours % 12
+    );
+    startDate.setMinutes(minutes || 0);
+    startDate.setSeconds(0);
+
+    // Convert duration to minutes
+    const durationInMinutes = parseFloat(duration) * 60;
+
+    // Add duration to the start time
+    const endDate = new Date(startDate.getTime() + durationInMinutes * 60000);
+
+    // Format the end time
+    return endDate.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
+  } catch (error) {
+    console.error("Error calculating end time:", error);
+    return "TBD";
+  }
+};
 
 type ScheduleEventCardProps = {
   events: Schedule[]; // Array of events to be displayed
@@ -35,7 +76,7 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
               </h5>
               <p className="flex flex-row items-center space-x-2 mb-1 text-med font-semibold font-body text-gray-700 dark:text-gray-400">
                 <>
-                  <MapPinIcon className="w-4 h-4" />{" "}
+                  <StarIcon className="w-4 h-4" />{" "}
                 </>{" "}
                 {event.event_type ||
                   "Event Type: Workshop, Pre-Hackathon Event, or Main Events"}
@@ -46,22 +87,23 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
                 </>{" "}
                 {event.date || "MM/DD/YYYY"}
               </p>
+              <p className="flex flex-row items-center space-x-2 mb-1 font-body text-gray-500 dark:text-gray-400">
+                <MapPinIcon className="w-4 h-4 shrink-0" />{" "}
+                {event.location || "Location details not available"}
+              </p>
               {/* to-do: change this to start time - end time i.e. 9am to 10am? */}
               <p className="mb-1 font-body text-gray-500 dark:text-gray-400">
                 <strong>Start Time:</strong> {event.start_time || "HH:MM AM/PM"}
               </p>
               <p className="mb-1 font-body text-gray-500 dark:text-gray-400">
                 <strong>End Time:</strong>{" "}
-                {event.duration + event.start_time || "TBD"}
+                {calculateEndTime(event.start_time, event.duration?.toString())}
               </p>
-              <p className="mb-3 font-body text-gray-500 dark:text-gray-400">
-                <strong>Location:</strong>{" "}
-                {event.location || "Location details not available"}
-              </p>
-              {event.link ? (
+
+              {event.link && (
                 <a
                   href={event.link}
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-300 rounded-lg hover:bg-red-400 focus:ring-4 focus:outline-none focus:ring-red-200 dark:bg-red-400 dark:hover:bg-red-500 dark:focus:ring-red-800 mt-5"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -82,11 +124,6 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
                     />
                   </svg>
                 </a>
-              ) : (
-                // show link when it is avail
-                <span className="text-gray-500 dark:text-gray-400">
-                  No link available
-                </span>
               )}
             </div>
           </div>
