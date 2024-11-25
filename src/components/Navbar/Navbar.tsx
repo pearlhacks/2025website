@@ -34,7 +34,7 @@ export function Navbar({ mode }: NavbarProps) {
               "Resources",
               "Sponsor",
               "Schedule",
-              "Live Page",
+              "Live",
             ].map((link) => (
               <div
                 key={link}
