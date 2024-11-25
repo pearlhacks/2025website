@@ -53,16 +53,17 @@ export default function Page() {
         day2Events.push(event);
       }
 
-      // Categorize as Pre-Hackathon Workshops
-      if (event.event_type === "workshop" && event.date !== "02/15") {
+      // Categorize as Pre-Hackathon Workshops (has workshop and is before the hackathon - 15th and 16th)
+      if (
+        event.event_type.includes("Workshop") &&
+        event.date != "2/15" &&
+        event.date != "2/16"
+      ) {
         preHackathonWorkshops.push(event);
       }
 
-      // Categorize as Upcoming Events if this week and before 02/15
-      if (
-        isThisWeek(eventDate) &&
-        isBefore(eventDate, parseISO("2025-02-15"))
-      ) {
+      // Categorize as Upcoming Events if this week (doesn't matter if it is before or during the hackathon)
+      if (isThisWeek(eventDate)) {
         upcomingEvents.push(event);
       }
     });
@@ -93,37 +94,37 @@ export default function Page() {
           From technical workshops to networking events and mentorship
           opportunities, there is always something exciting happening. Click
           below to explore the full schedule and join us in learning, creating,
-          and collaborating! You can also add these events to your google
+          and collaborating! You can also add these events to your Google
           Calendar to expand all events and view them on your personal calendar.
         </p>
         <div className="flex overflow-x-auto justify-center space-x-20">
           <ScheduleButton
             onClick={() => setCurrentTab("day1")}
-            className="bg-green hover:bg-green-600"
+            className="bg-green hover:bg-green-transition"
           >
             Day 1
           </ScheduleButton>
           <ScheduleButton
             onClick={() => setCurrentTab("day2")}
-            className="bg-yellow hover:bg-yellow-600"
+            className="bg-yellow hover:bg-yellow-400"
           >
             Day 2
           </ScheduleButton>
           <ScheduleButton
             onClick={() => setCurrentTab("preHackathon")}
-            className="bg-pink-accent hover:bg-pink-400"
+            className="bg-pink-accent hover:bg-pink-transition"
           >
             Pre-Hackathon Workshops
           </ScheduleButton>
           <ScheduleButton
             onClick={() => setCurrentTab("upcoming")}
-            className="bg-orange-300 hover:bg-orange-400"
+            className="bg-brown hover:bg-brown-transition"
           >
             Upcoming Events
           </ScheduleButton>
           <ScheduleButton
             onClick={() => window.open("https://calendar.google.com")}
-            className="bg-red-300 hover:bg-red-400"
+            className="bg-background-top hover:bg-red-300"
           >
             Add to Calendar
           </ScheduleButton>

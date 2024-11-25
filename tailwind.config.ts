@@ -18,6 +18,7 @@ const config: Config = {
       colors: {
         brown: {
           DEFAULT: "#9a5c38",
+          transition: "#713f12",
         },
         pink: {
           200: "#FAE3E1",
@@ -27,6 +28,7 @@ const config: Config = {
         },
         green: {
           DEFAULT: "#96b548",
+          transition: "#65a30d",
         },
         yellow: {
           DEFAULT: "#fad53f",
