@@ -124,6 +124,12 @@ export default function Page() {
           >
             Upcoming Events
           </ScheduleButton>
+          <ScheduleButton
+            onClick={() => window.open("https://calendar.google.com")}
+            className="bg-background-top hover:bg-red-300"
+          >
+            Add to Calendar
+          </ScheduleButton>
         </div>
 
         {/* Render either skeleton or events based on loading state */}
