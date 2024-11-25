@@ -12,14 +12,14 @@ export const ScheduleSkeleton = () => {
               className="bg-white block w-full flex flex-col justify-center items-start space-y-3 rounded-lg p-7 shadow-lg animate-pulse max-w-80"
             >
               {/* Skeleton Lines for Title and Details */}
-              <div className="animate-pulse h-3 bg-brown rounded-md w-3/4"></div>
-              <div className="animate-pulse h-3 bg-gray-200 rounded-md w-1/2"></div>
+              <div className="animate-pulse h-3 bg-pink-accent rounded-md w-3/4"></div>
+              <div className="animate-pulse h-3 bg-brown rounded-md w-1/2"></div>
 
               {/* Additional Skeleton Lines */}
-              <div className="animate-pulse h-3 bg-gray-200 rounded-md w-1/2"></div>
-              <div className="animate-pulse h-3 bg-gray-200 rounded-md w-1/2"></div>
-              <div className="animate-pulse h-3 bg-gray-200 rounded-md w-5/6"></div>
-              <div className="animate-pulse h-3 bg-gray-200 rounded-md w-5/6"></div>
+              <div className="animate-pulse h-3 bg-brown rounded-md w-1/2"></div>
+              <div className="animate-pulse h-3 bg-brown rounded-md w-1/2"></div>
+              <div className="animate-pulse h-3 bg-brown rounded-md w-5/6"></div>
+              <div className="animate-pulse h-3 bg-brown rounded-md w-5/6"></div>
             </div>
           ))}
         </div>

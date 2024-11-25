@@ -75,35 +75,35 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
           >
             <div className="relative z-10">
               {/* Event Title */}
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 font-sans dark:text-brown">
+              <h5 className="mb-2 text-2xl font-bold tracking-tight font-sans text-pink-accent">
                 {event.event_name || "Event Title"}
               </h5>
               {/* Event Type */}
-              <p className="flex flex-row items-center space-x-2 mb-1 text-med font-semibold font-body text-gray-700 dark:text-gray-400">
+              <p className="flex flex-row items-center space-x-2 mb-1 text-med font-semibold font-body text-brown-700 dark:text-brown-400">
                 <>
                   <StarIcon className="w-4 h-4" />{" "}
                 </>{" "}
                 {event.event_type || "Event Type: Workshop, General, or Other"}
               </p>
               {/* Date */}
-              <p className="flex flex-row items-center space-x-2 mb-1 text-gray-500 font-body dark:text-gray-400">
+              <p className="flex flex-row items-center space-x-2 mb-1 text-brown-500 font-body dark:text-brown-400">
                 <>
                   <CalendarIcon className="w-4 h-4" />{" "}
                 </>{" "}
                 {event.date || "MM/DD/YYYY"}
               </p>
               {/* Location */}
-              <p className="flex flex-row items-center space-x-2 mb-1 font-body text-gray-500 dark:text-gray-400">
+              <p className="flex flex-row items-center space-x-2 mb-1 font-body text-brown-500 dark:text-brown-400">
                 <MapPinIcon className="w-4 h-4 shrink-0" />{" "}
                 {event.location || "No Location Details"}
               </p>
               {/* Start Time */}
               {/* to-do: change this to start time - end time i.e. 9am to 10am? */}
-              <p className="mb-1 font-body text-gray-500 dark:text-gray-400">
+              <p className="mb-1 font-body text-brown-500 dark:text-brown-400">
                 <strong>Start Time:</strong> {event.start_time || "HH:MM AM/PM"}
               </p>
               {/* End Time */}
-              <p className="mb-1 font-body text-gray-500 dark:text-gray-400">
+              <p className="mb-1 font-body text-brown-500 dark:text-brown-400">
                 <strong>End Time:</strong>{" "}
                 {calculateEndTime(event.start_time, event.duration?.toString())}
               </p>

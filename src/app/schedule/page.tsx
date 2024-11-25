@@ -22,8 +22,8 @@ export default function Page() {
   });
 
   const [currentTab, setCurrentTab] = useState<
-    "day1" | "day2" | "preHackathon" | "upcoming"
-  >("day1");
+    "preHackathon" | "day1" | "day2" | "upcoming"
+  >("preHackathon");
 
   const [isLoading, setIsLoading] = useState(true); // Loading state
 
@@ -87,10 +87,7 @@ export default function Page() {
   return (
     <GenericLayout title="Schedule">
       <div className="space-y-20 text-brown">
-        <h1 className="text-green font-sans font-bold text-5xl py-5">
-          Pearl Hacks Schedule
-        </h1>
-        <p>
+        <h2 className="text-brown text-3xl py-5">
           At Pearl Hacks, we offer a variety of events and workshops every week
           designed to help you grow your skills and connect with the community.
           From technical workshops to networking events and mentorship
@@ -98,8 +95,14 @@ export default function Page() {
           below to explore the full schedule and join us in learning, creating,
           and collaborating! You can also add these events to your Google
           Calendar to expand all events and view them on your personal calendar.
-        </p>
+        </h2>
         <div className="flex overflow-x-auto justify-center space-x-20">
+          <ScheduleButton
+            onClick={() => setCurrentTab("preHackathon")}
+            className="bg-pink-accent hover:bg-pink-transition"
+          >
+            Pre-Hackathon Workshops
+          </ScheduleButton>
           <ScheduleButton
             onClick={() => setCurrentTab("day1")}
             className="bg-green hover:bg-green-transition"
@@ -111,12 +114,6 @@ export default function Page() {
             className="bg-yellow hover:bg-yellow-400"
           >
             Day 2
-          </ScheduleButton>
-          <ScheduleButton
-            onClick={() => setCurrentTab("preHackathon")}
-            className="bg-pink-accent hover:bg-pink-transition"
-          >
-            Pre-Hackathon Workshops
           </ScheduleButton>
           <ScheduleButton
             onClick={() => setCurrentTab("upcoming")}
