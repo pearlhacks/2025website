@@ -44,7 +44,9 @@ export default function Page() {
     const upcomingEvents: Schedule[] = [];
 
     events.forEach((event) => {
-      const eventDate = parseISO(event.date);
+      const eventDate = parseISO(
+        `${new Date().getFullYear()}-${event.date.replace("/", "-")}`
+      );
 
       // Categorize by Day 1 and Day 2
       if (event.date === "10/26") {
