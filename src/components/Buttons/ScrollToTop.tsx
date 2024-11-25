@@ -34,7 +34,7 @@ export function ScrollToTopButton() {
 
   return (
     <span
-      className={`flex z-50 flex-row space-x-4 p-10 fixed place-items-center bottom-0 scrollToTopButton transition ease-in-out delay-150 ${
+      className={`flex z-40 flex-row space-x-4 p-10 fixed place-items-center bottom-0 scrollToTopButton transition ease-in-out delay-150 ${
         isVisible ? "visible" : "hidden"
       }`}
       onClick={scrollToTop}

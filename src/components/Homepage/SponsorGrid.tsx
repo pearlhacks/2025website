@@ -1,7 +1,7 @@
 "use client";
 import { SponsorProps, Tier } from "@/utils/Types";
 
-export function SponsorGrid({ sponsors } : SponsorProps) {
+export function SponsorGrid({ sponsors }: SponsorProps) {
   const getSize = (tier: Tier) => {
     switch (tier) {
       case Tier.PEARL:
@@ -11,7 +11,7 @@ export function SponsorGrid({ sponsors } : SponsorProps) {
     }
   };
   return (
-    <div className="lg:w-[50rem] flex items-center justify-center flex-wrap gap-4 bg-pink-200 rounded-xl p-10">
+    <div className="lg:w-[50rem] h-[30rem] flex items-center justify-center flex-wrap gap-4 bg-pink-200 rounded-xl p-10">
       {sponsors.map((sponsor) => {
         return (
           <div key={sponsor.name}>

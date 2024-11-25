@@ -1,10 +1,9 @@
 "use client";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import { Navbar } from "../Navbar/Navbar";
-import { PrimaryButton } from "../Buttons/PrimaryButton";
 import { motion } from "framer-motion";
-import { link_mailinglist, register } from "@/utils/Urls";
 import StarsOverlay from "./Star";
+import { RegisterButton } from "./RegisterButton";
 
 export function HeroSection() {
   return (
@@ -35,9 +34,7 @@ export function HeroSection() {
                 <p>February 15-16th, 2025</p>
               </span>
             </div>
-            <PrimaryButton href={register}>
-              Register now
-            </PrimaryButton>
+            <RegisterButton />
           </div>
         </div>
       </div>

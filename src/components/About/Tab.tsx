@@ -2,7 +2,7 @@
 import { DirectorProps } from "@/utils/Types";
 import { useState } from "react";
 
-const Tab = ({ directors } : DirectorProps) => {
+const Tab = ({ directors }: DirectorProps) => {
   const [activeTab, setActiveTab] = useState("All");
 
   // filter directors based on selected tab
@@ -57,11 +57,13 @@ const Tab = ({ directors } : DirectorProps) => {
             key={index}
             className="bg-white shadow-sm px-2 py-5 text-center rounded-lg justify-center flex flex-col items-center space-y-4"
           >
-            {director.image_url && <img
-              src={director.image_url}
-              alt={`${director.name}'s image`}
-              className="w-36 h-36 rounded-full object-cover"
-            />}
+            {director.image_url && (
+              <img
+                src={director.image_url}
+                alt={`${director.name}'s image`}
+                className="w-36 h-36 object-center rounded-full object-cover"
+              />
+            )}
             <div>
               <h3 className="text-lg font-semibold">{director.name}</h3>
               <p className="text-gray-500">({director.pronouns})</p>
