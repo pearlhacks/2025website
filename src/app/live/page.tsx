@@ -4,7 +4,7 @@ import { GenericLayout } from "@/components/GenericLayout";
 import { ScheduleButton } from "@/components/Schedule/ScheduleButton";
 import { getSchedules } from "@/api/getData";
 import { ScheduleEventCard } from "@/components/Schedule/ScheduleEventCards";
-import { parseISO, isThisWeek, isBefore } from "date-fns";
+import { parseISO, isThisWeek } from "date-fns";
 import { Schedule } from "@/utils/Types";
 import { ScheduleSkeleton } from "@/components/Skeletons/ScheduleSkeleton";
 
@@ -27,118 +27,63 @@ export default function Page() {
 
   const [isLoading, setIsLoading] = useState(true); // Loading state
 
-  useEffect(() => {
-    async function fetchData() {
-      const scheduleData = await getSchedules();
-      categorizeEvents(scheduleData);
-      setIsLoading(false); // Set loading state to false after data is fetched
-    }
-    fetchData();
-  }, []);
-
-  // Helper function to categorize events based on sheet criteria
-  const categorizeEvents = (events: Schedule[]) => {
-    const day1Events: Schedule[] = [];
-    const day2Events: Schedule[] = [];
-    const preHackathonWorkshops: Schedule[] = [];
-    const upcomingEvents: Schedule[] = [];
-
-    events.forEach((event) => {
-      const eventDate = parseISO(
-        `${new Date().getFullYear()}-${event.date.replace("/", "-")}`
-      );
-
-      // Categorize by Day 1 and Day 2
-      if (event.date === "10/26") {
-        day1Events.push(event);
-      } else if (event.date === "10/27") {
-        day2Events.push(event);
-      }
-
-      // Categorize as Pre-Hackathon Workshops (has workshop and is before the hackathon - 15th and 16th)
-      if (
-        event.event_type.includes("Workshop") &&
-        event.date != "2/15" &&
-        event.date != "2/16"
-      ) {
-        preHackathonWorkshops.push(event);
-      }
-
-      // Categorize as Upcoming Events if this week (doesn't matter if it is before or during the hackathon)
-      if (isThisWeek(eventDate)) {
-        upcomingEvents.push(event);
-      }
-    });
-
-    setCategorizedEvents({
-      day1: day1Events,
-      day2: day2Events,
-      preHackathon: preHackathonWorkshops,
-      upcoming: upcomingEvents,
-    });
-  };
-
-  // Function to render events based on the selected tab
-  const renderEvents = () => {
-    const eventsToDisplay = categorizedEvents[currentTab] || [];
-    return <ScheduleEventCard events={eventsToDisplay} />;
-  };
-
   return (
-    <GenericLayout title="Schedule">
+    <GenericLayout title="Live Page">
       <div className="space-y-20 text-brown">
         <h1 className="text-green font-sans font-bold text-5xl py-5">
-          Pearl Hacks Schedule
+          Pearl Hacks Live Page
         </h1>
-        <p>
-          At Pearl Hacks, we offer a variety of events and workshops every week
-          designed to help you grow your skills and connect with the community.
-          From technical workshops to networking events and mentorship
-          opportunities, there is always something exciting happening. Click
-          below to explore the full schedule and join us in learning, creating,
-          and collaborating! You can also add these events to your Google
-          Calendar to expand all events and view them on your personal calendar.
-        </p>
-        <div className="flex overflow-x-auto justify-center space-x-20">
+
+        <div className="flex space-x-10">
+          {/* Button Group for Discord, Hacker Guide, and Devpost */}
           <ScheduleButton
-            onClick={() => setCurrentTab("day1")}
-            className="bg-green hover:bg-green-transition"
+            onClick={() => window.open("https://discord.com")}
+            className="bg-blue-600 hover:bg-blue-500"
           >
-            Day 1
+            Discord
           </ScheduleButton>
           <ScheduleButton
-            onClick={() => setCurrentTab("day2")}
-            className="bg-yellow hover:bg-yellow-400"
+            onClick={() => window.open("https://www.hackerguide.com")}
+            className="bg-purple-600 hover:bg-purple-500"
           >
-            Day 2
+            Hacker Guide
           </ScheduleButton>
           <ScheduleButton
-            onClick={() => setCurrentTab("preHackathon")}
-            className="bg-pink-accent hover:bg-pink-transition"
+            onClick={() => window.open("https://devpost.com")}
+            className="bg-orange-600 hover:bg-orange-500"
           >
-            Pre-Hackathon Workshops
-          </ScheduleButton>
-          <ScheduleButton
-            onClick={() => setCurrentTab("upcoming")}
-            className="bg-brown hover:bg-brown-transition"
-          >
-            Upcoming Events
-          </ScheduleButton>
-          <ScheduleButton
-            onClick={() => window.open("https://calendar.google.com")}
-            className="bg-background-top hover:bg-red-300"
-          >
-            Add to Calendar
+            Devpost
           </ScheduleButton>
         </div>
 
-        {/* Render either skeleton or events based on loading state */}
+        {/* Placeholder for Location, Parking, Menu, and WiFi */}
         <div className="space-y-4">
-          {isLoading ? (
-            <ScheduleSkeleton /> // Display skeleton while loading
-          ) : (
-            renderEvents() // Display events after loading
-          )}
+          <div className="text-xl font-semibold">Event Information</div>
+          <div className="bg-gray-100 p-4 rounded-md">
+            <h2 className="font-bold">Location</h2>
+            <p>To be announced.</p>
+          </div>
+          <div className="bg-gray-100 p-4 rounded-md">
+            <h2 className="font-bold">Parking</h2>
+            <p>Details coming soon.</p>
+          </div>
+          <div className="bg-gray-100 p-4 rounded-md">
+            <h2 className="font-bold">Menu</h2>
+            <p>Check back later for the menu details.</p>
+          </div>
+          <div className="bg-gray-100 p-4 rounded-md">
+            <h2 className="font-bold">WiFi</h2>
+            <p>Network information will be provided at the event.</p>
+          </div>
+        </div>
+
+        {/* Prizes Section */}
+        <div className="space-y-4">
+          <div className="text-xl font-semibold">Prizes</div>
+          <div className="bg-gray-100 p-4 rounded-md">
+            <h2 className="font-bold">Grand Prize</h2>
+            <p>Details about the grand prize to be announced soon.</p>
+          </div>
         </div>
       </div>
     </GenericLayout>
