@@ -24,19 +24,23 @@ const calculateEndTime = (startTime?: string, duration?: string): string => {
 
     // Create a base Date object with the start time
     const startDate = new Date();
-    startDate.setHours(
-      modifier === "PM" && hours !== 12 ? hours + 12 : hours % 12
-    );
+    if (modifier === "PM" && hours !== 12) {
+      startDate.setHours(hours + 12); // Convert PM times to 24-hour format, except for 12 PM
+    } else if (modifier === "AM" && hours === 12) {
+      startDate.setHours(0); // 12 AM is midnight, so set it to 0 hours
+    } else {
+      startDate.setHours(hours); // For AM times except 12 AM and PM times except 12 PM
+    }
     startDate.setMinutes(minutes || 0);
     startDate.setSeconds(0);
 
     // Convert duration to minutes
     const durationInMinutes = parseFloat(duration) * 60;
 
-    // Add duration to the start time
+    // Duration + Start Time
     const endDate = new Date(startDate.getTime() + durationInMinutes * 60000);
 
-    // Format the end time
+    // Format end time
     return endDate.toLocaleTimeString("en-US", {
       hour: "numeric",
       minute: "2-digit",
@@ -61,45 +65,50 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
   }
 
   return (
-    <div className="min-h-screen flex justify-center items-center py-4">
-      <div className="grid grid-cols-4 gap-4 auto-rows-auto">
+    <div className="min-h-screen flex justify-center items-start py-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-fr">
         {/* Render events directly */}
         {events.map((event, index) => (
           <div
             key={index}
-            className="relative max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg p-5 dark:bg-white-800 dark:border-white-700 overflow-hidden"
+            className="relative bg-white border border-gray-200 rounded-lg shadow-lg p-5 dark:bg-white-800 dark:border-white-700 overflow-hidden w-80"
           >
             <div className="relative z-10">
-              {/* replace labels with icon  */}
+              {/* Event Title */}
               <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 font-sans dark:text-brown">
                 {event.event_name || "Event Title"}
               </h5>
+              {/* Event Type */}
               <p className="flex flex-row items-center space-x-2 mb-1 text-med font-semibold font-body text-gray-700 dark:text-gray-400">
                 <>
                   <StarIcon className="w-4 h-4" />{" "}
                 </>{" "}
-                {event.event_type ||
-                  "Event Type: Workshop, Pre-Hackathon Event, or Main Events"}
+                {event.event_type || "Event Type: Workshop, General, or Other"}
               </p>
+              {/* Date */}
               <p className="flex flex-row items-center space-x-2 mb-1 text-gray-500 font-body dark:text-gray-400">
                 <>
                   <CalendarIcon className="w-4 h-4" />{" "}
                 </>{" "}
                 {event.date || "MM/DD/YYYY"}
               </p>
+              {/* Location */}
               <p className="flex flex-row items-center space-x-2 mb-1 font-body text-gray-500 dark:text-gray-400">
                 <MapPinIcon className="w-4 h-4 shrink-0" />{" "}
-                {event.location || "Location details not available"}
+                {event.location || "No Location Details"}
               </p>
+              {/* Start Time */}
               {/* to-do: change this to start time - end time i.e. 9am to 10am? */}
               <p className="mb-1 font-body text-gray-500 dark:text-gray-400">
                 <strong>Start Time:</strong> {event.start_time || "HH:MM AM/PM"}
               </p>
+              {/* End Time */}
               <p className="mb-1 font-body text-gray-500 dark:text-gray-400">
                 <strong>End Time:</strong>{" "}
                 {calculateEndTime(event.start_time, event.duration?.toString())}
               </p>
 
+              {/* Event Link - only if it pops up in the excel column, otherwise no notification */}
               {event.link && (
                 <a
                   href={event.link}
