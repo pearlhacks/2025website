@@ -7,6 +7,7 @@ import {
   BellAlertIcon,
   BellIcon,
   CalendarIcon,
+  ClockIcon,
   StarIcon,
 } from "@heroicons/react/16/solid";
 import { MapPinIcon } from "@heroicons/react/24/outline";
@@ -14,7 +15,7 @@ import { format, addMinutes } from "date-fns";
 
 const calculateEndTime = (startTime?: string, duration?: string): string => {
   if (!startTime || !duration) {
-    return "TBD"; // Handle cases where data is missing
+    return ""; // Handle cases where data is missing
   }
 
   try {
@@ -41,14 +42,14 @@ const calculateEndTime = (startTime?: string, duration?: string): string => {
     const endDate = new Date(startDate.getTime() + durationInMinutes * 60000);
 
     // Format end time
-    return endDate.toLocaleTimeString("en-US", {
+    return `- ${endDate.toLocaleTimeString("en-US", {
       hour: "numeric",
       minute: "2-digit",
       hour12: true,
-    });
+    })}`;
   } catch (error) {
     console.error("Error calculating end time:", error);
-    return "TBD";
+    return "";
   }
 };
 
@@ -71,40 +72,31 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
         {events.map((event, index) => (
           <div
             key={index}
-            className="relative bg-white border border-gray-200 rounded-lg shadow-lg p-5 dark:bg-white-800 dark:border-white-700 overflow-hidden w-80"
+            className="relative bg-white border border-gray-200 rounded-lg p-5 overflow-hidden w-80"
           >
             <div className="relative z-10">
               {/* Event Title */}
               <h5 className="mb-2 text-2xl font-bold tracking-tight font-sans text-pink-accent">
                 {event.event_name || "Event Title"}
               </h5>
-              {/* Event Type */}
-              <p className="flex flex-row items-center space-x-2 mb-1 text-med font-semibold font-body text-brown-700 dark:text-brown-400">
-                <>
-                  <StarIcon className="w-4 h-4" />{" "}
-                </>{" "}
-                {event.event_type || "Event Type: Workshop, General, or Other"}
+              {/* Location */}
+              <p className="flex flex-row items-center space-x-2 mb-1 font-body text-brown-500">
+                <MapPinIcon className="w-4 h-4 shrink-0" />{" "}
+                {event.location || "No Location Details"}
               </p>
               {/* Date */}
-              <p className="flex flex-row items-center space-x-2 mb-1 text-brown-500 font-body dark:text-brown-400">
+              <p className="flex flex-row items-center space-x-2 mb-1 text-brown-500 font-body">
                 <>
                   <CalendarIcon className="w-4 h-4" />{" "}
                 </>{" "}
                 {event.date || "MM/DD/YYYY"}
               </p>
-              {/* Location */}
-              <p className="flex flex-row items-center space-x-2 mb-1 font-body text-brown-500 dark:text-brown-400">
-                <MapPinIcon className="w-4 h-4 shrink-0" />{" "}
-                {event.location || "No Location Details"}
-              </p>
-              {/* Start Time */}
-              {/* to-do: change this to start time - end time i.e. 9am to 10am? */}
-              <p className="mb-1 font-body text-brown-500 dark:text-brown-400">
-                <strong>Start Time:</strong> {event.start_time || "HH:MM AM/PM"}
-              </p>
               {/* End Time */}
-              <p className="mb-1 font-body text-brown-500 dark:text-brown-400">
-                <strong>End Time:</strong>{" "}
+              <p className="flex flex-row items-center space-x-2 mb-1 font-body text-med font-semibold text-brown-500">
+                <>
+                  <ClockIcon className="w-4 h-4" />{" "}
+                </>
+                {event.start_time}{" "}
                 {calculateEndTime(event.start_time, event.duration?.toString())}
               </p>
 
@@ -112,7 +104,7 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
               {event.link && (
                 <a
                   href={event.link}
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-300 rounded-lg hover:bg-red-400 focus:ring-4 focus:outline-none focus:ring-red-200 dark:bg-red-400 dark:hover:bg-red-500 dark:focus:ring-red-800 mt-5"
+                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-300 rounded-lg hover:bg-red-400 focus:ring-4 focus:outline-none focus:ring-red-200 mt-5"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
