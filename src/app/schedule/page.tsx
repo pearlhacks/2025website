@@ -4,7 +4,7 @@ import { GenericLayout } from "@/components/GenericLayout";
 import { ScheduleButton } from "@/components/Schedule/ScheduleButton";
 import { getSchedules } from "@/api/getData";
 import { ScheduleEventCard } from "@/components/Schedule/ScheduleEventCards";
-import { parseISO, isThisWeek, isBefore } from "date-fns";
+import { parseISO, isThisWeek } from "date-fns";
 import { Schedule } from "@/utils/Types";
 import { ScheduleSkeleton } from "@/components/Skeletons/ScheduleSkeleton";
 
@@ -86,8 +86,8 @@ export default function Page() {
 
   return (
     <GenericLayout title="Schedule">
-      <div className="space-y-20 text-brown">
-        <h2 className="text-brown text-3xl py-5">
+      <div className="w-full space-y-20 text-brown">
+        <h2 className="text-brown py-5">
           At Pearl Hacks, we offer a variety of events and workshops every week
           designed to help you grow your skills and connect with the community.
           From technical workshops to networking events and mentorship
@@ -98,25 +98,41 @@ export default function Page() {
         <div className="flex overflow-x-auto justify-center space-x-20">
           <ScheduleButton
             onClick={() => setCurrentTab("upcoming")}
-            className="bg-brown hover:bg-brown-transition"
+            className={`${
+              currentTab === "upcoming"
+                ? "bg-pink-200 border-b-2 border-brown text-brown-transition"
+                : "bg-brown border-b-2 border-brown hover:bg-brown-transition"
+            } `}
           >
             Upcoming Events
           </ScheduleButton>
           <ScheduleButton
             onClick={() => setCurrentTab("preHackathon")}
-            className="bg-pink-accent hover:bg-pink-transition"
+            className={`${
+              currentTab === "preHackathon"
+                ? "bg-pink-200 border-b-2 border-pink-accent text-red-400"
+                : "bg-pink-accent hover:bg-pink-transition"
+            } `}
           >
             Pre-Hackathon Workshops
           </ScheduleButton>
           <ScheduleButton
             onClick={() => setCurrentTab("day1")}
-            className="bg-green hover:bg-green-transition"
+            className={`${
+              currentTab === "day1"
+                ? "bg-pink-200 bg-background-secondary border-b-2 border-green text-green-transition"
+                : "bg-green hover:bg-green-transition"
+            } `}
           >
             Day 1
           </ScheduleButton>
           <ScheduleButton
             onClick={() => setCurrentTab("day2")}
-            className="bg-yellow hover:bg-yellow-400"
+            className={`${
+              currentTab === "day2"
+                ? "bg-pink-200 bg-background-secondary border-b-2 border-yellow-400 text-yellow-500"
+                : "bg-yellow hover:bg-yellow"
+            } `}
           >
             Day 2
           </ScheduleButton>
