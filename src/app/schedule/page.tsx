@@ -22,8 +22,8 @@ export default function Page() {
   });
 
   const [currentTab, setCurrentTab] = useState<
-    "preHackathon" | "day1" | "day2" | "upcoming"
-  >("preHackathon");
+    "upcoming" | "preHackathon" | "day1" | "day2"
+  >("upcoming");
 
   const [isLoading, setIsLoading] = useState(true); // Loading state
 
@@ -98,6 +98,12 @@ export default function Page() {
         </h2>
         <div className="flex overflow-x-auto justify-center space-x-20">
           <ScheduleButton
+            onClick={() => setCurrentTab("upcoming")}
+            className="bg-brown hover:bg-brown-transition"
+          >
+            Upcoming Events
+          </ScheduleButton>
+          <ScheduleButton
             onClick={() => setCurrentTab("preHackathon")}
             className="bg-pink-accent hover:bg-pink-transition"
           >
@@ -114,12 +120,6 @@ export default function Page() {
             className="bg-yellow hover:bg-yellow-400"
           >
             Day 2
-          </ScheduleButton>
-          <ScheduleButton
-            onClick={() => setCurrentTab("upcoming")}
-            className="bg-brown hover:bg-brown-transition"
-          >
-            Upcoming Events
           </ScheduleButton>
         </div>
 
