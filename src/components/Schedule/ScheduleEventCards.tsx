@@ -66,9 +66,9 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
   }
 
   return (
-    <div className="min-h-screen flex justify-center items-start py-4">
+    <div className="w-full flex justify-center items-start py-4">
       {/* Scrollable horizontal container */}
-      <div className="flex flex-row overflow-x-auto space-x-4 max-w-full">
+      <div className="flex flex-row overflow-x-scroll space-x-4 w-full">
         {/* Wrap every 4 cards in a container */}
         {Array.from({ length: Math.ceil(events.length / 4) }).map(
           (_, rowIndex) => (
