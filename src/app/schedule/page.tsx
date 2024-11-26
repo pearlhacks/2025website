@@ -86,8 +86,8 @@ export default function Page() {
 
   return (
     <GenericLayout title="Schedule">
-      <div className="space-y-20 text-brown">
-        <h2 className="text-brown text-3xl py-5">
+      <div className="w-full space-y-20 text-brown">
+        <h2 className="text-brown py-5">
           At Pearl Hacks, we offer a variety of events and workshops every week
           designed to help you grow your skills and connect with the community.
           From technical workshops to networking events and mentorship
