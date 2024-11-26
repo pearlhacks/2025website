@@ -16,8 +16,6 @@ export const ScheduleSkeleton = () => {
 
               {/* Additional Skeleton Lines */}
               <div className="animate-pulse h-3 bg-brown rounded-md w-1/2"></div>
-              <div className="animate-pulse h-3 bg-brown rounded-md w-1/2"></div>
-              <div className="animate-pulse h-3 bg-brown rounded-md w-5/6"></div>
               <div className="animate-pulse h-3 bg-brown rounded-md w-5/6"></div>
             </div>
           ))}
