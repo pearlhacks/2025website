@@ -11,7 +11,6 @@ import {
   StarIcon,
 } from "@heroicons/react/16/solid";
 import { MapPinIcon } from "@heroicons/react/24/outline";
-import { format, addMinutes } from "date-fns";
 
 const calculateEndTime = (startTime?: string, duration?: string): string => {
   if (!startTime || !duration) {
@@ -85,11 +84,6 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
                       <h5 className="mb-2 text-2xl font-bold tracking-tight font-sans text-pink-accent">
                         {event.event_name || "Event Title"}
                       </h5>
-                      {/* Location */}
-                      <p className="flex flex-row items-center space-x-2 mb-1 font-body text-brown-500">
-                        <MapPinIcon className="w-4 h-4 shrink-0" />{" "}
-                        {event.location || "No Location Details"}
-                      </p>
                       {/* Date, Start Time - End Time */}
                       <p className="flex flex-row items-center space-x-2 mb-1 font-body text-med font-semibold text-brown-500">
                         <>
@@ -103,7 +97,11 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
                           event.duration?.toString()
                         )}
                       </p>
-
+                      {/* Location */}
+                      <p className="flex flex-row items-center space-x-2 mb-1 font-body text-brown-500">
+                        <MapPinIcon className="w-4 h-4 shrink-0" />{" "}
+                        {event.location || "TBD"}
+                      </p>
                       {/* Event Link */}
                       {event.link && (
                         <a
