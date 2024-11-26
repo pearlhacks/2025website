@@ -93,7 +93,7 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
                       {/* Date, Start Time - End Time */}
                       <p className="flex flex-row items-center space-x-2 mb-1 font-body text-med font-semibold text-brown-500">
                         <>
-                          <CalendarIcon className="w-4 h-4" />{" "}
+                          <ClockIcon className="w-4 h-4" />{" "}
                         </>{" "}
                         {event.date}
                         {", "}
