@@ -93,8 +93,7 @@ export default function Page() {
           From technical workshops to networking events and mentorship
           opportunities, there is always something exciting happening. Click
           below to explore the full schedule and join us in learning, creating,
-          and collaborating! You can also add these events to your Google
-          Calendar to expand all events and view them on your personal calendar.
+          and collaborating!
         </h2>
         <div className="flex overflow-x-auto justify-center space-x-20">
           <ScheduleButton
