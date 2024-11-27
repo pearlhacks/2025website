@@ -110,7 +110,7 @@ export default function Page() {
             onClick={() => setCurrentTab("preHackathon")}
             className={`${
               currentTab === "preHackathon"
-                ? "bg-pink-200 border-b-2 border-pink-accent text-red-400"
+                ? "bg-pink-200 border-b-2 border-pink-accent text-brown-transition"
                 : "bg-pink-accent hover:bg-pink-transition"
             } `}
           >
@@ -120,7 +120,7 @@ export default function Page() {
             onClick={() => setCurrentTab("day1")}
             className={`${
               currentTab === "day1"
-                ? "bg-pink-200 bg-background-secondary border-b-2 border-green text-green-transition"
+                ? "bg-pink-200 bg-background-secondary border-b-2 border-green text-brown-transition"
                 : "bg-green hover:bg-green-transition"
             } `}
           >
@@ -130,7 +130,7 @@ export default function Page() {
             onClick={() => setCurrentTab("day2")}
             className={`${
               currentTab === "day2"
-                ? "bg-pink-200 bg-background-secondary border-b-2 border-yellow-400 text-yellow-500"
+                ? "bg-pink-200 bg-background-secondary border-b-2 border-yellow-400 text-brown-transition"
                 : "bg-yellow hover:bg-yellow"
             } `}
           >
