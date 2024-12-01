@@ -55,3 +55,13 @@ export interface ResourceData {
   resource_type: "link" | "devpost";
   img_url?: string;
 }
+
+export interface Schedule {
+  event_name: string;
+  event_type: string;
+  date: string;
+  start_time: string;
+  duration: number;
+  location: string;
+  link: string | null;
+}
