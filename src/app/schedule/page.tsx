@@ -101,7 +101,7 @@ export default function Page() {
             className={`${
               currentTab === "upcoming"
                 ? "bg-pink-200 border-b-2 border-brown text-brown-transition"
-                : "bg-brown border-b-2 border-brown hover:bg-brown-transition"
+                : "bg-brown border-b-2 border-brown hover:bg-brown-transition text-white"
             } `}
           >
             Upcoming Events
@@ -111,7 +111,7 @@ export default function Page() {
             className={`${
               currentTab === "preHackathon"
                 ? "bg-pink-200 border-b-2 border-pink-accent text-brown-transition"
-                : "bg-pink-accent hover:bg-pink-transition"
+                : "bg-pink-accent hover:bg-pink-transition text-white"
             } `}
           >
             Pre-Hackathon Workshops
@@ -121,7 +121,7 @@ export default function Page() {
             className={`${
               currentTab === "day1"
                 ? "bg-pink-200 bg-background-secondary border-b-2 border-green text-brown-transition"
-                : "bg-green hover:bg-green-transition"
+                : "bg-green hover:bg-green-transition text-white"
             } `}
           >
             Day 1
@@ -131,7 +131,7 @@ export default function Page() {
             className={`${
               currentTab === "day2"
                 ? "bg-pink-200 bg-background-secondary border-b-2 border-yellow-400 text-brown-transition"
-                : "bg-yellow hover:bg-yellow"
+                : "bg-yellow hover:bg-yellow text-white"
             } `}
           >
             Day 2
