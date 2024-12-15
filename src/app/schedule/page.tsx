@@ -1,5 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { GenericLayout } from "@/components/GenericLayout";
 import { ScheduleButton } from "@/components/Schedule/ScheduleButton";
 import { getSchedules } from "@/api/getData";
@@ -9,38 +11,19 @@ import { Schedule } from "@/utils/Types";
 import { ScheduleSkeleton } from "@/components/Skeletons/ScheduleSkeleton";
 
 export default function Page() {
-  const [categorizedEvents, setCategorizedEvents] = useState<{
-    day1: Schedule[];
-    day2: Schedule[];
-    preHackathon: Schedule[];
-    upcoming: Schedule[];
-  }>({
-    day1: [],
-    day2: [],
-    preHackathon: [],
-    upcoming: [],
-  });
-
   const [currentTab, setCurrentTab] = useState<
-    "upcoming" | "preHackathon" | "day1" | "day2"
+    "upcoming" | "workshops" | "day1" | "day2"
   >("upcoming");
 
-  const [isLoading, setIsLoading] = useState(true); // Loading state
+  const { data: scheduleData = [], isLoading } = useQuery({
+    queryKey: ["schedules"],
+    queryFn: getSchedules,
+  });
 
-  useEffect(() => {
-    async function fetchData() {
-      const scheduleData = await getSchedules();
-      categorizeEvents(scheduleData);
-      setIsLoading(false); // Set loading state to false after data is fetched
-    }
-    fetchData();
-  }, []);
-
-  // Helper function to categorize events based on sheet criteria
   const categorizeEvents = (events: Schedule[]) => {
     const day1Events: Schedule[] = [];
     const day2Events: Schedule[] = [];
-    const preHackathonWorkshops: Schedule[] = [];
+    const workshops: Schedule[] = [];
     const upcomingEvents: Schedule[] = [];
 
     events.forEach((event) => {
@@ -48,39 +31,40 @@ export default function Page() {
         `${new Date().getFullYear()}-${event.date.replace("/", "-")}`
       );
 
-      // Categorize by Day 1 and Day 2
-      if (event.date === "10/26") {
+      if (event.date === "2/15") {
         day1Events.push(event);
-      } else if (event.date === "10/27") {
+      } else if (event.date === "2/16") {
         day2Events.push(event);
       }
 
-      // Categorize as Pre-Hackathon Workshops (has workshop and is before the hackathon - 15th and 16th)
-      if (
-        event.event_type.includes("Workshop") &&
-        event.date != "2/15" &&
-        event.date != "2/16"
-      ) {
-        preHackathonWorkshops.push(event);
+      if (event.event_type.includes("Workshop")) {
+        workshops.push(event);
       }
 
-      // Categorize as Upcoming Events if this week (doesn't matter if it is before or during the hackathon)
       if (isThisWeek(eventDate)) {
         upcomingEvents.push(event);
       }
     });
 
-    setCategorizedEvents({
+    return {
       day1: day1Events,
       day2: day2Events,
-      preHackathon: preHackathonWorkshops,
+      workshops: workshops,
       upcoming: upcomingEvents,
-    });
+    };
   };
 
-  // Function to render events based on the selected tab
+  const categorizedEvents = categorizeEvents(scheduleData);
+
   const renderEvents = () => {
     const eventsToDisplay = categorizedEvents[currentTab] || [];
+    if (eventsToDisplay.length === 0) {
+      return (
+        <p className="text-center">
+          No events coming up. Check back with us soon!
+        </p>
+      );
+    }
     return <ScheduleEventCard events={eventsToDisplay} />;
   };
 
@@ -95,7 +79,7 @@ export default function Page() {
           below to explore the full schedule and join us in learning, creating,
           and collaborating!
         </h2>
-        <div className="flex overflow-x-auto justify-center space-x-20">
+        <div className="flex overflow-x-auto flex-start md:justify-center space-x-20">
           <ScheduleButton
             onClick={() => setCurrentTab("upcoming")}
             className={`${
@@ -104,17 +88,17 @@ export default function Page() {
                 : "bg-brown border-b-2 border-brown hover:bg-brown-transition text-white"
             } `}
           >
-            Upcoming Events
+            This week
           </ScheduleButton>
           <ScheduleButton
-            onClick={() => setCurrentTab("preHackathon")}
+            onClick={() => setCurrentTab("workshops")}
             className={`${
-              currentTab === "preHackathon"
+              currentTab === "workshops"
                 ? "bg-pink-200 border-b-2 border-pink-accent text-brown-transition"
                 : "bg-pink-accent hover:bg-pink-transition text-white"
             } `}
           >
-            Pre-Hackathon Workshops
+            Workshops
           </ScheduleButton>
           <ScheduleButton
             onClick={() => setCurrentTab("day1")}
@@ -138,13 +122,8 @@ export default function Page() {
           </ScheduleButton>
         </div>
 
-        {/* Render either skeleton or events based on loading state */}
         <div className="space-y-4">
-          {isLoading ? (
-            <ScheduleSkeleton /> // Display skeleton while loading
-          ) : (
-            renderEvents() // Display events after loading
-          )}
+          {isLoading ? <ScheduleSkeleton /> : renderEvents()}
         </div>
       </div>
     </GenericLayout>
