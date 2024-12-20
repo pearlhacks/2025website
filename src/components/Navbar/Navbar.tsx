@@ -51,7 +51,7 @@ export function Navbar({ mode }: NavbarProps) {
           </span>
           <a
             id="mlh-trust-badge"
-            className="block w-[80px] md:w-[120px] absolute right-[50px] top-0 w-[10%]"
+            className="block w-[80px] md:w-[100px] absolute right-[50px] top-0 w-[10%]"
             href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
             target="_blank"
           >
