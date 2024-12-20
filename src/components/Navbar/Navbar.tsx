@@ -30,7 +30,7 @@ export function Navbar({ mode }: NavbarProps) {
           </span>
         </Link>
         <span className="z-30 flex flex-wrap items-center">
-          <span className="hidden sm:flex flex-row space-x-4">
+          <span className="hidden sm:flex flex-row space-x-4 mr-[170px]">
             {["About", "FAQ", "Resources", "Schedule"].map((link) => (
               <div
                 key={link}
@@ -49,6 +49,19 @@ export function Navbar({ mode }: NavbarProps) {
               </div>
             ))}
           </span>
+          <a
+            id="mlh-trust-badge"
+            className="block w-[80px] md:w-[120px] absolute right-[50px] top-0 w-[10%]"
+            href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
+            target="_blank"
+          >
+            <img
+              src="https://s3.amazonaws.com/logged-assets/trust-badge/2025/mlh-trust-badge-2025-white.svg"
+              alt="Major League Hacking 2025 Hackathon Season"
+              className="w-full"
+            />
+          </a>
+
           <HamburgerMenu mode={mode} />
         </span>
       </div>

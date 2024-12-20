@@ -73,7 +73,7 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
             key={index}
             className="w-full content-center flex flex-col md:flex-row justify-between bg-white rounded-lg p-5 overflow-hidden w-80"
           >
-            <div className="w-full flex flex-col md:flex-row justify-between">
+            <div className="w-full flex flex-col justify-between">
               {/* Event Title */}
               <h5 className="mb-2 text-2xl font-bold tracking-tight font-sans text-pink-accent">
                 {event.event_name || "Event Title"}

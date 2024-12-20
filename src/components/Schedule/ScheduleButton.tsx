@@ -18,7 +18,7 @@ export const ScheduleButton: FC<ScheduleButtonProps> = ({
 }) => {
   const buttonContent = (
     <span
-      className={`font-medium rounded-full text-medium px-10 py-5 text-center mb-2 ${className}`}
+      className={`w-40 font-medium rounded-full text-medium px-10 py-5 text-center mb-2 ${className}`}
     >
       {children}
     </span>
