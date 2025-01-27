@@ -20,8 +20,8 @@ export function Footer() {
           </span>
           <FooterContent title="Administration">
             Pearl Hacks abides by{" "}
-            <Link href={mlh_codeofconduct}>the MLH Code of Conduct</Link>. For
-            questions or feedback, contact us at{" "}
+            <Link href={mlh_codeofconduct}>the MLH Code of Conduct</Link>. If
+            you have any questions or feedback, please contact us at{" "}
             <Link href={social_email}>questions@pearlhacks.com</Link>.
           </FooterContent>
           <FooterContent title="Inclusivity Statement">

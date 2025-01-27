@@ -31,6 +31,46 @@ export default function Page() {
         `${new Date().getFullYear()}-${event.date.replace("/", "-")}`
       );
 
+      const calculateEndTime = (startTime?: string, duration?: string) => {
+        if (!startTime || !duration) {
+          return ""; // Handle cases where data is missing
+        }
+
+        try {
+          // Parse start time into hours and minutes
+          const [time, modifier] = startTime.split(" "); // E.g., "9:00 AM"
+          const [hours, minutes] = time.split(":").map(Number);
+
+          // Create a base Date object with the start time
+          const startDate = new Date();
+          if (modifier === "PM" && hours !== 12) {
+            startDate.setHours(hours + 12); // Convert PM times to 24-hour format, except for 12 PM
+          } else if (modifier === "AM" && hours === 12) {
+            startDate.setHours(0); // 12 AM is midnight, so set it to 0 hours
+          } else {
+            startDate.setHours(hours); // For AM times except 12 AM and PM times except 12 PM
+          }
+          startDate.setMinutes(minutes || 0);
+          startDate.setSeconds(0);
+
+          // Convert duration to minutes
+          const durationInMinutes = parseFloat(duration) * 60;
+
+          // Duration + Start Time
+          const endDate = new Date(
+            startDate.getTime() + durationInMinutes * 60000
+          );
+
+          // Format end time
+          return endDate;
+        } catch (error) {
+          console.error("Error calculating end time:", error);
+          return "";
+        }
+      };
+
+      const endDatetime = calculateEndTime(event.start_time, event.duration.toString());
+
       if (event.date === "2/15") {
         day1Events.push(event);
       } else if (event.date === "2/16") {
@@ -40,8 +80,9 @@ export default function Page() {
       if (event.event_type.includes("Workshop")) {
         workshops.push(event);
       }
-
-      if (isThisWeek(eventDate)) {
+      // if the event is this week and it has not passed currently in time
+      // {calculateEndTime(event.start_time, event.duration?.toString())}
+      if (isThisWeek(eventDate) && new Date() < new Date(endDatetime)) {
         upcomingEvents.push(event);
       }
     });
