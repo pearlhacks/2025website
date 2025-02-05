@@ -9,11 +9,11 @@ import Tab from "@/components/Live/Tab";
 export default function Page() {
   return (
     <GenericLayout title="Live">
-      <div className="space-y-4">
+      <div className="w-full space-y-4">
         <Timer />
         <LiveButtonGroup />
 
-        <h2 className="text-green font-sans font-bold text-2xl">
+        <h2 className="text-green mt-8 font-sans font-bold text-2xl">
           Event Information
         </h2>
         <Tab />

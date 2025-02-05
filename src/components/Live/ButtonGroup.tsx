@@ -5,28 +5,29 @@ import {
   DocumentIcon,
 } from "@heroicons/react/16/solid";
 import { Discord, FilePersonFill } from "react-bootstrap-icons";
+import { link_devpost, link_discord, link_hackerguide, link_resumedatabase } from "@/utils/Urls";
 
 const LiveButtonGroup: React.FC = () => {
   const buttons = [
     {
       label: "Hacker Guide",
-      onClick: () => alert("Button 1 clicked"),
+      href: link_hackerguide,
       isActive: true,
       icon: <DocumentIcon />,
     },
     {
       label: "Discord",
-      onClick: () => alert("Button 2 clicked"),
+      href: link_discord,
       icon: <Discord />,
     },
     {
       label: "Devpost",
-      onClick: () => alert("Button 3 clicked"),
+      href: link_devpost,
       icon: <ArchiveBoxArrowDownIcon />,
     },
     {
       label: "Resume Database",
-      onClick: () => alert("Button 3 clicked"),
+      href: link_resumedatabase,
       icon: <FilePersonFill />,
     },
   ];

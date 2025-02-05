@@ -1,10 +1,11 @@
+import Link from "next/link";
 import React, { ReactNode } from "react";
 
 interface ButtonGroupProps {
   buttons: {
     icon: ReactNode;
     label: string;
-    onClick: () => void;
+    href: string;
     isActive?: boolean;
   }[];
 }
@@ -16,12 +17,15 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({ buttons }) => {
         <button
           key={index}
           type="button"
-          onClick={button.onClick}
-          className={`rounded-md w-full md:w-2/3 flex flex-row items-center font-sans font-bold text-white border-2 border-pink transition ease-in-out p-4 justify-center hover:border-green hover:text-green uppercase hover:bg-pink bg-pink-accent
+          className={`rounded-md w-full md:w-2/3  font-sans font-bold text-white border-2 border-pink transition ease-in-out p-4 hover:border-green hover:text-green uppercase hover:bg-pink bg-pink-accent
                `}
         >
-          <div className="w-4 h-4 mr-4">{button.icon}</div>
-          <div>{button.label}</div>
+          <Link href={button.href}>
+            <div className="flex flex-row items-center  justify-center">
+              <div className="w-4 h-4 mr-4">{button.icon}</div>
+              <div>{button.label}</div>
+            </div>
+          </Link>
         </button>
       ))}
     </div>
