@@ -27,9 +27,6 @@ export default function Page() {
     queryKey: ["faqs"],
     queryFn: getFAQs,
   });
-
-  console.log(allFaqs);
-
   if (isLoading) {
     return (
       <GenericLayout title="FAQ">

@@ -18,7 +18,21 @@ export const link_resumedatabase = "https://form.typeform.com/to/oqPreAkN";
 
 export const link_mailinglist =
   "https://docs.google.com/forms/d/19DBnubSD4h-scUPk0rONWUqEIse-9U2Efz_TtcAqFy4/viewform?edit_requested=true";
+ 
+export const image_menu = "";
+
+export const image_venue1 =
+  "https://file.notion.so/f/f/446ea872-fff9-42f4-ac4a-356702d2bfbc/a4bb3680-3604-4908-8c47-fb11957d66cc/Union_Maps_2025_(4).png?table=block&id=9f35dae4-5657-418f-83a9-b3bcc951afd8&spaceId=446ea872-fff9-42f4-ac4a-356702d2bfbc&expirationTimestamp=1738785600000&signature=X7FovmCiZW5jwbjkUWj58_iYWsllpfC2bBC6lDtwLeQ&downloadName=Union+Maps+2025+%284%29.png";
+export const image_venue2 =
+  "https://file.notion.so/f/f/446ea872-fff9-42f4-ac4a-356702d2bfbc/3f6a7231-6629-42a7-bad5-e6414dde4e19/Union_Maps_2025_(5).png?table=block&id=920eafcc-a764-4cbb-a921-22185ab61834&spaceId=446ea872-fff9-42f4-ac4a-356702d2bfbc&expirationTimestamp=1738785600000&signature=HIdiwlAyF1X4G1QwzTHjSyQKxz3PwazKxXO58VoJVkA&downloadName=Union+Maps+2025+%285%29.png";
 
 export const social_linkedin = "https://www.linkedin.com/company/pearl-hacks/";
 export const social_github = "https://github.com/pearlhacks";
 export const social_email = "mailto:questions@pearlhacks.com";
+
+export const map_parking1 = "https://maps.app.goo.gl/6FfEyWjd4eKYXPAh6";
+export const map_parking2 = "https://maps.app.goo.gl/5zi2gbRMqSQjG9R59";
+export const map_parking3 =
+  "https://www.google.com/maps/search/Parking+lot+240+E+Cameron+Ave+Chapel+Hill,+NC+27514/@35.911968,-79.049338,657m/data=!3m1!1e3?hl=en&entry=ttu&g_ep=EgoyMDI1MDIwMi4wIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D";
+export const map_parking4 =
+  "https://www.google.com/maps/search/Swain+Parking+Lot+105+E+Cameron+Ave+Chapel+Hill,+NC+27514/@35.912215,-79.053745,657m/data=!3m1!1e3?hl=en&entry=ttu&g_ep=EgoyMDI1MDIwMi4wIKXMDSoJLDEwMjExMjMzSAFQAw%3D%3D";
