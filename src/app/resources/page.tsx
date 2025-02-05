@@ -11,6 +11,7 @@ import {
   ExternalLinkCardSkeleton,
 } from "@/components/Skeletons/ResourceCard";
 import { Resource } from "@/utils/Types";
+import { HackerGuideLink } from "@/components/HackerGuideLink";
 
 export default function Page() {
   const queries = useQueries({
@@ -51,6 +52,7 @@ export default function Page() {
 
   return (
     <GenericLayout title="Resources">
+      <HackerGuideLink />
       <div className="w-full max-w-7xl mx-auto space-y-8 px-4 sm:px-6 lg:px-8">
         <div className="w-full">
           <h2 className="text-green font-sans font-bold text-2xl pb-5">

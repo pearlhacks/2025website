@@ -6,9 +6,10 @@ import { GenericLayout } from "@/components/GenericLayout";
 import { ScheduleButton } from "@/components/Schedule/ScheduleButton";
 import { getSchedules } from "@/api/getData";
 import { ScheduleEventCard } from "@/components/Schedule/ScheduleEventCards";
-import { parseISO, isThisWeek } from "date-fns";
+import { parseISO, isThisWeek, parse } from "date-fns";
 import { Schedule } from "@/utils/Types";
 import { ScheduleSkeleton } from "@/components/Skeletons/ScheduleSkeleton";
+import { HackerGuideLink } from "@/components/HackerGuideLink";
 
 export default function Page() {
   const [currentTab, setCurrentTab] = useState<
@@ -27,9 +28,7 @@ export default function Page() {
     const upcomingEvents: Schedule[] = [];
 
     events.forEach((event) => {
-      const eventDate = parseISO(
-        `${new Date().getFullYear()}-${event.date.replace("/", "-")}`
-      );
+      const eventDate = parse(event.date, "MM/dd", new Date());
 
       const calculateEndTime = (startTime?: string, duration?: string) => {
         if (!startTime || !duration) {
@@ -69,7 +68,10 @@ export default function Page() {
         }
       };
 
-      const endDatetime = calculateEndTime(event.start_time, event.duration.toString());
+      const endDatetime = calculateEndTime(
+        event.start_time,
+        event.duration.toString()
+      );
 
       if (event.date === "2/15") {
         day1Events.push(event);
@@ -80,9 +82,7 @@ export default function Page() {
       if (event.event_type.includes("Workshop")) {
         workshops.push(event);
       }
-      // if the event is this week and it has not passed currently in time
-      // {calculateEndTime(event.start_time, event.duration?.toString())}
-      if (isThisWeek(eventDate) && new Date() < new Date(endDatetime)) {
+      if (isThisWeek(eventDate)) {
         upcomingEvents.push(event);
       }
     });
@@ -111,16 +111,10 @@ export default function Page() {
 
   return (
     <GenericLayout title="Schedule">
-      <div className="w-full space-y-20 text-brown">
-        <h2 className="text-brown py-5">
-          At Pearl Hacks, we offer a variety of events and workshops every week
-          designed to help you grow your skills and connect with the community.
-          From technical workshops to networking events and mentorship
-          opportunities, there is always something exciting happening. Click
-          below to explore the full schedule and join us in learning, creating,
-          and collaborating!
-        </h2>
-        <div className="flex overflow-x-auto flex-start md:justify-center space-x-20">
+      <div className="w-full flex flex-col items-center space-y-20 text-brown">
+        <HackerGuideLink />
+
+        <div className="w-full flex overflow-x-auto flex-start md:justify-center space-x-20">
           <ScheduleButton
             onClick={() => setCurrentTab("upcoming")}
             className={`${
@@ -163,7 +157,7 @@ export default function Page() {
           </ScheduleButton>
         </div>
 
-        <div className="space-y-4">
+        <div className="w-full space-y-4">
           {isLoading ? <ScheduleSkeleton /> : renderEvents()}
         </div>
       </div>

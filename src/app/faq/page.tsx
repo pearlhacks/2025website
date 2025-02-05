@@ -7,6 +7,7 @@ import { Heading } from "@/components/Skeletons/Heading";
 import { SocialMediaBar } from "@/components/Footer/SocialMediaBar";
 import { useQuery } from "@tanstack/react-query";
 import { getFAQs } from "@/api/getData";
+import { HackerGuideLink } from "@/components/HackerGuideLink";
 
 export default function Page() {
   const categories = [
@@ -60,6 +61,7 @@ export default function Page() {
 
   return (
     <GenericLayout title="FAQ">
+      <HackerGuideLink />
       {faqsByCategory.map(({ category, faqs }) => (
         <div className="pb-5" key={category}>
           <h2 className="text-green font-sans font-bold text-2xl">

@@ -8,6 +8,14 @@ export const register_mentor = "http://bit.ly/ph2025mentor";
 export const mlh_codeofconduct =
   "https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md";
 
+export const link_discord = "https://bit.ly/PH25Discord";
+
+export const link_hackerguide = "http://bit.ly/PH25HackerGuide";
+
+export const link_devpost = "https://pearlhacks2025.devpost.com/";
+
+export const link_resumedatabase = "https://form.typeform.com/to/oqPreAkN";
+
 export const link_mailinglist =
   "https://docs.google.com/forms/d/19DBnubSD4h-scUPk0rONWUqEIse-9U2Efz_TtcAqFy4/viewform?edit_requested=true";
 
