@@ -9,12 +9,19 @@ import {
   Schedule,
 } from "@/utils/Types";
 
+export const getPhotos = async () => {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_WEB_API}/firebase/photos/about`
+  );
+  const data = await response.json();
+  console.log(data)
+}
+
 export const getSchedules = async () => {
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_WEB_API}/sheet/schedules`
   );
   const data = await response.json();
-  console.log(data);
   const schedules: Schedule[] = (data.schedules || []).map((schedule: any) => ({
     event_name: schedule.event_name,
     event_type: schedule.event_type,

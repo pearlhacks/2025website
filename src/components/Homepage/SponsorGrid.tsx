@@ -2,7 +2,6 @@
 import { SponsorProps, Tier } from "@/utils/Types";
 
 export function SponsorGrid({ sponsors }: SponsorProps) {
-  console.log(sponsors);
   const getSize = (tier: Tier) => {
     switch (tier) {
       case Tier.PEARL:
