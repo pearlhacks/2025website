@@ -7,7 +7,9 @@ interface NavbarProps {
 
 export function Navbar({ mode }: NavbarProps) {
   const color = mode === "landing" ? "brown" : "pink";
-
+  const codingStart = new Date("2025-02-15T00:00:00-05:00");
+  const codingEnd = new Date("2025-02-16T23:00:00-05:00");
+  const now = new Date();
   return (
     <>
       <div
@@ -31,24 +33,20 @@ export function Navbar({ mode }: NavbarProps) {
         </Link>
         <span className="z-30 flex flex-wrap items-center">
           <span className="hidden sm:flex flex-row space-x-4 mr-[170px]">
-            {["About", "FAQ", "Resources", "Schedule"].map((link) => (
-              <div
-                key={link}
-                className={
-                  link === "Tracks" ? "flex flex-row space-x-1" : undefined
-                }
-              >
-                <p className={`transition ease-in-out hover:text-white`}>
-                  <Link href={link.toLowerCase()}>{link}</Link>
-                </p>
-                {link === "Tracks" && (
-                  <div className="p-1 text-center text-xs rounded-md bg-pink-accent text-white">
-                    NEW!
-                  </div>
-                )}
-              </div>
-            ))}
+            {["About", "FAQ", "Resources", "Schedule", "Live"]
+              .filter(
+                (link) =>
+                  link !== "Live" || (now >= codingStart && now <= codingEnd)
+              ) // Remove "Live" if not in time range
+              .map((link) => (
+                <div key={link}>
+                  <p className="transition ease-in-out hover:text-white">
+                    <Link href={link.toLowerCase()}>{link}</Link>
+                  </p>
+                </div>
+              ))}
           </span>
+
           <a
             id="mlh-trust-badge"
             className="block w-[80px] md:w-[100px] absolute right-[50px] top-0 w-[10%]"

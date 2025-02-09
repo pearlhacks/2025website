@@ -1,5 +1,12 @@
 // components/TabComponent.js
-import { image_venue1, image_venue2, map_parking1, map_parking2, map_parking3, map_parking4 } from "@/utils/Urls";
+import {
+  image_venue1,
+  image_venue2,
+  map_parking1,
+  map_parking2,
+  map_parking3,
+  map_parking4,
+} from "@/utils/Urls";
 import { MapPinIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
 import { ParkingBullet } from "./ParkingBullet";
@@ -90,7 +97,7 @@ const Tab = () => {
             </div>
           </div>
         )}
-        {activeTab === "Menu" && <div></div>}
+        {activeTab === "Menu" && <div>TBA</div>}
       </div>
     </div>
   );

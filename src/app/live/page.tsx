@@ -5,6 +5,7 @@ import { ScheduleButton } from "@/components/Schedule/ScheduleButton";
 import LiveButtonGroup from "@/components/Live/ButtonGroup";
 import Timer from "@/components/Live/Timer";
 import Tab from "@/components/Live/Tab";
+import { PrizeSection } from "@/components/Live/Prize";
 
 export default function Page() {
   return (
@@ -20,10 +21,7 @@ export default function Page() {
 
         {/* Prizes Section */}
         <h2 className="text-green font-sans font-bold text-2xl">Prizes</h2>
-        <div className="bg-gray-100 p-4 rounded-md">
-          <h2 className="font-bold">Grand Prize</h2>
-          <p>Details about the grand prize to be announced soon.</p>
-        </div>
+        <PrizeSection />
       </div>
     </GenericLayout>
   );

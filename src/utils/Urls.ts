@@ -16,15 +16,19 @@ export const link_devpost = "https://pearlhacks2025.devpost.com/";
 
 export const link_resumedatabase = "https://form.typeform.com/to/oqPreAkN";
 
+export const link_directorapp = "https://forms.gle/bVE1ZQBcLhbgYmtP9";
+
+export const link_2026mailinglist =
+  "https://docs.google.com/forms/d/e/1FAIpQLSeA1H_oTL2U6rXnAEDqQ3t2CeP0qwEmRBZnbMIMb9ODcuL72w/viewform";
 export const link_mailinglist =
   "https://docs.google.com/forms/d/19DBnubSD4h-scUPk0rONWUqEIse-9U2Efz_TtcAqFy4/viewform?edit_requested=true";
- 
+
 export const image_menu = "";
 
 export const image_venue1 =
-  "https://file.notion.so/f/f/446ea872-fff9-42f4-ac4a-356702d2bfbc/a4bb3680-3604-4908-8c47-fb11957d66cc/Union_Maps_2025_(4).png?table=block&id=9f35dae4-5657-418f-83a9-b3bcc951afd8&spaceId=446ea872-fff9-42f4-ac4a-356702d2bfbc&expirationTimestamp=1738785600000&signature=X7FovmCiZW5jwbjkUWj58_iYWsllpfC2bBC6lDtwLeQ&downloadName=Union+Maps+2025+%284%29.png";
+  "https://uncph.notion.site/image/attachment%3Aa4bb3680-3604-4908-8c47-fb11957d66cc%3AUnion_Maps_2025_(4).png?table=block&id=9f35dae4-5657-418f-83a9-b3bcc951afd8&spaceId=446ea872-fff9-42f4-ac4a-356702d2bfbc&width=1420&userId=&cache=v2";
 export const image_venue2 =
-  "https://file.notion.so/f/f/446ea872-fff9-42f4-ac4a-356702d2bfbc/3f6a7231-6629-42a7-bad5-e6414dde4e19/Union_Maps_2025_(5).png?table=block&id=920eafcc-a764-4cbb-a921-22185ab61834&spaceId=446ea872-fff9-42f4-ac4a-356702d2bfbc&expirationTimestamp=1738785600000&signature=HIdiwlAyF1X4G1QwzTHjSyQKxz3PwazKxXO58VoJVkA&downloadName=Union+Maps+2025+%285%29.png";
+  "https://uncph.notion.site/image/attachment%3A3f6a7231-6629-42a7-bad5-e6414dde4e19%3AUnion_Maps_2025_(5).png?table=block&id=920eafcc-a764-4cbb-a921-22185ab61834&spaceId=446ea872-fff9-42f4-ac4a-356702d2bfbc&width=1420&userId=&cache=v2";
 
 export const social_linkedin = "https://www.linkedin.com/company/pearl-hacks/";
 export const social_github = "https://github.com/pearlhacks";
