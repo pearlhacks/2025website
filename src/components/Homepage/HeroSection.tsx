@@ -4,8 +4,14 @@ import { Navbar } from "../Navbar/Navbar";
 import { motion } from "framer-motion";
 import StarsOverlay from "./Star";
 import { RegisterButton } from "./RegisterButton";
+import { SecondaryButton } from "../Buttons/SecondaryButton";
+import { PrimaryButton } from "../Buttons/PrimaryButton";
+import { link_2026mailinglist, link_directorapp } from "@/utils/Urls";
 
 export function HeroSection() {
+  const codingStart = new Date("2025-02-15T00:00:00-05:00");
+  const codingEnd = new Date("2025-02-16T23:00:00-05:00");
+  const now = new Date();
   return (
     <>
       <div className="bg-cover bg-center bg-no-repeat bg-[url('/images/landing/PH2025_WebsiteLanding.svg')]">
@@ -31,10 +37,23 @@ export function HeroSection() {
               </div>
               <span className="justify-center md:justify-start flex font-medium text-brown flex-row space-x-2">
                 <ClockIcon className="w-6" />
-                <p>February 15-16th, 2025</p>
+                <p>{now < codingStart ? "February 15-16th, 2025" : "NOW"}</p>
               </span>
             </div>
-            <RegisterButton />
+            {now < codingStart ? (
+              <RegisterButton />
+            ) : now > codingEnd ? (
+              <div className="space-x-2 space-y-2">
+                <SecondaryButton href={link_2026mailinglist}>
+                  PH2026 Mailing List
+                </SecondaryButton>
+                <PrimaryButton href={link_directorapp}>
+                  Director Interest Form
+                </PrimaryButton>
+              </div>
+            ) : (
+              <SecondaryButton href={"/live"}>Live</SecondaryButton>
+            )}
           </div>
         </div>
       </div>

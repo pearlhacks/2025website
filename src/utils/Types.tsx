@@ -56,6 +56,12 @@ export interface ResourceData {
   img_url?: string;
 }
 
+export interface Prize {
+  category: string;
+  type: string;
+  prizes: string;
+}
+
 export interface Schedule {
   event_name: string;
   event_type: string;

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "../Link";
 
 const Timer: React.FC = () => {
-
   const [timeLeft, setTimeLeft] = useState<string>("");
   const [label, setLabel] = useState<string>("");
 
@@ -43,8 +42,7 @@ const Timer: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-  });
+  useEffect(() => {});
 
   return (
     <div className="w-full bg-white flex text-brown space-y-4 flex-col items-center rounded-md p-10 shadow-sm">
@@ -54,7 +52,7 @@ const Timer: React.FC = () => {
         </div>
         {label && <div>{label}</div>}
       </div>
-      <div className="text-sm italic">
+      <div className="text-sm text-center italic">
         Check <Link href="/schedule">the schedule page</Link> for the entire
         schedule!
       </div>
