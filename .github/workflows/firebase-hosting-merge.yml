@@ -15,6 +15,7 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
+          NEXT_PUBLIC_WEB_API: ${{env.NEXT_PUBLIC_WEB_API}}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PEARLHACKS_MASTER }}
           channelId: live
           projectId: pearlhacks-master
