@@ -4,8 +4,12 @@ import {
   ArchiveBoxArrowDownIcon,
   DocumentIcon,
 } from "@heroicons/react/16/solid";
-import { Discord, FilePersonFill } from "react-bootstrap-icons";
-import { link_devpost, link_discord, link_hackerguide, link_resumedatabase } from "@/utils/Urls";
+import { Discord } from "react-bootstrap-icons";
+import {
+  link_devpost,
+  link_discord,
+  link_hackerguide,
+} from "@/utils/Urls";
 
 const LiveButtonGroup: React.FC = () => {
   const buttons = [
@@ -24,11 +28,6 @@ const LiveButtonGroup: React.FC = () => {
       label: "Devpost",
       href: link_devpost,
       icon: <ArchiveBoxArrowDownIcon />,
-    },
-    {
-      label: "Resume Database",
-      href: link_resumedatabase,
-      icon: <FilePersonFill />,
     },
   ];
 

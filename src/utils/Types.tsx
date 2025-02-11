@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export enum Tier {
   PEARL,
   GOLD,
@@ -70,4 +72,20 @@ export interface Schedule {
   duration: number;
   location: string;
   link: string | null;
+}
+
+export interface ButtonGroupProps {
+  buttons: {
+    icon: ReactNode;
+    label: string;
+    href: string;
+    isActive?: boolean;
+  }[];
+}
+
+
+export interface ParkingBulletProps {
+  name: string;
+  address: string;
+  href: string;
 }

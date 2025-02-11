@@ -1,27 +1,42 @@
 import { getPrizes } from "@/api/getData";
 import { useQuery } from "@tanstack/react-query";
+import { Heading } from "../Skeletons/Heading";
+import { Prize, PrizeGrid } from "../Skeletons/PrizeSkeleton";
+
+type Prize = {
+  type: string;
+  category: string;
+  prizes: string;
+};
 
 export const PrizeSection = () => {
   const {
-    data: prizes,
+    data: prizes = [],
     isLoading,
     error,
-  } = useQuery({
+  } = useQuery<Prize[]>({
     queryKey: ["prizes"],
     queryFn: getPrizes,
   });
+
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="w-full flex flex-col justify-start items-start animate-pulse">
+        <Heading />
+        <PrizeGrid />
+      </div>
+    );
   }
+
+  const groupedPrizes = prizes.reduce<Record<string, Prize[]>>((acc, prize) => {
+    if (!acc[prize.type]) acc[prize.type] = [];
+    acc[prize.type].push(prize);
+    return acc;
+  }, {});
+
   return (
     <div className="space-y-6">
-      {Object.entries(
-        prizes.reduce((acc, prize) => {
-          if (!acc[prize.type]) acc[prize.type] = [];
-          acc[prize.type].push(prize);
-          return acc;
-        }, {})
-      ).map(([type, prizeList]) => (
+      {Object.entries(groupedPrizes).map(([type, prizeList]) => (
         <div key={type}>
           <h2 className="font-sans text-pink-transition text-lg font-bold mb-3">
             {type}
