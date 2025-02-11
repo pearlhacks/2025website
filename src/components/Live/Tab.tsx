@@ -96,7 +96,7 @@ const Tab = () => {
             </div>
           </div>
         )}
-        {activeTab === "Menu" && <div className="text-brown">TBA</div>}
+        {activeTab === "Menu" && <div className="text-brown">Check out later!</div>}
       </div>
     </div>
   );
