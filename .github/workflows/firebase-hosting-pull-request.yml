@@ -17,9 +17,8 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          NEXT_PUBLIC_WEB_API: ${{env.NEXT_PUBLIC_WEB_API}}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PEARLHACKS_MASTER }}
           projectId: pearlhacks-master
         env:
           FIREBASE_CLI_EXPERIMENTS: webframeworks
-          NEXT_PUBLIC_WEB_API: ${{env.NEXT_PUBLIC_WEB_API}}
+          NEXT_PUBLIC_WEB_API: ${{secrets.NEXT_PUBLIC_WEB_API}}
