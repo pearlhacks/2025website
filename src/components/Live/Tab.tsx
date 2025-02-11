@@ -7,7 +7,6 @@ import {
   map_parking3,
   map_parking4,
 } from "@/utils/Urls";
-import { MapPinIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
 import { ParkingBullet } from "./ParkingBullet";
 
@@ -97,7 +96,7 @@ const Tab = () => {
             </div>
           </div>
         )}
-        {activeTab === "Menu" && <div>TBA</div>}
+        {activeTab === "Menu" && <div className="text-brown">TBA</div>}
       </div>
     </div>
   );

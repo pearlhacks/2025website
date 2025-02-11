@@ -1,14 +1,7 @@
+import { ButtonGroupProps } from "@/utils/Types";
 import Link from "next/link";
 import React, { ReactNode } from "react";
 
-interface ButtonGroupProps {
-  buttons: {
-    icon: ReactNode;
-    label: string;
-    href: string;
-    isActive?: boolean;
-  }[];
-}
 
 const ButtonGroup: React.FC<ButtonGroupProps> = ({ buttons }) => {
   return (

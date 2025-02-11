@@ -14,8 +14,6 @@ export const link_hackerguide = "http://bit.ly/PH25HackerGuide";
 
 export const link_devpost = "https://pearlhacks2025.devpost.com/";
 
-export const link_resumedatabase = "https://form.typeform.com/to/oqPreAkN";
-
 export const link_directorapp = "https://forms.gle/bVE1ZQBcLhbgYmtP9";
 
 export const link_2026mailinglist =

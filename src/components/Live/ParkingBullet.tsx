@@ -1,11 +1,7 @@
+import { ParkingBulletProps } from "@/utils/Types";
 import { MapPinIcon } from "@heroicons/react/16/solid";
 import Link from "next/link";
 
-interface ParkingBulletProps {
-  name: string;
-  address: string;
-  href: string;
-}
 
 export const ParkingBullet = ({ name, address, href }: ParkingBulletProps) => {
   return (
