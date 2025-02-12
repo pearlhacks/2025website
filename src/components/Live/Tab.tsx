@@ -101,7 +101,7 @@ const Tab = () => {
           <div className="text-brown">
             <img src={image_menu} />
           </div>
-        )}
+        )}}
       </div>
     </div>
   );

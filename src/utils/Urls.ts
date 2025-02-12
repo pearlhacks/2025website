@@ -20,10 +20,8 @@ export const link_2026mailinglist =
   "https://docs.google.com/forms/d/e/1FAIpQLSeA1H_oTL2U6rXnAEDqQ3t2CeP0qwEmRBZnbMIMb9ODcuL72w/viewform";
 export const link_mailinglist =
   "https://docs.google.com/forms/d/19DBnubSD4h-scUPk0rONWUqEIse-9U2Efz_TtcAqFy4/viewform?edit_requested=true";
-
 export const image_menu =
   "https://uncph.notion.site/image/attachment%3A3ce3d520-5f26-406c-b546-fd8355483153%3Amenu2025.png?table=block&id=19880d7a-6b5f-80b0-b1b3-ce539f91ad1f&spaceId=446ea872-fff9-42f4-ac4a-356702d2bfbc&width=1600&userId=&cache=v2";
-
 export const image_venue1 =
   "https://uncph.notion.site/image/attachment%3Aa4bb3680-3604-4908-8c47-fb11957d66cc%3AUnion_Maps_2025_(4).png?table=block&id=9f35dae4-5657-418f-83a9-b3bcc951afd8&spaceId=446ea872-fff9-42f4-ac4a-356702d2bfbc&width=1420&userId=&cache=v2";
 export const image_venue2 =
