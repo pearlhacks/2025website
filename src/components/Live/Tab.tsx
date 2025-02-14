@@ -1,5 +1,6 @@
 // components/TabComponent.js
 import {
+  image_menu,
   image_venue1,
   image_venue2,
   map_parking1,
@@ -96,7 +97,11 @@ const Tab = () => {
             </div>
           </div>
         )}
-        {activeTab === "Menu" && <div className="text-brown">Check out later!</div>}
+        {activeTab === "Menu" && (
+          <div className="text-brown">
+            <img src={image_menu} />
+          </div>
+        )}
       </div>
     </div>
   );
