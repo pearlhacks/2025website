@@ -15,7 +15,6 @@ export const getPhotos = async () => {
     `${process.env.NEXT_PUBLIC_WEB_API}/firebase/photos/about`
   );
   const data = await response.json();
-  console.log(data);
 };
 
 export const getSchedules = async () => {
@@ -81,7 +80,6 @@ export const getPrizes = async () => {
     `${process.env.NEXT_PUBLIC_WEB_API}/sheet/prizes`
   );
   const data = await response.json();
-  console.log(data);
   const prizes: Prize[] = (data.prizes || []).map((prize: any) => ({
     category: prize.category,
     type: prize.type,
