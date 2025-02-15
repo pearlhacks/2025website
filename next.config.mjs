@@ -29,6 +29,15 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: "/(.*).(js|css|woff2|jpg|png|webp|svg)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
     ];
   },
 };
