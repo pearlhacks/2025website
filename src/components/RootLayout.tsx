@@ -27,7 +27,6 @@ export default function RootLayoutClient({
           retry: 1,
           refetchOnWindowFocus: false,
         },
-        cacheTime: 6 * 60 * 60 * 1000, // Keep cache for 6 hours
       },
     });
   });
