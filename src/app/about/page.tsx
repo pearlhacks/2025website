@@ -7,15 +7,14 @@ import Tab from "@/components/About/Tab";
 import { TabSkeleton } from "@/components/Skeletons/Tab";
 
 export default function Page() {
-  const {
-    data: directors,
-    isLoading,
-    error,
-  } = useQuery({
-    queryKey: ["directors"],
-    queryFn: getDirectors,
-  });
-
+  // const {
+  //   data: directors,
+  //   isLoading,
+  //   isError,
+  // } = useQuery({
+  //   queryKey: ["directors"],
+  //   queryFn: getDirectors,
+  // });
   return (
     <GenericLayout title="About Us">
       <div className="space-y-4 text-brown">
@@ -26,13 +25,13 @@ export default function Page() {
           <div className="flex flex-col md:flex-row items-top lg:items-center md:space-x-4">
             <div className="space-y-4">
               <p>
-                The first Pearl Hacks was held in 2014 as
-                one of the only beginner-friendly hackathons targeted towards
-                women at the time. Founded by UNC alumnus Maegan Clawges, Pearl
-                Hacks was organized in response to the boom in college
-                hackathons. These hackathons allowed participants to spend a
-                weekend bringing their technological ideas to life with the help
-                of their peers and industry professionals.
+                The first Pearl Hacks was held in 2014 as one of the only
+                beginner-friendly hackathons targeted towards women at the time.
+                Founded by UNC alumnus Maegan Clawges, Pearl Hacks was organized
+                in response to the boom in college hackathons. These hackathons
+                allowed participants to spend a weekend bringing their
+                technological ideas to life with the help of their peers and
+                industry professionals.
               </p>
               <p>
                 While all emerging hackathons were great at immersing students
@@ -44,18 +43,10 @@ export default function Page() {
                 hackathon experience that sidestepped these issues.
               </p>
             </div>
-            <img
-              src="/images/about/About_1.jpg"
-              className="object-cover mt-4 md:mt-0 md:w-1/3 rounded-md"
-            />
           </div>
         </div>
         <div className="flex flex-wrap items-center text-start space-x-4">
           <div className="flex flex-col md:flex-row items-top md:space-x-4 lg:items-center">
-            <img
-              src="/images/about/About_2.jpg"
-              className="object-cover mb-4 md:mb-0 md:w-1/3 rounded-md"
-            />
             <div className="space-y-4">
               <p>
                 By growing and learning from the last ten years of Pearl Hacks
@@ -96,12 +87,20 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-wrap items-center">
+      {/* <div className="w-full flex flex-wrap items-center">
         <h2 className="text-green font-sans font-bold text-2xl py-5">
           Meet the Team
         </h2>
-        {isLoading ? <TabSkeleton /> : <Tab directors={directors} />}
-      </div>
+        {isLoading ? (
+          <TabSkeleton />
+        ) : isError ? (
+          <p>Error loading directors</p>
+        ) : directors ? ( // Ensure directors exist before rendering
+          <Tab directors={directors} />
+        ) : (
+          <p>No data available</p> // Handle cases where API returns empty data
+        )}
+      </div> */}
     </GenericLayout>
   );
 }
