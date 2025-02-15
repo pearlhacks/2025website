@@ -1,39 +1,64 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import "../../public/globals.css";
-import { ScrollToTopButton } from "@/components/Buttons/ScrollToTop";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { persistQueryClient } from "@tanstack/react-query-persist-client";
 import { createSyncStoragePersister } from "@tanstack/query-sync-storage-persister";
+import dynamic from "next/dynamic";
+import "../../public/globals.css"; // Ensure only necessary styles are included
+
+// Lazy load the ScrollToTopButton to reduce initial bundle size
+const ScrollToTopButton = dynamic(
+  () =>
+    import("@/components/Buttons/ScrollToTop").then(
+      (mod) => mod.ScrollToTopButton
+    ),
+  { ssr: false }
+);
 
 export default function RootLayoutClient({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const [queryClient] = useState(
-    () =>
-      new QueryClient({
-        defaultOptions: {
-          queries: {
-            staleTime: 60 * 60 * 1000, // 1 hour for freshness
-            retry: 1,
-            refetchOnWindowFocus: false,
-          },
+}: Readonly<{ children: React.ReactNode }>) {
+  const [queryClient] = useState(() => {
+    return new QueryClient({
+      defaultOptions: {
+        queries: {
+          staleTime: 60 * 60 * 1000, // 1-hour cache for freshness
+          retry: 1,
+          refetchOnWindowFocus: false,
         },
-      })
-  );
+      },
+    });
+  });
 
   useEffect(() => {
-    const persister = createSyncStoragePersister({
-      storage: window.localStorage, // Using localStorage to persist cache data
-    });
+    if (typeof window !== "undefined") {
+      const persister = createSyncStoragePersister({
+        storage: window.localStorage,
+      });
 
-    persistQueryClient({
-      queryClient,
-      persister,
-    });
+      persistQueryClient({
+        queryClient,
+        persister,
+        dehydrateOptions: {
+          shouldDehydrateQuery: ({ queryKey }) => {
+            // Avoid persisting large queries
+            return !queryKey.includes("large-data-query");
+          },
+        },
+      });
+
+      // Cleanup strategy to avoid exceeding storage limits
+      const cleanupStorage = () => {
+        const keys = Object.keys(localStorage);
+        if (keys.length > 50) {
+          // Example: Remove older stored queries when exceeding 50 entries
+          localStorage.removeItem(keys[0]);
+        }
+      };
+
+      cleanupStorage();
+    }
   }, [queryClient]);
 
   return (

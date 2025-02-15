@@ -4,12 +4,8 @@ import { Schedule } from "@/utils/Types";
 import React from "react";
 import { ScheduleSkeleton } from "../Skeletons/ScheduleSkeleton";
 import {
-  BellAlertIcon,
-  BellIcon,
-  CalendarIcon,
   ClockIcon,
   LinkIcon,
-  StarIcon,
 } from "@heroicons/react/16/solid";
 import { MapPinIcon } from "@heroicons/react/24/outline";
 

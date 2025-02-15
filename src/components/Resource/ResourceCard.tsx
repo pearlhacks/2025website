@@ -1,8 +1,5 @@
 import { DevpostLink } from "@/utils/Types";
 import Link from "next/link";
-import { ReactNode } from "react";
-
-
 
 export const DevpostLinkCard = ({
   img_url,
