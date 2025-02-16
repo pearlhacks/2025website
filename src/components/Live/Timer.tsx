@@ -6,7 +6,7 @@ const Timer: React.FC = () => {
   const [label, setLabel] = useState<string>("");
 
   const codingStart = new Date("2025-02-15T11:00:00-05:00"); // Feb 15th 11:00 AM EST
-  const codingEnd = new Date("2025-02-16T23:00:00-05:00"); // Feb 16th 11:00 PM EST
+  const codingEnd = new Date("2025-02-16T11:00:00-05:00"); // Feb 16th 11:00 PM EST
 
   useEffect(() => {
     const interval = setInterval(() => {
