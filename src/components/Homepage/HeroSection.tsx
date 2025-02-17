@@ -4,7 +4,6 @@ import { Navbar } from "../Navbar/Navbar";
 import { motion } from "framer-motion";
 import StarsOverlay from "./Star";
 import Image from "next/image";
-import { RegisterButton } from "./RegisterButton";
 import { SecondaryButton } from "../Buttons/SecondaryButton";
 import { PrimaryButton } from "../Buttons/PrimaryButton";
 import { link_2026mailinglist, link_directorapp } from "@/utils/Urls";
@@ -45,12 +44,9 @@ export function HeroSection() {
               </div>
               <span className="justify-center md:justify-start flex font-medium text-brown flex-row space-x-2">
                 <ClockIcon className="w-6" />
-                <p>{now < codingStart ? "February 15-16th, 2025" : "NOW"}</p>
+                <p>Ended. Thank you for participating!</p>
               </span>
             </div>
-            {now < codingStart ? (
-              <RegisterButton />
-            ) : now > codingEnd ? (
               <div className="space-x-2 space-y-2">
                 <SecondaryButton href={link_2026mailinglist}>
                   PH2026 Mailing List
@@ -59,9 +55,6 @@ export function HeroSection() {
                   Director Interest Form
                 </PrimaryButton>
               </div>
-            ) : (
-              <SecondaryButton href={"/live"}>Live</SecondaryButton>
-            )}
           </div>
         </div>
       </div>
