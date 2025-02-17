@@ -33,11 +33,7 @@ export function Navbar({ mode }: NavbarProps) {
         </Link>
         <span className="z-30 flex flex-wrap items-center">
           <span className="hidden sm:flex flex-row space-x-4 mr-[170px]">
-            {["About", "FAQ", "Resources", "Schedule", "Live"]
-              .filter(
-                (link) =>
-                  link !== "Live" || (now >= codingStart && now <= codingEnd)
-              ) // Remove "Live" if not in time range
+            {["About", "FAQ", "Resources", "Schedule"]
               .map((link) => (
                 <div key={link}>
                   <p className="transition ease-in-out hover:text-white">
