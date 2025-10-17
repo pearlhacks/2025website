@@ -20,7 +20,7 @@ export function Navbar({ mode }: NavbarProps) {
             className={`group font-bold font-sans ${
               mode == "landing"
                 ? "hover:text-white"
-                : "bg-white text-brown hover:text-pink"
+                : "text-white hover:text-pink"
             } transition ease-in-out pr-2 rounded-lg  flex flex-row items-center space-x-2`}
           >
             <img
@@ -36,7 +36,7 @@ export function Navbar({ mode }: NavbarProps) {
             {["About", "FAQ", "Resources", "Schedule"]
               .map((link) => (
                 <div key={link}>
-                  <p className="transition ease-in-out hover:text-white">
+                  <p className="text-[#fbe8ca] transition ease-in-out hover:text-white">
                     <Link href={link.toLowerCase()}>{link}</Link>
                   </p>
                 </div>
