@@ -5,6 +5,7 @@ import { getDirectors } from "@/api/getData";
 import { useQuery } from "@tanstack/react-query";
 import Tab from "@/components/About/Tab";
 import { TabSkeleton } from "@/components/Skeletons/Tab";
+import { Accordion } from "@/components/FAQ/Accordion";
 
 export default function Page() {
   // const {
@@ -17,9 +18,9 @@ export default function Page() {
   // });
   return (
     <GenericLayout title="About Us">
-      <div className="space-y-4 text-brown">
+      <div className="space-y-4 text-brown-dark">
         <div className="flex flex-wrap items-center">
-          <h2 className="text-green font-sans font-bold text-2xl py-5">
+          <h2 className="text-pink font-sans font-bold text-2xl py-5">
             Our Beginnings
           </h2>
           <div className="flex flex-col md:flex-row items-top lg:items-center md:space-x-4">
@@ -73,7 +74,7 @@ export default function Page() {
           </SecondaryButton>
         </div>
         <div className="flex flex-wrap items-center text-start space-x-4">
-          <h2 className="text-green font-sans font-bold text-2xl py-5">
+          <h2 className="text-pink font-sans font-bold text-2xl py-5">
             Inclusivity Statement
           </h2>
           <div className="space-y-4">
@@ -88,7 +89,7 @@ export default function Page() {
         </div>
       </div>
       {/* <div className="w-full flex flex-wrap items-center">
-        <h2 className="text-green font-sans font-bold text-2xl py-5">
+        <h2 className="text-pink font-sans font-bold text-2xl py-5">
           Meet the Team
         </h2>
         {isLoading ? (

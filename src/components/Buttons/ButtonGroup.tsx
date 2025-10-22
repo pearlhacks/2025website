@@ -2,7 +2,6 @@ import { ButtonGroupProps } from "@/utils/Types";
 import Link from "next/link";
 import React from "react";
 
-
 const ButtonGroup: React.FC<ButtonGroupProps> = ({ buttons }) => {
   return (
     <div className="w-full flex flex-col md:flex-row rounded-md" role="group">

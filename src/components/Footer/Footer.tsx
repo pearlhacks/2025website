@@ -10,8 +10,8 @@ import {
 
 export function Footer() {
   return (
-    <div className="w-full bg-cover bg-bottom items-center bg-no-repeat px-5 pt-96 pb-5 md:pb-10 bg-[url('/images/PH25_Footer.svg')]">
-      <div className="flex flex-col space-y-5 md:space-y-4 divide-pink-accent divide-y">
+    <div className="w-full bg-cover bg-bottom items-center bg-no-repeat px-5 pt-96 pb-5 md:pb-10 bg-[url('/images/PH26_Footer.svg')]">
+      <div className="flex flex-col space-y-5 md:space-y-4 divide-brown-transition divide-y">
         <div className="grid grid-cols-1 md:grid-cols-3 justify-left md:justify-center items-start gap-2 md:gap-4">
           <span className="hidden sm:block">
             <FooterContent title="Keep up with us">
@@ -31,7 +31,7 @@ export function Footer() {
             respectful of our participants’ identities and expressions.
           </FooterContent>
         </div>
-        <div className="flex  py-2 md:py-5 text-pink-accent w-full flex-col justify-start md:flex-row md:justify-between items-center">
+        <div className="flex  py-2 md:py-5 text-brown-transition w-full flex-col justify-start md:flex-row md:justify-between items-center">
           <span className="flex flex-row items-center space-x-1">
             <p>Made with</p> <HeartIcon className="w-4 h-4" />{" "}
             <p>by Pearl Hacks</p>

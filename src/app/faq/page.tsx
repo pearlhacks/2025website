@@ -1,4 +1,5 @@
 "use client";
+console.log("FAQ Accordion bundle LOADED");
 
 import { Accordion } from "@/components/FAQ/Accordion";
 import { GenericLayout } from "@/components/GenericLayout";
@@ -42,7 +43,7 @@ export default function Page() {
     return (
       <GenericLayout title="FAQ">
         <div className="flex justify-center items-center min-h-[200px]">
-          <p className="text-red-500">
+          <p className="text-pink">
             Error loading FAQs. Please try again later.
           </p>
         </div>
@@ -61,9 +62,7 @@ export default function Page() {
       <HackerGuideLink />
       {faqsByCategory.map(({ category, faqs }) => (
         <div className="pb-5" key={category}>
-          <h2 className="text-green font-sans font-bold text-2xl">
-            {category}
-          </h2>
+          <h2 className="text-pink font-sans font-bold text-2xl">{category}</h2>
           <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-5 gap-x-10">
             {faqs.map((faq) => (
               <Accordion
@@ -76,7 +75,7 @@ export default function Page() {
         </div>
       ))}
       <div className="w-full flex flex-col items-center text-center pt-10">
-        <p className="text-pink-transition font-medium">
+        <p className="text-brown-transition font-medium">
           Can&apos;t find what you&apos;re looking for? Reach out to us through
           any of these channels
         </p>
