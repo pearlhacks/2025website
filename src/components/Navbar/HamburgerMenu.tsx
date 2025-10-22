@@ -15,9 +15,9 @@ export default function HamburgerMenu({ mode }: HamburgerMenuProps) {
 
   const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
   const color = mode === "landing" ? "brown" : "pink";
-    const codingStart = new Date("2025-02-15T00:00:00-05:00");
-    const codingEnd = new Date("2025-02-16T23:00:00-05:00");
-    const now = new Date();
+  const codingStart = new Date("2025-02-15T00:00:00-05:00");
+  const codingEnd = new Date("2025-02-16T23:00:00-05:00");
+  const now = new Date();
 
   const navContainer = {
     visible: {
@@ -57,12 +57,11 @@ export default function HamburgerMenu({ mode }: HamburgerMenuProps) {
             variants={navContainer}
           >
             <div className="block text-brown w-screen sm:hidden absolute flex flex-col items-end right-0 top-0 pt-28 z-38 bg-white p-8 space-y-4 transition ease-in-out delay-150">
-              {["About", "FAQ", "Resources", "Schedule"]
-                .map((link) => (
-                  <NavItem key={link}>
-                    <Link href={link.toLowerCase()}>{link}</Link>
-                  </NavItem>
-                ))}
+              {["About", "FAQ", "Resources", "Schedule"].map((link) => (
+                <NavItem key={link}>
+                  <Link href={link.toLowerCase()}>{link}</Link>
+                </NavItem>
+              ))}
             </div>
           </motion.div>
         )}

@@ -20,11 +20,11 @@ export function Navbar({ mode }: NavbarProps) {
             className={`group font-bold font-sans ${
               mode == "landing"
                 ? "hover:text-white"
-                : "bg-white text-brown hover:text-pink"
+                : "bg-brown-dark text-white hover:text-cream"
             } transition ease-in-out pr-2 rounded-lg  flex flex-row items-center space-x-2`}
           >
             <img
-              src="/images/PH2025Logo.svg"
+              src="/images/PH2026Logo.svg"
               className="w-10 h-10 group-hover:opacity-50"
               alt="Pearl Hacks Logo"
             />
@@ -33,14 +33,13 @@ export function Navbar({ mode }: NavbarProps) {
         </Link>
         <span className="z-30 flex flex-wrap items-center">
           <span className="hidden sm:flex flex-row space-x-4 mr-[170px]">
-            {["About", "FAQ", "Resources", "Schedule"]
-              .map((link) => (
-                <div key={link}>
-                  <p className="transition ease-in-out hover:text-white">
-                    <Link href={link.toLowerCase()}>{link}</Link>
-                  </p>
-                </div>
-              ))}
+            {["About", "FAQ", "Resources", "Schedule"].map((link) => (
+              <div key={link}>
+                <p className="text-cream transition ease-in-out hover:text-white">
+                  <Link href={link.toLowerCase()}>{link}</Link>
+                </p>
+              </div>
+            ))}
           </span>
 
           <a

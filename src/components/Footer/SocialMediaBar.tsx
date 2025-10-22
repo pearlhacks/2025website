@@ -8,7 +8,7 @@ export function SocialMediaBar() {
       <Link href={social_linkedin}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-6=5 hover:text-pink transition ease-in-out"
+          className="h-5 w-6=5 text-brown-light hover:text-white transition ease-in-out"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -18,7 +18,7 @@ export function SocialMediaBar() {
       <Link href={social_github}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 hover:text-pink transition ease-in-out"
+          className="h-5 w-5 text-brown-light hover:text-white transition ease-in-out"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -26,7 +26,7 @@ export function SocialMediaBar() {
         </svg>
       </Link>
       <Link href={social_email}>
-        <EnvelopeIcon className="h-6 w-6 hover:text-pink transition ease-in-out" />
+        <EnvelopeIcon className="h-6 w-6 text-brown-light hover:text-white transition ease-in-out" />
       </Link>
     </div>
   );

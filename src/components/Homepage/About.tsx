@@ -1,7 +1,7 @@
 import { SecondaryButton } from "../Buttons/SecondaryButton";
 import { TrackCard } from "./TrackCard";
-import track1Icon from "../../../public/images/tracks/track_1.svg";
-import track2Icon from "../../../public/images/tracks/track_2.svg";
+import track1Icon from "../../../public/images/tracks/Beginner_s Track.svg";
+import track2Icon from "../../../public/images/tracks/Regular Track.svg";
 export function About() {
   return (
     <div className="bg-pink-accent justify-center items-center text-center pt-20 sm:pt-40 px-5 space-y-8">

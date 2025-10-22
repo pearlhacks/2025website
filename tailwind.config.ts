@@ -13,30 +13,27 @@ const config: Config = {
     },
     extend: {
       backgroundImage: {
-        landing: "url(/images/landing/PH2025_WebsiteLanding.svg')",
+        landing: "url('/images/landing/PH26_Landing.svg')",
       },
       colors: {
         brown: {
-          DEFAULT: "#9a5c38",
-          transition: "#713f12",
+          light: "#CA8E5C",
+          DEFAULT: "#752E1A",
+          dark: "#5D2515",
+          mid: "#B2652B",
+          accent: "#B3662A",
+          transition: "#cb905c",
+        },
+        cream: {
+          DEFAULT: "#FBE8CA",
+        },
+        white: "#FFFFFF",
+        blue: {
+          DEFAULT: "#7ac0e6",
+          light: "#9ccce6",
         },
         pink: {
-          200: "#FAE3E1",
-          DEFAULT: "#ffd0cc",
-          accent: "#f18e87",
-          transition: "#DE6F67",
-        },
-        green: {
-          DEFAULT: "#96b548",
-          transition: "#65a30d",
-        },
-        yellow: {
-          DEFAULT: "#fad53f",
-        },
-        background: {
-          top: "#E3938B",
-          transition: "#DE6F67",
-          secondary: "#F7D2CD",
+          DEFAULT: "#e57794",
         },
       },
     },
