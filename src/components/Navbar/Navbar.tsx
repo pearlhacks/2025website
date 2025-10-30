@@ -6,14 +6,15 @@ interface NavbarProps {
 }
 
 export function Navbar({ mode }: NavbarProps) {
-  const color = mode === "landing" ? "brown" : "pink";
   const codingStart = new Date("2025-02-15T00:00:00-05:00");
   const codingEnd = new Date("2025-02-16T23:00:00-05:00");
   const now = new Date();
   return (
     <>
       <div
-        className={`w-full h-full text-${color} text-md flex flex-row items-center justify-between p-5`}
+        className={`w-full h-full text-md flex flex-row items-center justify-between p-5 ${
+          mode === "landing" ? "text-brown" : "text-pink"
+        }`}
       >
         <Link className="z-30" href="/">
           <span
@@ -36,7 +37,7 @@ export function Navbar({ mode }: NavbarProps) {
             {["About", "FAQ", "Resources", "Schedule"]
               .map((link) => (
                 <div key={link}>
-                  <p className="text-[#fbe8ca] transition ease-in-out hover:text-white">
+                  <p className="text-yellow-light transition ease-in-out hover:text-white">
                     <Link href={link.toLowerCase()}>{link}</Link>
                   </p>
                 </div>

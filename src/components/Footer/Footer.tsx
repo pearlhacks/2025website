@@ -31,7 +31,7 @@ export function Footer() {
             respectful of our participants' identities and expressions.
           </FooterContent>
         </div>
-        <div className="flex  py-2 md:py-5 text-[#cb915c] w-full flex-col justify-start md:flex-row md:justify-between items-center">
+        <div className="flex  py-2 md:py-5 text-brown-lighter w-full flex-col justify-start md:flex-row md:justify-between items-center">
           <span className="flex flex-row items-center space-x-1">
             <p>Made with</p> <HeartIcon className="w-4 h-4" />{" "}
             <p>by Pearl Hacks</p>
