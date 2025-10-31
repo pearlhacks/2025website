@@ -9,14 +9,33 @@ interface GenericLayoutProps {
 
 export function GenericLayout({ title, children }: GenericLayoutProps) {
   return (
-    <div className="w-full bg-pink h-full">
-      <div className="relative bg-cover justify-center text-center pb-72 bg-center bg-no-repeat bg-[url('/images/generic/PH2025_Header.svg')]">
+    <div className="w-full bg-yellow-light h-full">
+      <div className="relative bg-brown-dark">
         <Navbar mode="generic" />
-        <h2 className="pt-20 text-white font-sans font-bold text-4xl">
-          {title}
-        </h2>
+        <div className="relative z-20 pt-4 pb-4 flex justify-center items-center -mt-16">
+          <img
+            src="/images/generic/sign.svg"
+            alt="Sign"
+            className="absolute w-96 h-auto z-20 translate-y-16"
+          />
+          <h2 className="relative z-20 text-white font-sans font-bold text-4xl py-8 translate-y-16">
+            {title}
+          </h2>
+        </div>
+        <div className="relative overflow-hidden h-24">
+          <img
+            src="/images/generic/PH2026_Header.svg"
+            alt="Blue stripes"
+            className="absolute -top-20 left-0 w-full"
+          />
+        </div>
       </div>
-      <div className="bg-pink text-pink-accent p-5 place-items-center">
+      <img
+        src="/images/generic/awning.svg"
+        alt="Awning decoration"
+        className="w-full h-auto scale-y-75 -mt-32"
+      />
+      <div className="bg-yellow-light text-pink-accent p-5 place-items-center">
         {children}
       </div>
       <Footer />

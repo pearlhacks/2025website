@@ -101,7 +101,7 @@ export default function Page() {
     const eventsToDisplay = categorizedEvents[currentTab] || [];
     if (eventsToDisplay.length === 0) {
       return (
-        <p className="text-center">
+        <p className="text-brown-light text-center">
           No events coming up. Check back with us soon!
         </p>
       );
@@ -119,8 +119,8 @@ export default function Page() {
             onClick={() => setCurrentTab("upcoming")}
             className={`${
               currentTab === "upcoming"
-                ? "bg-pink-200 border-b-2 border-brown text-brown-transition"
-                : "bg-brown border-b-2 border-brown hover:bg-brown-transition text-white"
+                ? "bg-brown-darker border-b-2 border-brown-darker text-white"
+                : "bg-brown-darker border-b-2 border-brown-darker hover:opacity-80 text-white"
             } `}
           >
             This week
@@ -129,8 +129,8 @@ export default function Page() {
             onClick={() => setCurrentTab("workshops")}
             className={`${
               currentTab === "workshops"
-                ? "bg-pink-200 border-b-2 border-pink-accent text-brown-transition"
-                : "bg-pink-accent hover:bg-pink-transition text-white"
+                ? "bg-brown-light border-b-2 border-brown-light text-white"
+                : "bg-brown-light hover:opacity-80 text-white"
             } `}
           >
             Workshops
@@ -139,8 +139,8 @@ export default function Page() {
             onClick={() => setCurrentTab("day1")}
             className={`${
               currentTab === "day1"
-                ? "bg-pink-200 bg-background-secondary border-b-2 border-green text-brown-transition"
-                : "bg-green hover:bg-green-transition text-white"
+                ? "bg-blue border-b-2 border-blue text-white"
+                : "bg-blue hover:opacity-80 text-white"
             } `}
           >
             Day 1
@@ -149,8 +149,8 @@ export default function Page() {
             onClick={() => setCurrentTab("day2")}
             className={`${
               currentTab === "day2"
-                ? "bg-pink-200 bg-background-secondary border-b-2 border-yellow-400 text-brown-transition"
-                : "bg-yellow hover:bg-yellow text-white"
+                ? "bg-pink-light border-b-2 border-pink-light text-white"
+                : "bg-pink-light hover:opacity-80 text-white"
             } `}
           >
             Day 2
