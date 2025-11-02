@@ -12,7 +12,7 @@ export function Navbar({ mode }: NavbarProps) {
   return (
     <>
       <div
-        className={`w-full h-full ${mode === "landing" ? "bg-cream" : ""} text-${color} text-md flex flex-row items-center justify-between p-5`}
+        className={`w-full h-full ${mode === "landing" ? "bg-cream text-brown" : "text-pink"} text-md flex flex-row items-center justify-between p-5`}
       >
         <Link className="z-30" href="/">
           <span
