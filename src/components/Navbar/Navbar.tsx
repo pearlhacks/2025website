@@ -6,7 +6,6 @@ interface NavbarProps {
 }
 
 export function Navbar({ mode }: NavbarProps) {
-  const color = mode === "landing" ? "brown" : "pink";
   const codingStart = new Date("2025-02-15T00:00:00-05:00");
   const codingEnd = new Date("2025-02-16T23:00:00-05:00");
   const now = new Date();

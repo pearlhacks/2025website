@@ -101,7 +101,7 @@ export default function Page() {
     const eventsToDisplay = categorizedEvents[currentTab] || [];
     if (eventsToDisplay.length === 0) {
       return (
-        <p className="text-brown text-center">
+        <p className="text-brown-light text-center">
           No events coming up. Check back with us soon!
         </p>
       );
