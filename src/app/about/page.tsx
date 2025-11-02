@@ -19,10 +19,10 @@ export default function Page() {
     <GenericLayout title="About Us">
       <div className="space-y-4 text-brown">
         <div className="flex flex-wrap items-center">
-          <h2 className="text-green font-sans font-bold text-2xl py-5">
+          <h2 className="font-sans font-bold text-2xl py-5 text-pink">
             Our Beginnings
           </h2>
-          <div className="flex flex-col md:flex-row items-top lg:items-center md:space-x-4">
+          <div className="flex flex-col md:flex-row items-top lg:items-center md:space-x-4 text-brown">
             <div className="space-y-4">
               <p>
                 The first Pearl Hacks was held in 2014 as one of the only
@@ -45,7 +45,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap items-center text-start space-x-4">
+        <div className="flex flex-wrap items-center text-start space-x-4 text-brown">
           <div className="flex flex-col md:flex-row items-top md:space-x-4 lg:items-center">
             <div className="space-y-4">
               <p>
@@ -73,10 +73,10 @@ export default function Page() {
           </SecondaryButton>
         </div>
         <div className="flex flex-wrap items-center text-start space-x-4">
-          <h2 className="text-green font-sans font-bold text-2xl py-5">
+          <h2 className="font-sans font-bold text-2xl py-5 text-pink">
             Inclusivity Statement
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-4 text-brown">
             <p>
               Pearl Hacks is an event designed to uplift and center women and
               gender non-conforming individuals in tech. We expect all of our

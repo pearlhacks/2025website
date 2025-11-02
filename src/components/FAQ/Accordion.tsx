@@ -23,7 +23,7 @@ export function Accordion({ question, answer }: AccordionProps) {
           isOpen ? "rounded-b-none" : ""
         } justify-between bg-white`}
       >
-        <h3 className="text-pink-transition font-medium text-md">{question}</h3>
+        <h3 className="text-brown font-medium text-md">{question}</h3>
 
         <button
           className="text-brown w-4 h-4 rounded-full"

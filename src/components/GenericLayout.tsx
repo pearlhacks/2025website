@@ -9,8 +9,8 @@ interface GenericLayoutProps {
 
 export function GenericLayout({ title, children }: GenericLayoutProps) {
   return (
-    <div className="w-full bg-[#fbe8ca] h-full">
-      <div className="relative bg-[#5d2514]">
+    <div className="w-full bg-cream h-full">
+      <div className="relative bg-brown">
         <Navbar mode="generic" />
         <div className="relative z-20 pt-4 pb-4 flex justify-center items-center -mt-16">
           <img
@@ -35,7 +35,7 @@ export function GenericLayout({ title, children }: GenericLayoutProps) {
         alt="Awning decoration"
         className="w-full h-auto scale-y-75 -mt-32"
       />
-      <div className="bg-[#fbe8ca] text-pink-accent p-5 place-items-center">
+      <div className="bg-cream text-pink-accent p-5 place-items-center">
         {children}
       </div>
       <Footer />

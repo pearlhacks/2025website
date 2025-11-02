@@ -8,9 +8,15 @@ import {
   social_email,
 } from "@/utils/Urls";
 
-export function Footer() {
+interface FooterProps {
+  backgroundColor?: "landing" | "generic";
+}
+
+export function Footer({ backgroundColor = "generic" }: FooterProps) {
+  const bgColor = backgroundColor === "landing" ? "bg-brown-light" : "bg-cream";
+
   return (
-    <div className="w-full bg-cover bg-top items-center bg-no-repeat px-5 pt-[500px] pb-5 md:pb-10 bg-[url('/images/PH26_Footer.svg')]">
+    <div className={`w-full ${bgColor} bg-cover bg-top items-center bg-no-repeat px-5 pt-[200px] sm:pt-[300px] md:pt-[400px] lg:pt-[500px] pb-5 md:pb-10 bg-[url('/images/PH26_Footer.svg')]`}>
       <div className="flex flex-col space-y-5 md:space-y-4 divide-[#8B6F5C] divide-y">
         <div className="grid grid-cols-1 md:grid-cols-3 justify-left md:justify-center items-start gap-2 md:gap-4">
           <span className="hidden sm:block">
@@ -31,7 +37,7 @@ export function Footer() {
             respectful of our participants' identities and expressions.
           </FooterContent>
         </div>
-        <div className="flex  py-2 md:py-5 text-[#cb915c] w-full flex-col justify-start md:flex-row md:justify-between items-center">
+        <div className="flex  py-2 md:py-5 text-brown-footer w-full flex-col justify-start md:flex-row md:justify-between items-center">
           <span className="flex flex-row items-center space-x-1">
             <p>Made with</p> <HeartIcon className="w-4 h-4" />{" "}
             <p>by Pearl Hacks</p>

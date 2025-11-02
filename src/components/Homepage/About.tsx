@@ -1,14 +1,14 @@
 import { SecondaryButton } from "../Buttons/SecondaryButton";
 import { TrackCard } from "./TrackCard";
-import track1Icon from "../../../public/images/tracks/track_1.svg";
-import track2Icon from "../../../public/images/tracks/track_2.svg";
+import track1Icon from "../../../public/images/tracks/beginner_track.svg";
+import track2Icon from "../../../public/images/tracks/regular_track.svg";
 export function About() {
   return (
-    <div className="bg-pink-accent justify-center items-center text-center pt-20 sm:pt-40 px-5 space-y-8">
+    <div className="bg-brown justify-center items-center text-center pt-20 sm:pt-40 px-5 space-y-8">
       <h2 className="text-white font-sans font-bold text-2xl">
         What is Pearl Hacks?
       </h2>
-      <div className="text-center space-y-2 text-pink-200">
+      <div className="text-center space-y-2 text-cream">
         <p>
           Pearl Hacks is a hackathon for women and gender non-conforming
           individuals in tech. We especially cater to first-time hackers who are
@@ -22,8 +22,8 @@ export function About() {
         </p>
       </div>
       <div className="space-x-2">
-        <SecondaryButton href="/about">Learn more</SecondaryButton>
-        <SecondaryButton href="https://pearlhacks2024.devpost.com/">
+        <SecondaryButton href="/about" textColor="text-brown" hoverTextColor="hover:text-white">Learn more</SecondaryButton>
+        <SecondaryButton href="https://pearlhacks2024.devpost.com/" textColor="text-brown" hoverTextColor="hover:text-white">
           Show past projects
         </SecondaryButton>
         {/* <div className="relative inset-0 flex">
@@ -36,9 +36,9 @@ export function About() {
       <div className="pt-8 space-y-8">
         <div className="justify-center items-center space-x-2 flex flex-row">
           <h2 className="text-white font-sans font-bold text-2xl">Tracks</h2>
-          <div className="p-1 text-center text-xs rounded-md bg-pink-transition text-white">
+          {/* <div className="p-1 text-center text-xs rounded-md bg-pink-transition text-white">
             NEW!
-          </div>
+          </div> */}
         </div>
         <div className="w-full flex flex-col justify-center px-8 gap-5 md:flex-row">
           <TrackCard

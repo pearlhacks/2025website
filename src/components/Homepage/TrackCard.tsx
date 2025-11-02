@@ -19,7 +19,7 @@ export const TrackCard: React.FC<TrackCardProps> = ({
   return (
     <motion.div
       className={`w-full h-48 md:w-1/2 rounded-md flex items-center justify-center p-5 ${
-        hidden ? "bg-pink" : "bg-white border-double border-8 border-pink"
+        hidden ? "bg-cream" : "bg-cream border-double border-8 border-brown"
       } cursor-pointer`}
       onClick={() => setHidden(!hidden)}
       animate={{ rotateY: hidden ? 0 : 180 }}
