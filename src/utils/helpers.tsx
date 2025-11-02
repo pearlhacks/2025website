@@ -42,7 +42,7 @@ export const formatContent = (text: string) => {
       }
 
       // Add the link
-      parts.push(<Link href={linkMatch[2]}>{linkMatch[1]}</Link>);
+      parts.push(<Link key={key++} href={linkMatch[2]}>{linkMatch[1]}</Link>);
 
       lastIndex = linkMatch.index + linkMatch[0].length;
     }

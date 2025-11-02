@@ -55,7 +55,7 @@ export default function Page() {
       <HackerGuideLink />
       <div className="w-full max-w-7xl mx-auto space-y-8 px-4 sm:px-6 lg:px-8">
         <div className="w-full">
-          <h2 className="text-pink-red font-sans font-bold text-2xl pb-5">
+          <h2 className="text-pink font-sans font-bold text-2xl pb-5">
             Past Projects
           </h2>
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -81,7 +81,7 @@ export default function Page() {
         </div>
 
         <div className="w-full">
-          <h2 className="text-pink-red font-sans font-bold text-2xl pb-5">
+          <h2 className="text-pink font-sans font-bold text-2xl pb-5">
             Useful Tools & Articles
           </h2>
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">

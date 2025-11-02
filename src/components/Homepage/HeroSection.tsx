@@ -14,7 +14,7 @@ export function HeroSection() {
   const now = new Date();
   return (
     <>
-      <div className="bg-cover bg-center bg-no-repeat bg-[url('/images/landing/PH2025_WebsiteLanding.svg')]">
+      <div className="bg-cream bg-cover bg-center bg-no-repeat bg-[url('/images/landing/PH2026_WebsiteLanding.svg')]">
         <StarsOverlay />
         <Navbar mode="landing" />
         <div className="z-10 w-full p-10 pb-20 md:pb-52 space-x-4 flex flex-wrap items-center justify-center">
@@ -25,8 +25,8 @@ export function HeroSection() {
             className="relative sm:w-2/3 md:w-2/5 h-auto"
           >
             <Image
-              src="/images/landing/PH2025_MG.svg"
-              alt="Pearl Hacks 2025 Logo"
+              src="/images/landing/PH2026_MG.svg"
+              alt="Pearl Hacks 2026 Logo"
               width={500} // Adjust based on design
               height={500} // Adjust based on design
               priority // Ensures this image loads first
@@ -35,10 +35,8 @@ export function HeroSection() {
           <div className="z-10 space-y-4 text-center md:text-left">
             <div>
               <div className="font-sans">
-                <h2 className="text-xl font-bold text-pink-accent italic">
-                  sprout with
-                </h2>
-                <h1 className="text-white text-5xl font-bold uppercase">
+                <h2 className="text-xl font-bold text-brown-medium italic"> brew with </h2>
+                <h1 className="text-brown text-5xl font-bold uppercase">
                   Pearl Hacks
                 </h1>
               </div>

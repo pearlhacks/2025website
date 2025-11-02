@@ -61,7 +61,7 @@ export default function Page() {
       <HackerGuideLink />
       {faqsByCategory.map(({ category, faqs }) => (
         <div className="pb-5" key={category}>
-          <h2 className="text-green font-sans font-bold text-2xl">
+          <h2 className="font-sans font-bold text-2xl text-pink">
             {category}
           </h2>
           <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-5 gap-x-10">
@@ -76,7 +76,7 @@ export default function Page() {
         </div>
       ))}
       <div className="w-full flex flex-col items-center text-center pt-10">
-        <p className="text-pink-transition font-medium">
+        <p className="text-brown font-medium">
           Can&apos;t find what you&apos;re looking for? Reach out to us through
           any of these channels
         </p>

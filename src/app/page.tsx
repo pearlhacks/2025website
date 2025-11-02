@@ -28,22 +28,7 @@ export default function Home() {
       <HeroSection />
       <About />
       {sponsors && <Sponsor sponsors={sponsors} />}
-      <span className="block lg:hidden">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-      </span>
-      <Footer />
+      <Footer backgroundColor="landing" />
     </div>
   );
 }

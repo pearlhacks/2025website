@@ -13,44 +13,39 @@ const config: Config = {
     },
     extend: {
       backgroundImage: {
-        landing: "url(/images/landing/PH2025_WebsiteLanding.svg')",
+        landing: "url(/images/landing/PH2026_WebsiteLanding.svg')",
       },
       colors: {
+        // Primary brand colors - browns
         brown: {
-          DEFAULT: "#9a5c38",
-          dark: "#5d2514",
-          darker: "#5d2516",
-          transition: "#713f12",
-          light: "#ca8d5c",
-          lighter: "#cb915c",
+          DEFAULT: "#5d2516", // Primary dark brown text
+          light: "#ca8d5c", // Light brown for accents/buttons
+          footer: "#cb915c", // Footer text color
+          dark: "#6D2A1B", // Dark brown for About section background
+          medium: "#B2652B", // Medium brown for "brew with" text
         },
+        // Secondary brand colors - pinks
         pink: {
-          200: "#FAE3E1",
-          DEFAULT: "#ffd0cc",
-          accent: "#f18e87",
-          transition: "#DE6F67",
-          light: "#ff99bb",
-          red: "#e57794",
+          DEFAULT: "#E57794", // Primary pink for headings
+          light: "#ff99bb", // Light pink for accents
+          soft: "#FAE3E1", // Soft pink background
+          accent: "#f18e87", // Pink accent color
+          transition: "#DE6F67", // Pink transition/darker shade
         },
-        green: {
-          DEFAULT: "#96b548",
-          transition: "#65a30d",
-        },
-        yellow: {
-          DEFAULT: "#fad53f",
-          light: "#fbe8ca",
-        },
+        // Accent colors - blues
         blue: {
-          DEFAULT: "#7ac0e6",
-          light: "#9ccce6",
-          lighter: "#7fb8d8",
+          DEFAULT: "#7ac0e6", // Primary blue for buttons
+          light: "#9ccce6", // Light blue for links
+          hover: "#7fb8d8", // Blue hover state
         },
-        background: {
-          top: "#E3938B",
-          transition: "#DE6F67",
-          secondary: "#F7D2CD",
-          cream: "#fbe8ca",
-          white: "#fffbf7",
+        // Background colors - creams
+        cream: {
+          DEFAULT: "#fbe8ca", // Primary cream background
+          light: "#fffbf7", // Light cream for cards
+        },
+        // Utility colors
+        green: {
+          DEFAULT: "#96b548", // Kept for future use
         },
       },
     },

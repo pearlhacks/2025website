@@ -119,8 +119,8 @@ export default function Page() {
             onClick={() => setCurrentTab("upcoming")}
             className={`${
               currentTab === "upcoming"
-                ? "bg-brown-darker border-b-2 border-brown-darker text-white"
-                : "bg-brown-darker border-b-2 border-brown-darker hover:opacity-80 text-white"
+                ? "bg-brown border-b-2 border-brown text-white"
+                : "bg-brown border-b-2 border-brown hover:opacity-80 text-white"
             } `}
           >
             This week
