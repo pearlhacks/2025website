@@ -72,18 +72,20 @@ export default function Page() {
             Learn more
           </SecondaryButton>
         </div>
-        <div className="flex flex-wrap items-center text-start space-x-4">
+        <div className="flex flex-wrap items-center">
           <h2 className="font-sans font-bold text-2xl py-5 text-pink">
             Inclusivity Statement
           </h2>
-          <div className="space-y-4 text-brown">
-            <p>
-              Pearl Hacks is an event designed to uplift and center women and
-              gender non-conforming individuals in tech. We expect all of our
-              mentors, volunteers, participants, directors, sponsors, judges,
-              and visitors to be respectful of our participants’ gender
-              identities and expressions.
-            </p>
+          <div className="flex flex-col md:flex-row items-top lg:items-center md:space-x-4 text-brown">
+            <div className="space-y-4">
+              <p>
+                Pearl Hacks is an event designed to uplift and center women and
+                gender non-conforming individuals in tech. We expect all of our
+                mentors, volunteers, participants, directors, sponsors, judges,
+                and visitors to be respectful of our participants' gender
+                identities and expressions.
+              </p>
+            </div>
           </div>
         </div>
       </div>

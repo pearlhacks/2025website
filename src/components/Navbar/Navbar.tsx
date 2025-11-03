@@ -19,7 +19,7 @@ export function Navbar({ mode }: NavbarProps) {
             className={`group font-bold font-sans ${
               mode == "landing"
                 ? "text-brown hover:text-brown-light"
-                : "bg-white text-brown hover:text-white"
+                : "text-cream hover:text-white"
             } transition ease-in-out pr-2 rounded-lg  flex flex-row items-center space-x-2`}
           >
             <img

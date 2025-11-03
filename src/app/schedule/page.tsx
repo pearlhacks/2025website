@@ -9,7 +9,7 @@ import { ScheduleEventCard } from "@/components/Schedule/ScheduleEventCards";
 import { parseISO, isThisWeek, parse } from "date-fns";
 import { Schedule } from "@/utils/Types";
 import { ScheduleSkeleton } from "@/components/Skeletons/ScheduleSkeleton";
-import { HackerGuideLink } from "@/components/HackerGuideLink";
+// import { HackerGuideLink } from "@/components/HackerGuideLink";
 
 export default function Page() {
   const [currentTab, setCurrentTab] = useState<
@@ -112,7 +112,7 @@ export default function Page() {
   return (
     <GenericLayout title="Schedule">
       <div className="w-full flex flex-col items-center space-y-20 text-brown">
-        <HackerGuideLink />
+        {/* <HackerGuideLink /> */}
 
         <div className="w-full flex overflow-x-auto flex-start md:justify-center space-x-20">
           <ScheduleButton

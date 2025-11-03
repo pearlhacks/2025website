@@ -16,7 +16,7 @@ export function Footer({ backgroundColor = "generic" }: FooterProps) {
   const bgColor = backgroundColor === "landing" ? "bg-brown-light" : "bg-cream";
 
   return (
-    <div className={`w-full ${bgColor} bg-cover bg-top items-center bg-no-repeat px-5 pt-[200px] sm:pt-[300px] md:pt-[400px] lg:pt-[500px] pb-5 md:pb-10 bg-[url('/images/PH26_Footer.svg')]`}>
+    <div className={`w-full ${bgColor} bg-cover bg-top items-center bg-no-repeat px-5 pt-[200px] sm:pt-[300px] md:pt-[400px] lg:pt-[500px] pb-5 md:pb-10 bg-[url('/images/PH26_Footer_1.svg')]`}>
       <div className="flex flex-col space-y-5 md:space-y-4 divide-[#8B6F5C] divide-y">
         <div className="grid grid-cols-1 md:grid-cols-3 justify-left md:justify-center items-start gap-2 md:gap-4">
           <span className="hidden sm:block">
