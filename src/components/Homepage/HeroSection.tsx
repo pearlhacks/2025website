@@ -82,7 +82,7 @@ export function HeroSection() {
             <div>
               <div className="font-sans">
                 <h2 className="text-xl font-bold text-brown-medium italic"> brew with </h2>
-                <h1 className="text-brown text-5xl font-bold uppercase">
+                <h1 className="text-brown-dark md:text-brown text-5xl font-bold uppercase">
                   Pearl Hacks
                 </h1>
               </div>
@@ -92,58 +92,58 @@ export function HeroSection() {
                   <p>Ended. Thank you for participating!</p>
                 </span>
               ) : eventStatus === "during" ? (
-                <div className="justify-center md:justify-start">
-                  <span className="flex font-medium text-brown flex-row space-x-2 mb-2">
+                <div>
+                  <span className="flex justify-center md:justify-start font-medium text-brown flex-row space-x-2 mb-2">
                     <ClockIcon className="w-6" />
                     <p>Event is live! Time remaining:</p>
                   </span>
                   <div className="flex gap-3 justify-center md:justify-start">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-brown">{timeLeft.days}</div>
-                      <div className="text-xs text-brown-medium">DAYS</div>
+                      <div className="text-xs font-bold text-brown-medium">DAYS</div>
                     </div>
                     <div className="text-3xl font-bold text-brown">:</div>
                     <div className="text-center">
                       <div className="text-3xl font-bold text-brown">{String(timeLeft.hours).padStart(2, '0')}</div>
-                      <div className="text-xs text-brown-medium">HOURS</div>
+                      <div className="text-xs font-bold text-brown-medium">HOURS</div>
                     </div>
                     <div className="text-3xl font-bold text-brown">:</div>
                     <div className="text-center">
                       <div className="text-3xl font-bold text-brown">{String(timeLeft.minutes).padStart(2, '0')}</div>
-                      <div className="text-xs text-brown-medium">MIN</div>
+                      <div className="text-xs font-bold text-brown-medium">MIN</div>
                     </div>
                     <div className="text-3xl font-bold text-brown">:</div>
                     <div className="text-center">
                       <div className="text-3xl font-bold text-brown">{String(timeLeft.seconds).padStart(2, '0')}</div>
-                      <div className="text-xs text-brown-medium">SEC</div>
+                      <div className="text-xs font-bold text-brown-medium">SEC</div>
                     </div>
                   </div>
                 </div>
               ) : (
-                <div className="justify-center md:justify-start">
-                  <span className="flex font-medium text-brown flex-row space-x-2 mb-2">
+                <div>
+                  <span className="flex justify-center md:justify-start font-medium text-brown flex-row space-x-2 mb-2">
                     <ClockIcon className="w-6" />
                     <p>Countdown to Pearl Hacks 2026</p>
                   </span>
                   <div className="flex gap-3 justify-center md:justify-start">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-brown">{timeLeft.days}</div>
-                      <div className="text-xs text-brown-medium">DAYS</div>
+                      <div className="text-xs font-bold text-brown-medium">DAYS</div>
                     </div>
                     <div className="text-3xl font-bold text-brown">:</div>
                     <div className="text-center">
                       <div className="text-3xl font-bold text-brown">{String(timeLeft.hours).padStart(2, '0')}</div>
-                      <div className="text-xs text-brown-medium">HOURS</div>
+                      <div className="text-xs font-bold text-brown-medium">HOURS</div>
                     </div>
                     <div className="text-3xl font-bold text-brown">:</div>
                     <div className="text-center">
                       <div className="text-3xl font-bold text-brown">{String(timeLeft.minutes).padStart(2, '0')}</div>
-                      <div className="text-xs text-brown-medium">MIN</div>
+                      <div className="text-xs font-bold text-brown-medium">MIN</div>
                     </div>
                     <div className="text-3xl font-bold text-brown">:</div>
                     <div className="text-center">
                       <div className="text-3xl font-bold text-brown">{String(timeLeft.seconds).padStart(2, '0')}</div>
-                      <div className="text-xs text-brown-medium">SEC</div>
+                      <div className="text-xs font-bold text-brown-medium">SEC</div>
                     </div>
                   </div>
                 </div>
