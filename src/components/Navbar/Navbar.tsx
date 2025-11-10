@@ -32,7 +32,7 @@ export function Navbar({ mode }: NavbarProps) {
         </Link>
         <span className="z-30 flex flex-wrap items-center">
           <span className="hidden sm:flex flex-row space-x-4 mr-[170px]">
-            {["About", "FAQ", "Resources", "Schedule"]
+            {["About", "FAQ", "Resources", "Schedule", "Programs"]
               .map((link) => (
                 <div key={link}>
                   <p className={`${mode === "landing" ? "text-brown hover:text-brown-light" : "text-cream hover:text-white"} transition ease-in-out`}>
