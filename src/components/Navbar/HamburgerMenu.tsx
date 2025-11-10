@@ -57,7 +57,7 @@ export default function HamburgerMenu({ mode }: HamburgerMenuProps) {
             variants={navContainer}
           >
             <div className="block text-brown w-screen sm:hidden absolute flex flex-col items-end right-0 top-0 pt-28 z-38 bg-white p-8 space-y-4 transition ease-in-out delay-150">
-              {["About", "FAQ", "Resources", "Schedule"]
+              {["About", "FAQ", "Resources", "Schedule", "Programs"]
                 .map((link) => (
                   <NavItem key={link}>
                     <Link href={link.toLowerCase()}>{link}</Link>
