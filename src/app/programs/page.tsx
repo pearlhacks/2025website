@@ -149,11 +149,6 @@ export default function Page() {
                   workshops, resources, and mentorship to help you grow new skills and bring extra flair to your projects.
                   They're a chance to try out new 'ingredients' and see how they blend into your unique creation.
                 </p>
-                <p className="text-lg max-w-3xl mx-auto italic leading-relaxed">
-                  No matter which Track or Pathway you choose, each experience is a chance to learn something new,
-                  collaborate with others, and whip up a project that's uniquely yours. So grab your apron, gather your
-                  team, and get ready to bake up something beautiful at Pearl Hacks!
-                </p>
               </div>
 
               {/* Focus Pathway Cards */}
@@ -222,6 +217,15 @@ export default function Page() {
               </motion.div>
             )}
           </AnimatePresence>
+
+          {/* Closing Message */}
+          <div className="text-center mt-12">
+            <p className="text-lg max-w-3xl mx-auto italic leading-relaxed text-brown">
+              No matter which Track or Pathway you choose, each experience is a chance to learn something new,
+              collaborate with others, and whip up a project that's uniquely yours. So grab your apron, gather your
+              team, and get ready to bake up something beautiful at Pearl Hacks!
+            </p>
+          </div>
         </div>
       </div>
     </GenericLayout>
