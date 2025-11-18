@@ -12,13 +12,13 @@ export function GenericLayout({ title, children }: GenericLayoutProps) {
     <div className="w-full bg-cream h-full">
       <div className="relative bg-brown">
         <Navbar mode="generic" />
-        <div className="relative z-20 pt-4 pb-4 flex justify-center items-center -mt-16">
+        <div className="relative z-20 pt-4 pb-4 flex justify-center items-center -mt-16 px-4">
           <img
             src="/images/generic/sign.svg"
             alt="Sign"
-            className="absolute w-96 h-auto z-20 translate-y-16"
+            className="absolute w-80 sm:w-96 h-auto z-20 translate-y-16"
           />
-          <h2 className="relative z-20 text-white font-sans font-bold text-4xl py-8 translate-y-16">
+          <h2 className="relative z-20 text-white font-sans font-bold text-2xl sm:text-3xl md:text-4xl py-8 translate-y-16 text-center max-w-xs sm:max-w-md">
             {title}
           </h2>
         </div>

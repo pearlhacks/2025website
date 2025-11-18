@@ -8,8 +8,8 @@ interface FooterContentProps {
 export function FooterContent({ title, children }: FooterContentProps) {
   return (
     <div className="w-full">
-      <h2 className="text-white font-sans font-bold uppercase">{title}</h2>
-      <p className="text-brown-footer">{children}</p>
+      <h2 className="text-white font-sans font-bold uppercase break-words">{title}</h2>
+      <p className="text-brown-footer break-words">{children}</p>
     </div>
   );
 }

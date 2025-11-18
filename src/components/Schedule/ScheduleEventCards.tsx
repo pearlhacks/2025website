@@ -67,17 +67,17 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
         {events.map((event, index) => (
           <div
             key={index}
-            className="w-full content-center flex flex-col md:flex-row justify-between bg-cream-light rounded-lg p-5 overflow-hidden w-80"
+            className="w-full content-center flex flex-col md:flex-row justify-between bg-cream-light rounded-lg p-4 sm:p-5 overflow-hidden"
           >
             <div className="w-full flex flex-col justify-between">
               {/* Event Title */}
-              <h5 className="mb-2 text-2xl font-bold tracking-tight font-sans text-brown-light">
+              <h5 className="mb-2 text-xl sm:text-2xl font-bold tracking-tight font-sans text-brown-light break-words">
                 {event.event_name || "Event Title"}
               </h5>
               {/* Date, Start Time - End Time */}
-              <p className="flex flex-row items-center space-x-2 font-body text-med font-semibold text-brown">
+              <p className="flex flex-row items-center space-x-2 font-body text-sm sm:text-base font-semibold text-brown break-words">
                 <>
-                  <ClockIcon className="w-4 h-4 mr-2" />{" "}
+                  <ClockIcon className="w-4 h-4 mr-2 flex-shrink-0" />{" "}
                 </>{" "}
                 {event.date}
                 {", "}
@@ -85,8 +85,8 @@ export const ScheduleEventCard: React.FC<ScheduleEventCardProps> = ({
                 {calculateEndTime(event.start_time, event.duration?.toString())}
               </p>
               {/* Location */}
-              <p className="flex flex-row items-center gap-2 font-body text-brown">
-                <MapPinIcon className="w-4 h-4" />
+              <p className="flex flex-row items-center gap-2 font-body text-sm sm:text-base text-brown break-words">
+                <MapPinIcon className="w-4 h-4 flex-shrink-0" />
                 {event.location || "TBD"}
               </p>
             </div>

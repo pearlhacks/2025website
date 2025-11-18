@@ -59,12 +59,13 @@ export default function Page() {
   return (
     <GenericLayout title="FAQ">
       {/* <HackerGuideLink /> */}
+      <div className="mt-8">
       {faqsByCategory.map(({ category, faqs }) => (
         <div className="pb-5" key={category}>
-          <h2 className="font-sans font-bold text-2xl text-pink">
+          <h2 className="font-sans font-bold text-2xl text-pink break-words">
             {category}
           </h2>
-          <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-5 gap-x-10">
+          <div className="p-2 sm:p-5 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-x-10">
             {faqs.map((faq) => (
               <Accordion
                 key={faq.question}
@@ -75,8 +76,9 @@ export default function Page() {
           </div>
         </div>
       ))}
-      <div className="w-full flex flex-col items-center text-center pt-10">
-        <p className="text-brown font-medium">
+      </div>
+      <div className="w-full flex flex-col items-center text-center pt-10 px-4">
+        <p className="text-brown font-medium text-sm sm:text-base break-words">
           Can&apos;t find what you&apos;re looking for? Reach out to us through
           any of these channels
         </p>
