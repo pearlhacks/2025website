@@ -1,7 +1,7 @@
 export const register_participant =
-  "https://form.typeform.com/to/J6XtoOGO?typeform-source=linktr.ee";
+  "https://form.typeform.com/to/YhiOKbed";
 
-export const register_volunteer = "http://bit.ly/ph2025volunteer";
+export const register_volunteer = "https://form.typeform.com/to/CeiTB91p";
 
 export const register_mentor = "http://bit.ly/ph2025mentor";
 

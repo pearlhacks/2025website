@@ -78,11 +78,11 @@ export function HeroSection() {
               priority // Ensures this image loads first
             />
           </motion.div>
-          <div className="z-10 space-y-4 text-center md:text-left">
+          <div className="z-10 space-y-4 text-center md:text-left px-4">
             <div>
               <div className="font-sans">
                 <h2 className="text-xl font-bold text-brown-medium italic"> brew with </h2>
-                <h1 className="text-brown-dark md:text-brown text-5xl font-bold uppercase">
+                <h1 className="text-brown-dark md:text-brown text-5xl font-bold uppercase break-words">
                   Pearl Hacks
                 </h1>
               </div>
@@ -151,10 +151,10 @@ export function HeroSection() {
             </div>
               <div className="space-x-2 space-y-2">
                 <SecondaryButton href={link_2026mailinglist}>
-                  PH2026 Mailing List
+                  HACKER REGISTRATION
                 </SecondaryButton>
-                <PrimaryButton href={link_directorapp}>
-                  Director Interest Form
+                <PrimaryButton href={link_2026mailinglist}>
+                  MENTOR & VOLUNTEER APPLICATION
                 </PrimaryButton>
               </div>
           </div>

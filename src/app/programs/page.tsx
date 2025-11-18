@@ -12,8 +12,8 @@ export default function Page() {
     <GenericLayout title="Programs">
       <div className="w-full flex flex-col items-center space-y-12 text-brown max-w-6xl mx-auto px-4">
         {/* Hero Description */}
-        <div className="text-center max-w-4xl">
-          <p className="text-lg leading-relaxed">
+        <div className="text-center max-w-4xl mt-8">
+          <p className="text-base sm:text-lg leading-relaxed">
             Just like baking with Churro, hackathons are all about mixing together the right ingredients — creativity, collaboration, and
             curiosity — to make something wonderful! At Pearl Hacks, our <span className="font-bold">Tracks</span> and <span className="font-bold">Focus Pathways</span> are designed to help you
             explore, learn, and create your own recipe for success.
@@ -58,8 +58,8 @@ export default function Page() {
               >
               {/* Tracks Header */}
               <div className="text-center">
-                <h2 className="text-3xl font-bold text-brown mb-4">Tracks</h2>
-                <p className="text-lg max-w-3xl mx-auto">
+                <h2 className="font-sans font-bold text-2xl text-pink mb-4">Tracks</h2>
+                <p className="text-base sm:text-lg max-w-3xl mx-auto">
                   Think of Tracks as the main layers of your hackathon experience — where your project can rise to the
                   occasion and compete for prizes. Whether you're diving in as a first-time hacker through our Beginner
                   Track or taking full creative freedom in our General Track, these categories are where you can submit your
@@ -70,18 +70,18 @@ export default function Page() {
               {/* Track Cards */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 items-start">
                 {/* General Track Card */}
-                <div className="bg-white rounded-3xl border-4 border-brown-light p-8 shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="flex items-center space-x-4 mb-4">
+                <div className="bg-white rounded-3xl border-4 border-brown-light p-5 sm:p-8 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="flex items-center space-x-3 sm:space-x-4 mb-4">
                     <div className="bg-brown-light rounded-full p-3 flex-shrink-0">
                       <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-brown">General Track</h3>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-sans text-xl sm:text-2xl font-bold text-brown break-words">General Track</h3>
                     </div>
                   </div>
-                  <p className="text-brown leading-relaxed">
+                  <p className="text-base sm:text-lg text-brown leading-relaxed">
                     The General Track is for all hackers — from seasoned coders to
                     first-time builders — ready to cook up something creative! In this
                     open-ended track, you can bring any idea to life using software,
@@ -99,18 +99,18 @@ export default function Page() {
                 </div>
 
                 {/* Beginner Track Card */}
-                <div className="bg-white rounded-3xl border-4 border-brown-light p-8 shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="flex items-center space-x-4 mb-4">
+                <div className="bg-white rounded-3xl border-4 border-brown-light p-5 sm:p-8 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="flex items-center space-x-3 sm:space-x-4 mb-4">
                     <div className="bg-brown-light rounded-full p-3 flex-shrink-0">
                       <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-brown">Beginner Track</h3>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-sans text-xl sm:text-2xl font-bold text-brown break-words">Beginner Track</h3>
                     </div>
                   </div>
-                  <p className="text-brown leading-relaxed">
+                  <p className="text-base sm:text-lg text-brown leading-relaxed">
                     New to hackathons or computer science? The Beginner Track is
                     your perfect starter recipe! You'll get access to beginner-friendly
                     workshops, learning resources, and mentorship to help you build
@@ -142,8 +142,8 @@ export default function Page() {
               >
               {/* Focus Pathways Header */}
               <div className="text-center space-y-6">
-                <h2 className="text-3xl font-bold text-brown mb-4">Focus Pathways</h2>
-                <p className="text-lg max-w-3xl mx-auto leading-relaxed">
+                <h2 className="font-sans font-bold text-2xl text-pink mb-4">Focus Pathways</h2>
+                <p className="text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
                   Our <span className="font-bold">Focus Pathways</span> are like flavor add-ins — they're here to inspire your creativity and help you explore
                   exciting new areas of tech! While these pathways don't have separate prizes, they provide specialized
                   workshops, resources, and mentorship to help you grow new skills and bring extra flair to your projects.
@@ -154,18 +154,18 @@ export default function Page() {
               {/* Focus Pathway Cards */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 items-start">
                 {/* UX/UI Focus Pathway Card */}
-                <div className="bg-white rounded-3xl border-4 border-blue-light p-8 shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="flex items-center space-x-4 mb-4">
+                <div className="bg-white rounded-3xl border-4 border-blue-light p-5 sm:p-8 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="flex items-center space-x-3 sm:space-x-4 mb-4">
                     <div className="bg-blue-light rounded-full p-3 flex-shrink-0">
                       <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-brown">UX/UI Focus Pathway</h3>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-sans text-xl sm:text-2xl font-bold text-brown break-words">UX/UI Focus Pathway</h3>
                     </div>
                   </div>
-                  <p className="text-brown leading-relaxed">
+                  <p className="text-base sm:text-lg text-brown leading-relaxed">
                     The UX/UI Focus Pathway is for hackers who love design,
                     creativity, and user experience — the frosting that makes every
                     project beautiful and usable! Through guided workshops and
@@ -184,19 +184,19 @@ export default function Page() {
                 </div>
 
                 {/* AI Focus Pathway Card */}
-                <div className="bg-white rounded-3xl border-4 border-blue-light p-8 shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="flex items-center space-x-4 mb-4">
+                <div className="bg-white rounded-3xl border-4 border-blue-light p-5 sm:p-8 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="flex items-center space-x-3 sm:space-x-4 mb-4">
                     <div className="bg-blue-light rounded-full p-3 flex-shrink-0">
                       <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M13 7H7v6h6V7z" />
                         <path fillRule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-brown">AI Focus Pathway</h3>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-sans text-xl sm:text-2xl font-bold text-brown break-words">AI Focus Pathway</h3>
                     </div>
                   </div>
-                  <p className="text-brown leading-relaxed">
+                  <p className="text-base sm:text-lg text-brown leading-relaxed">
                     The AI Focus Pathway invites hackers to stir in a little innovation
                     using artificial intelligence and machine learning! Experiment
                     with tools like chatbots, computer vision, or natural language
@@ -220,7 +220,7 @@ export default function Page() {
 
           {/* Closing Message */}
           <div className="text-center mt-12">
-            <p className="text-lg max-w-3xl mx-auto italic leading-relaxed text-brown">
+            <p className="text-base sm:text-lg max-w-3xl mx-auto italic leading-relaxed text-brown">
               No matter which Track or Pathway you choose, each experience is a chance to learn something new,
               collaborate with others, and whip up a project that's uniquely yours. So grab your apron, gather your
               team, and get ready to bake up something beautiful at Pearl Hacks!
