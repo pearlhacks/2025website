@@ -6,7 +6,7 @@ import StarsOverlay from "./Star";
 import Image from "next/image";
 import { SecondaryButton } from "../Buttons/SecondaryButton";
 import { PrimaryButton } from "../Buttons/PrimaryButton";
-import { link_2026mailinglist, link_directorapp } from "@/utils/Urls";
+import { link_2026mailinglist, link_directorapp, register_participant, register_volunteer } from "@/utils/Urls";
 import { useState, useEffect } from "react";
 
 interface TimeLeft {
@@ -150,10 +150,10 @@ export function HeroSection() {
               )}
             </div>
               <div className="space-x-2 space-y-2">
-                <SecondaryButton href={link_2026mailinglist}>
+                <SecondaryButton href={register_participant}>
                   HACKER REGISTRATION
                 </SecondaryButton>
-                <PrimaryButton href={link_2026mailinglist}>
+                <PrimaryButton href={register_volunteer}>
                   MENTOR & VOLUNTEER APPLICATION
                 </PrimaryButton>
               </div>
