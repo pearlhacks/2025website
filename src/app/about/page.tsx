@@ -17,7 +17,7 @@ export default function Page() {
   // });
   return (
     <GenericLayout title="About Us">
-      <div className="space-y-4 text-brown">
+      <div className="space-y-4 text-brown mt-4 md:mt-0">
         <div className="flex flex-wrap items-center">
           <h2 className="font-sans font-bold text-2xl py-5 text-pink">
             Our Beginnings

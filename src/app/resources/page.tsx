@@ -53,9 +53,9 @@ export default function Page() {
   return (
     <GenericLayout title="Resources">
       {/* <HackerGuideLink /> */}
-      <div className="w-full max-w-7xl mx-auto space-y-8 px-3 sm:px-6 lg:px-8">
-        <div className="w-full mt-8">
-          <h2 className="text-pink font-sans font-bold text-xl sm:text-2xl pb-5 break-words">
+      <div className="w-full max-w-7xl mx-auto space-y-8">
+        <div className="w-full mt-8 md:mt-0">
+          <h2 className="text-pink font-sans font-bold text-2xl pb-5 break-words">
             Past Projects
           </h2>
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -81,7 +81,7 @@ export default function Page() {
         </div>
 
         <div className="w-full">
-          <h2 className="text-pink font-sans font-bold text-xl sm:text-2xl pb-5 break-words">
+          <h2 className="text-pink font-sans font-bold text-2xl pb-5 break-words">
             Useful Tools & Articles
           </h2>
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
