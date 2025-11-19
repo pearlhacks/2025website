@@ -59,7 +59,7 @@ export default function Page() {
   return (
     <GenericLayout title="FAQ">
       {/* <HackerGuideLink /> */}
-      <div className="mt-8 md:mt-4">
+      <div className="mt-8 md:mt-0">
       {faqsByCategory.map(({ category, faqs }) => (
         <div className="pb-5" key={category}>
           <h2 className="font-sans font-bold text-2xl text-pink break-words">

@@ -54,7 +54,7 @@ export default function Page() {
     <GenericLayout title="Resources">
       {/* <HackerGuideLink /> */}
       <div className="w-full max-w-7xl mx-auto space-y-8 px-3 sm:px-6 lg:px-8">
-        <div className="w-full mt-8 md:mt-4">
+        <div className="w-full mt-8 md:mt-0">
           <h2 className="text-pink font-sans font-bold text-xl sm:text-2xl pb-5 break-words">
             Past Projects
           </h2>

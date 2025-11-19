@@ -12,7 +12,7 @@ export default function Page() {
     <GenericLayout title="Programs">
       <div className="w-full flex flex-col items-center space-y-12 text-brown max-w-6xl mx-auto px-4">
         {/* Hero Description */}
-        <div className="text-center max-w-4xl mt-8 md:mt-4">
+        <div className="text-center max-w-4xl mt-8 md:mt-0">
           <p className="text-base sm:text-lg leading-relaxed">
             Just like baking with Churro, hackathons are all about mixing together the right ingredients — creativity, collaboration, and
             curiosity — to make something wonderful! At Pearl Hacks, our <span className="font-bold">Tracks</span> and <span className="font-bold">Focus Pathways</span> are designed to help you
