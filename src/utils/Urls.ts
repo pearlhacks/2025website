@@ -10,7 +10,7 @@ export const mlh_codeofconduct =
 
 export const link_discord = "https://bit.ly/PH25Discord";
 
-export const link_hackerguide = "http://bit.ly/PH25HackerGuide";
+export const link_hackerguide = "https://www.notion.so/2026-Hacker-Guide-2a096f87665481bfaff0de9d41c47665?source=copy_link";
 
 export const link_devpost = "https://pearlhacks2025.devpost.com/";
 
