@@ -7,14 +7,14 @@ import Tab from "@/components/About/Tab";
 import { TabSkeleton } from "@/components/Skeletons/Tab";
 
 export default function Page() {
-  // const {
-  //   data: directors,
-  //   isLoading,
-  //   isError,
-  // } = useQuery({
-  //   queryKey: ["directors"],
-  //   queryFn: getDirectors,
-  // });
+  const {
+    data: directors,
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["directors"],
+    queryFn: getDirectors,
+  });
   return (
     <GenericLayout title="About Us">
       <div className="space-y-4 text-brown mt-4 md:mt-0">
@@ -89,20 +89,20 @@ export default function Page() {
           </div>
         </div>
       </div>
-      {/* <div className="w-full flex flex-wrap items-center">
-        <h2 className="text-green font-sans font-bold text-2xl py-5">
+      <div className="w-full flex flex-wrap items-center">
+        <h2 className="text-pink font-sans font-bold text-2xl py-5">
           Meet the Team
         </h2>
         {isLoading ? (
           <TabSkeleton />
         ) : isError ? (
           <p>Error loading directors</p>
-        ) : directors ? ( // Ensure directors exist before rendering
+        ) : directors ? (
           <Tab directors={directors} />
         ) : (
-          <p>No data available</p> // Handle cases where API returns empty data
+          <p>No data available</p>
         )}
-      </div> */}
+      </div>
     </GenericLayout>
   );
 }

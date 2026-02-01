@@ -39,8 +39,8 @@ const Tab = ({ directors }: DirectorProps) => {
               duration-300
               ${
                 activeTab === tab
-                  ? "border-pink-accent border-b-2 text-pink-accent font-semibold"
-                  : "border-brown border-b text-brown hover:border-pink-accent hover:text-pink-accent"
+                  ? "border-blue border-b-2 text-blue font-semibold"
+                  : "border-brown border-b text-brown hover:border-blue hover:text-blue"
               }
             `}
               onClick={() => setActiveTab(tab)}
@@ -65,8 +65,8 @@ const Tab = ({ directors }: DirectorProps) => {
               />
             )}
             <div>
-              <h3 className="text-lg font-semibold">{director.name}</h3>
-              <p className="text-gray-500">({director.pronouns})</p>
+              <h3 className="text-lg font-semibold text-brown">{director.name}</h3>
+              <p className="text-brown-light">({director.pronouns})</p>
               <p className="text-brown">{director.role}</p>
             </div>
           </div>
