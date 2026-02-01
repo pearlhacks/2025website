@@ -2,7 +2,7 @@ import { link_hackerguide } from "@/utils/Urls";
 
 export const HackerGuideLink = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center mt-8 sm:mt-6 md:mt-4">
         <p className="text-brown font-medium">
         For more information, check out{" "}
         <a
