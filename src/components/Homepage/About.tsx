@@ -10,9 +10,10 @@ export function About() {
       </h2>
       <div className="text-center space-y-2 text-cream">
         <p>
-          Pearl Hacks is a hackathon for women and gender non-conforming
-          individuals in tech. We especially cater to first-time hackers who are
-          looking for a supportive environment to explore technology.
+          Pearl Hacks is a hackathon that celebrates women and gender-nonconforming individuals in tech. 
+          In alignment with university guidelines, the event is open to all participants, while maintaining 
+          a supportive environment that centers historically underrepresented genders in technology. We especially 
+          cater to first-time hackers who are looking for a supportive environment to explore technology.
         </p>
         <p>
           Participants work in teams to create incredible projects in 24 hours
