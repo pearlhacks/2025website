@@ -4,8 +4,8 @@ import { SponsorProps, Tier } from "@/utils/Types";
 export function SponsorGrid({ sponsors }: SponsorProps) {
   const getSize = (tier: Tier) => {
     switch (tier) {
-      case Tier.PEARL:
-        return "h-20 sm:h-28";
+      case Tier.GOLD:
+        return "h-20 sm:h-20";
       case Tier.SILVER:
         return "h-8 sm:h-10";
     }
