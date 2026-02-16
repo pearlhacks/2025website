@@ -1,10 +1,10 @@
 "use client";
-import { GenericLayout } from "@/components/GenericLayout";
-import { SecondaryButton } from "@/components/Buttons/SecondaryButton";
 import { getDirectors } from "@/api/getData";
-import { useQuery } from "@tanstack/react-query";
 import Tab from "@/components/About/Tab";
+import { SecondaryButton } from "@/components/Buttons/SecondaryButton";
+import { GenericLayout } from "@/components/GenericLayout";
 import { TabSkeleton } from "@/components/Skeletons/Tab";
+import { useQuery } from "@tanstack/react-query";
 
 export default function Page() {
   const {
@@ -22,6 +22,23 @@ export default function Page() {
           <h2 className="font-sans font-bold text-2xl py-5 text-pink">
             Our Beginnings
           </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3 w-full mb-4">
+            <img
+              src="/images/about/IMG_8358.JPG"
+              alt="Pearl Hacks team on steps"
+              className="w-full h-28 sm:h-40 md:h-48 lg:h-56 object-cover rounded-lg"
+            />
+            <img
+              src="/images/about/IMG_5344.jpg"
+              alt="Pearl Hacks participants with project"
+              className="w-full h-28 sm:h-40 md:h-48 lg:h-56 object-cover rounded-lg"
+            />
+            <img
+              src="/images/about/IMG_5372.jpg"
+              alt="Pearl Hacks networking"
+              className="w-full h-28 sm:h-40 md:h-48 lg:h-56 object-cover rounded-lg"
+            />
+          </div>
           <div className="flex flex-col md:flex-row items-top lg:items-center md:space-x-4 text-brown">
             <div className="space-y-4">
               <p>
