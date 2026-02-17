@@ -26,17 +26,17 @@ export default function Page() {
             <img
               src="/images/about/IMG_8358.JPG"
               alt="Pearl Hacks team on steps"
-              className="w-full h-28 sm:h-40 md:h-48 lg:h-56 object-cover rounded-lg"
+              className="w-full h-48 lg:h-56 object-cover rounded-lg"
             />
             <img
               src="/images/about/IMG_5344.jpg"
               alt="Pearl Hacks participants with project"
-              className="w-full h-28 sm:h-40 md:h-48 lg:h-56 object-cover rounded-lg"
+              className="w-full h-48 lg:h-56 object-cover rounded-lg"
             />
             <img
               src="/images/about/IMG_5372.jpg"
               alt="Pearl Hacks networking"
-              className="w-full h-28 sm:h-40 md:h-48 lg:h-56 object-cover rounded-lg"
+              className="w-full h-48 lg:h-56 object-cover rounded-lg"
             />
           </div>
           <div className="flex flex-col md:flex-row items-top lg:items-center md:space-x-4 text-brown">
