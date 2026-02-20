@@ -6,7 +6,7 @@ import StarsOverlay from "./Star";
 import Image from "next/image";
 import { SecondaryButton } from "../Buttons/SecondaryButton";
 import { PrimaryButton } from "../Buttons/PrimaryButton";
-import { link_2026mailinglist, link_directorapp, register_participant, register_volunteer } from "@/utils/Urls";
+import { link_2026mailinglist, link_directorapp, link_discord_2026, register_participant, register_volunteer } from "@/utils/Urls";
 import { useState, useEffect } from "react";
 
 interface TimeLeft {
@@ -149,10 +149,20 @@ export function HeroSection() {
                 </div>
               )}
             </div>
-              <div className="space-x-2 space-y-2">
-                <SecondaryButton href={register_participant}>
-                  HACKER REGISTRATION
-                </SecondaryButton>
+              <div className="flex flex-col items-center md:items-start gap-2">
+                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                  <SecondaryButton href={register_participant}>
+                    HACKER REGISTRATION
+                  </SecondaryButton>
+                  <a
+                    href={link_discord_2026}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-sans font-bold text-white border-2 border-brown-light bg-brown-light hover:bg-transparent transition ease-in-out p-2 px-4 uppercase rounded-full inline-flex justify-center items-center backdrop-blur"
+                  >
+                    JOIN DISCORD SERVER
+                  </a>
+                </div>
                 <PrimaryButton href={register_volunteer}>
                   MENTOR & VOLUNTEER APPLICATION
                 </PrimaryButton>

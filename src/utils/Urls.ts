@@ -9,6 +9,7 @@ export const mlh_codeofconduct =
   "https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md";
 
 export const link_discord = "https://bit.ly/PH25Discord";
+export const link_discord_2026 = "http://Tinyurl.com/ph26discord";
 
 export const link_hackerguide = "https://www.notion.so/2026-Hacker-Guide-2a096f87665481bfaff0de9d41c47665?source=copy_link";
 
